@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="18px" viewBox="0 0 11 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>chevron-right</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Observatorio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1400_2" transform="translate(-117.000000, -3423.000000)" fill="#BA9868" fill-rule="nonzero">
+            <g id="Group-12" transform="translate(0.000000, 3356.000000)">
+                <path d="M118.351021,76 L127.827642,67.8635077 C128.048477,67.6739019 128.058422,67.3574486 127.849856,67.1566895 C127.641289,66.9559304 127.293191,66.9468889 127.072356,67.1364947 L117.172357,75.6364935 C116.942548,75.8338046 116.942548,76.1661954 117.172357,76.3635065 L127.072356,84.8635053 C127.293191,85.0531111 127.641289,85.0440696 127.849856,84.8433105 C128.058422,84.6425514 128.048477,84.3260981 127.827642,84.1364923 L118.351021,76 Z" id="chevron-right"></path>
+            </g>
+        </g>
+    </g>
+</svg>

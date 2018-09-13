@@ -1,0 +1,103 @@
+{
+  "checksum": {
+    "previous": "8fbe27ac6073eb6538a9e5cb893c1824526c512a44984a2f3695c731db9e0f8b",
+    "current": "8fbe27ac6073eb6538a9e5cb893c1824526c512a44984a2f3695c731db9e0f8b"
+  },
+  "fonts": [
+    "./source/assets/fonts/observatorio-icons.ttf",
+    "./source/assets/fonts/observatorio-icons.svg",
+    "./source/assets/fonts/observatorio-icons.woff",
+    "./source/assets/fonts/observatorio-icons.eot",
+    "./source/assets/fonts/observatorio-icons.woff2"
+  ],
+  "glyphs": {
+    "arrow-left": {
+      "codepoint": 61697,
+      "source": "./source/assets/images/icons/arrow-left.svg"
+    },
+    "arrow-right": {
+      "codepoint": 61696,
+      "source": "./source/assets/images/icons/arrow-right.svg"
+    },
+    "chevron-left": {
+      "codepoint": 61698,
+      "source": "./source/assets/images/icons/chevron-left.svg"
+    },
+    "chevron-right": {
+      "codepoint": 61699,
+      "source": "./source/assets/images/icons/chevron-right.svg"
+    },
+    "facebook": {
+      "codepoint": 61700,
+      "source": "./source/assets/images/icons/facebook.svg"
+    },
+    "facebook-dark": {
+      "codepoint": 61701,
+      "source": "./source/assets/images/icons/facebook-dark.svg"
+    },
+    "inslides": {
+      "codepoint": 61702,
+      "source": "./source/assets/images/icons/inslides.svg"
+    },
+    "linkedin": {
+      "codepoint": 61703,
+      "source": "./source/assets/images/icons/linkedin.svg"
+    },
+    "linkedin-dark": {
+      "codepoint": 61704,
+      "source": "./source/assets/images/icons/linkedin-dark.svg"
+    },
+    "mail": {
+      "codepoint": 61705,
+      "source": "./source/assets/images/icons/mail.svg"
+    },
+    "menu-mobile": {
+      "codepoint": 61706,
+      "source": "./source/assets/images/icons/menu-mobile.svg"
+    },
+    "twitter": {
+      "codepoint": 61707,
+      "source": "./source/assets/images/icons/twitter.svg"
+    },
+    "twitter-dark": {
+      "codepoint": 61708,
+      "source": "./source/assets/images/icons/twitter-dark.svg"
+    },
+    "youtube": {
+      "codepoint": 61709,
+      "source": "./source/assets/images/icons/youtube.svg"
+    }
+  },
+  "options": {
+    "autowidth": false,
+    "config": "fontcustom.yml",
+    "copyright": "",
+    "css3": false,
+    "css_selector": ".icon-{{glyph}}",
+    "debug": false,
+    "font_ascent": 448,
+    "font_descent": 64,
+    "font_design_size": 16,
+    "font_em": 512,
+    "font_name": "observatorio-icons",
+    "force": false,
+    "input": {
+      "templates": "./source/assets/images/icons",
+      "vectors": "./source/assets/images/icons"
+    },
+    "no_hash": true,
+    "output": {
+      "css": "./source/assets/stylesheets/partials/config",
+      "fonts": "./source/assets/fonts",
+      "preview": "./source/assets/fonts"
+    },
+    "preprocessor_path": "./../fonts/",
+    "quiet": false,
+    "templates": [
+      "scss"
+    ]
+  },
+  "templates": [
+    "./source/assets/stylesheets/partials/config/_observatorio-icons.scss"
+  ]
+}

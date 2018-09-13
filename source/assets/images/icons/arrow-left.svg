@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="12px" viewBox="0 0 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Combined Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Observatorio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1400_1" transform="translate(-116.000000, -413.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-10" transform="translate(116.000000, 401.000000)">
+                <path d="M12.3249919,18.6982123 L0.9,18.6982123 C0.402943725,18.6982123 -3.33066907e-16,18.2952685 0,17.7982123 C3.33066907e-16,17.301156 0.402943725,16.8982123 0.9,16.8982123 L12.3130957,16.8982123 L8.95346767,13.5361672 C8.60212221,13.184569 8.60232712,12.6147206 8.95392535,12.2633751 C9.30552357,11.9120296 9.87537202,11.9122346 10.2267175,12.2638328 L15.1273564,17.1679974 C15.4785232,17.5194169 15.4785232,18.0889124 15.1273564,18.4403319 L10.2049758,23.3662538 C9.85363038,23.7178521 9.28378193,23.718057 8.93218371,23.3667115 C8.58058548,23.0153661 8.58038057,22.4455176 8.93172603,22.0939194 L12.3249919,18.6982123 Z" id="Combined-Shape" transform="translate(7.695366, 17.815043) scale(-1, 1) translate(-7.695366, -17.815043) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,83 @@
+//
+// Icon Font: observatorio-icons
+//
+
+@font-face {
+  font-family: "observatorio-icons";
+  src: url("./../fonts/observatorio-icons.eot");
+  src: url("./../fonts/observatorio-icons.eot?#iefix") format("embedded-opentype"),
+       url("./../fonts/observatorio-icons.woff2") format("woff2"),
+       url("./../fonts/observatorio-icons.woff") format("woff"),
+       url("./../fonts/observatorio-icons.ttf") format("truetype"),
+       url("./../fonts/observatorio-icons.svg#observatorio-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "observatorio-icons";
+    src: url("./../fonts/observatorio-icons.svg#observatorio-icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-arrow-left:before,
+.icon-arrow-right:before,
+.icon-chevron-left:before,
+.icon-chevron-right:before,
+.icon-facebook:before,
+.icon-facebook-dark:before,
+.icon-inslides:before,
+.icon-linkedin:before,
+.icon-linkedin-dark:before,
+.icon-mail:before,
+.icon-menu-mobile:before,
+.icon-twitter:before,
+.icon-twitter-dark:before,
+.icon-youtube:before {
+  display: inline-block;
+  font-family: "observatorio-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icon-arrow-left:before { content: "\f101"; }
+.icon-arrow-right:before { content: "\f100"; }
+.icon-chevron-left:before { content: "\f102"; }
+.icon-chevron-right:before { content: "\f103"; }
+.icon-facebook:before { content: "\f104"; }
+.icon-facebook-dark:before { content: "\f105"; }
+.icon-inslides:before { content: "\f106"; }
+.icon-linkedin:before { content: "\f107"; }
+.icon-linkedin-dark:before { content: "\f108"; }
+.icon-mail:before { content: "\f109"; }
+.icon-menu-mobile:before { content: "\f10a"; }
+.icon-twitter:before { content: "\f10b"; }
+.icon-twitter-dark:before { content: "\f10c"; }
+.icon-youtube:before { content: "\f10d"; }
+
+$font-observatorio-icons-arrow-left: "\f101";
+$font-observatorio-icons-arrow-right: "\f100";
+$font-observatorio-icons-chevron-left: "\f102";
+$font-observatorio-icons-chevron-right: "\f103";
+$font-observatorio-icons-facebook: "\f104";
+$font-observatorio-icons-facebook-dark: "\f105";
+$font-observatorio-icons-inslides: "\f106";
+$font-observatorio-icons-linkedin: "\f107";
+$font-observatorio-icons-linkedin-dark: "\f108";
+$font-observatorio-icons-mail: "\f109";
+$font-observatorio-icons-menu-mobile: "\f10a";
+$font-observatorio-icons-twitter: "\f10b";
+$font-observatorio-icons-twitter-dark: "\f10c";
+$font-observatorio-icons-youtube: "\f10d";

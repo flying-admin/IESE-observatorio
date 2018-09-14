@@ -1,0 +1,34 @@
+.hero_home {
+  width: 100%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 700px;
+  @include media("<phablet") {
+    min-height: 520px;
+  }
+  &_content {
+    width: 100%;
+    max-width: 930px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    .page_title {
+      font-size: 50px;
+      line-height: 60px;
+      color: $white;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      @include media("<phablet") {
+        font-size: 30px;
+        line-height: 40px;
+        letter-spacing: 2px;
+        padding: 0 5px;
+      }
+    }
+  }
+}

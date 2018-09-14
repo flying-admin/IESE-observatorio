@@ -3,6 +3,28 @@
 %>
 <header class="header <%= extra_classes %>">
 
-<h1>Header Content</h1>
+  <div class="logos">
+    <a href="" class="logo_bestinver white"><%= image_tag("content/logo-bestinver.png", :class => '') %></a>
+    <a href="" class="logo_iese white"><%= image_tag("content/logo-iese.png", :class => '') %></a>
 
+    <a href="" class="logo_bestinver transparent"><%= image_tag("content/logo-bestinver-white.png", :class => '') %></a>
+    <a href="" class="logo_iese transparent"><%= image_tag("content/logo-iese-white.png", :class => '') %></a>
+  </div>
+
+  <ul class="header_menu">
+    <li>
+      <a href="">BEST OF elementos</a>
+    </li>
+    <li>
+      <a href="">investment trends 2018</a>
+    </li>
+    <li>
+      <a href="">Sobre el informe</a>
+    </li>
+  </ul>
+
+  <a href="" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+
+  <!-- <button class="btn_menu_mobile transparent"><span class="icon-menu-mobile"></span></button> -->
+  <button class="btn_menu_mobile "><span class="hamburguer-menu"></span></button>
 </header>

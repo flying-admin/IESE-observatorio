@@ -1,0 +1,168 @@
+.header {
+  height: 116px;
+  padding-left: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  @include media("<tablet") {
+    height: 50px;
+    padding-left: 16px;
+  }
+  .logos {
+    .logo_bestinver {
+      height: 50px;
+      margin-right: 35px;
+      @include media("<desktop") {
+        height: 30px;
+        margin-right: 15px;
+      }
+      @include media("<tablet") {
+        height: 29px;
+      }
+      &.white {
+        display: none;
+      }
+      &.transparent {
+        display: inline-block;
+      }
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+    .logo_iese {
+      height: 50px;
+      @include media("<desktop") {
+        height: 30px;
+      }
+      @include media("<tablet") {
+        height: 29px;
+      }
+      &.white {
+        display: none;
+      }
+      &.transparent {
+        display: inline-block;
+      }
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+  .header_menu {
+    display: flex;
+    @include media("<tablet") {
+      display: none;
+    }
+    li {
+      a {
+        display: block;
+        padding: 0 20px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $black;
+        text-decoration: none;
+        @include media("<desktop") {
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+  .btn_header {
+    display: block;
+    width: 224px;
+    height: 116px;
+    line-height: 116px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: $primary;
+    text-decoration: none;
+    @include media("<desktop") {
+      width: 200px;
+    }
+    @include media("<tablet") {
+      display: none;
+    }
+  }
+  .btn_menu_mobile {
+    display: none;
+    @include media("<tablet") {
+      background-color: transparent;
+      border: none;
+      display: block;
+      padding: 0 16px;
+      height: 26px;
+      .hamburguer-menu {
+        display: block;
+        background-color: $white;
+        width: 15px;
+        height: 2px;
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          background-color: $white;
+          width: 26px;
+          height: 2px;
+          position: absolute;
+          top: -9px;
+          right: 0;
+        }
+        &:before {
+          content: '';
+          display: block;
+          background-color: $white;
+          width: 26px;
+          height: 2px;
+          position: absolute;
+          bottom: -9px;
+          right: 0;
+        }
+      }
+    }
+  }
+  &.bg-white {
+    background-color: $white;
+    .logos {
+      .logo_bestinver {
+        &.white {
+          display: inline-block;
+        }
+        &.transparent {
+          display: none;
+        }
+      }
+      .logo_iese {
+        &.white {
+          display: inline-block;
+        }
+        &.transparent {
+          display: none;
+        }
+      }
+    }
+    .btn_menu_mobile {
+      @include media("<tablet") {
+        .hamburguer-menu {
+          background-color: $primary;
+          &:after,
+          &:before {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}

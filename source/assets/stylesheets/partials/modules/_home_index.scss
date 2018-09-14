@@ -1,0 +1,70 @@
+.home_index {
+  &_content {
+    width: 100%;
+    max-width: 1166px;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 250px;
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &_index {
+    width: 400px;
+  }
+  &_title {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 35px;
+    color: rgba($black, 0.15);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  &_list {
+    li {
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 18px;
+      letter-spacing: 1px;
+      color: $primary-text;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+  }
+  &_intro {
+    width: 700px;
+    padding: 40px;
+    margin-top: -220px;
+    background-color: $white;
+    box-shadow: 0 4px 13px 1px rgba(0,0,0,0.12);
+    &_title {
+      font-size: 50px;
+      line-height: 60px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      color: $blackish;
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 70px;
+        height: 5px;
+        background-color: $red;
+      }
+    }
+    &_text {
+      p {
+        font-size: 18px;
+        line-height: 36px;
+        color: $blackish;
+      }
+    }
+  }
+}

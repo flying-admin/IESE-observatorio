@@ -68,7 +68,7 @@
         letter-spacing: 2px;
         font-weight: 700;
         text-transform: uppercase;
-        color: $black;
+        color: $white;
         text-decoration: none;
         @include media("<desktop") {
           padding: 0 10px;
@@ -153,6 +153,13 @@
         }
       }
     }
+    .header_menu {
+      li {
+        a {
+          color: $black;
+        }
+      }
+    }
     .btn_menu_mobile {
       @include media("<tablet") {
         .hamburguer-menu {
@@ -164,5 +171,8 @@
         }
       }
     }
+  }
+  &.bg-transparent {
+    position: fixed;
   }
 }

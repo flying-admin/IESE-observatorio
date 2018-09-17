@@ -1,0 +1,21 @@
+<%
+  extra_classes ||= ""
+  title ||= ""
+  image ||= ""
+  extra_content ||= ""
+%>
+
+<div class="hero_section" style="background-image: url(assets/images/content/<%= image %>);">
+  <div class="hero_section_content">
+    <h1 class="page_title"><%= title %></h1>
+    <a href="" class="link_back"><span class="icon-arrow-left"></span>Inicio</a>
+  </div>
+  <% if extra_content == "2" %>
+    <div class="hero_section_extra_content">
+      <%= image_tag("content/chart_1.png", :class => 'chart') %>
+    </div>
+  <% end %>
+</div>
+
+
+

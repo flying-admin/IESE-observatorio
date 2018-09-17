@@ -1,0 +1,23 @@
+---
+title: Proyect Index
+layout: layout
+---
+
+<%= partial("shared/header", :locals => {
+  :extra_classes => 'bg-transparent'
+}) %>
+
+<div class="content__wrapper">
+
+  <%= partial("modules/hero_section", :locals => {
+    :extra_classes => '',
+    :title => 'Productos de inversión, nada nuevo en el horizontes',
+    :image => 'hero_1.jpg',
+    :extra_content=> ""
+  }) %>
+
+  <%= partial("modules/download", :locals => {
+    :extra_classes => ''
+  }) %>
+</div>
+<%= partial("shared/footer") %>

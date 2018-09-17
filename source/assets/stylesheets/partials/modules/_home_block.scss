@@ -1,0 +1,248 @@
+.home_block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 150px;
+  @include media("<desktop") {
+    margin-bottom: 50px;
+  }
+  @include media("<tablet") {
+    display: block;
+  }
+  &_big {
+    width: 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    @include media("<tablet") {
+      width: 100%;
+    }
+    @include media("<phablet") {
+      display: block;
+    }
+  }
+  &_small {
+    width: 25%;
+    min-width: 240px;
+    min-height: 240px;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $box-shadow;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    @include media("<phablet") {
+      width: 240px;
+      height: 240px;
+    }
+    .percent {
+      line-height: 150px;
+      display: block;
+      color: $primary-text;
+      .num {
+        font-size: 130px;
+      }
+      .sim {
+        font-size: 80px;
+      }
+      font-weight: 100;
+    }
+    .text {
+      display: block;
+      padding: 0 55px;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 1px;
+      font-weight: 800;
+      color: $darkgrey;
+      text-transform: uppercase;
+    }
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+  &_title {
+    font-size: 40px;
+    line-height: 60px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: $white;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    @include media("<phablet") {
+      font-size: 25px;
+      line-height: 35px;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 70px;
+      height: 5px;
+      background-color: $red;
+    }
+  }
+  &_text {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+    color: $white;
+    margin-bottom: 40px;
+    @include media("<phablet") {
+      font-size: 15px;
+      line-height: 30px;
+    }
+  }
+  .btn {
+    @include media("<phablet") {
+      width: 100%;
+    }
+  }
+  &.prod {
+    padding-bottom: 150px;
+    @include media("<tablet") {
+      padding-bottom: 0;
+    }
+    @include media("<phablet") {
+      padding-bottom: 150px;
+    }
+    .home_block_big {
+      .home_block_big_content {
+        width: 580px;
+        padding: 80px 100px 80px 120px;
+        background-image: $overlay;
+        @include media("<desktop") {
+          padding: 80px 50px 80px 60px;
+        }
+        @include media("<tablet") {
+          width: 100%;
+          padding: 80px 50px 150px 60px;
+        }
+        @include media("<phablet") {
+          padding: 30px 15px 150px 15px;
+        }
+      }
+    }
+    .home_block_small {
+      transform: translate(-66%, 33%);
+      @include media("<tablet") {
+        transform: translate(0, -50%);
+        float: right;
+      }
+    }
+  }
+  &.digital {
+    justify-content: flex-end;
+    .home_block_big {
+      justify-content: space-between;
+      align-items: center;
+      .home_block_big_content {
+        width: 580px;
+        padding: 65px 0 65px 120px;
+        @include media("<desktop") {
+          padding: 65px 0 65px 60px;
+        }
+        @include media("<tablet") {
+          width: 100%;
+        }
+        @include media("<phablet") {
+          padding: 30px 15px;
+        }
+      }
+    }
+    .home_block_big_chart {
+      width: 475px;
+      max-width: 100%;
+      padding-right: 110px;
+      @include media("<phablet") {
+        padding: 0 15px 30px 15px;
+        margin: 0 auto;
+      }
+    }
+  }
+  &.saving {
+    padding-bottom: 150px;
+    flex-direction: row-reverse;
+    @include media("<tablet") {
+      padding-bottom: 0;
+    }
+    @include media("<phablet") {
+      padding-bottom: 150px;
+    }
+    .home_block_big {
+      justify-content: flex-end;
+      transform: translate(-11%, 0);
+      @include media("<tablet") {
+        transform: translate(0, 0);
+      }
+      .home_block_big_content {
+        width: 580px;
+        background-image: $overlay;
+        padding: 80px 100px 80px 120px;
+        @include media("<desktop") {
+          padding: 80px 50px 80px 60px;
+        }
+        @include media("<tablet") {
+          width: 100%;
+          padding: 80px 50px 150px 300px;
+        }
+        @include media("<phablet") {
+          padding: 30px 15px 150px 15px;
+        }
+      }
+    }
+    .home_block_small {
+      transform: translate(33%, 33%);
+      @include media("<tablet") {
+        transform: translate(0, -50%);
+        float: left;
+      }
+      @include media("<phablet") {
+        float: right;
+      }
+    }
+  }
+  &.known {
+    justify-content: flex-start;
+    .home_block_big {
+      justify-content: space-between;
+      align-items: center;
+      .home_block_big_content {
+        width: 580px;
+        padding: 65px 0 65px 120px;
+        @include media("<desktop") {
+          padding: 65px 0 65px 60px;
+        }
+        @include media("<tablet") {
+          width: 100%;
+        }
+        @include media("<phablet") {
+          padding: 30px 15px;
+        }
+      }
+    }
+    .home_block_big_chart {
+      width: 430px;
+      max-width: 100%;
+      padding-right: 130px;
+      @include media("<phablet") {
+        padding-right: 0;
+        padding-bottom: 30px;
+        padding: 0 15px 30px 15px;
+        margin: 0 auto;
+      }
+    }
+  }
+}

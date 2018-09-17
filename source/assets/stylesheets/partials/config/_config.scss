@@ -19,9 +19,12 @@ $primary: #B59971;
 // $corporative: #000;
 // $error: #000;
 // $lightgrey: #000;
-// $darkgrey: #000;
+$darkgrey: #575757;
 $primary-text: #BA9868;
 $red: #DF040B;
+
+$overlay: linear-gradient(-180deg, rgba(#575757, 0.4) 0%, rgba(#000000, 0.4) 100%);
+$box-shadow: 0 4px 13px 1px rgba(0,0,0,0.12);
 
 //Fonts
 $font_default: "Graphik", sans-serif;

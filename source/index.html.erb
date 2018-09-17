@@ -17,5 +17,75 @@ layout: layout
     :extra_classes => ''
   }) %>
 
+
+  <div class="home_block prod">
+    <div class="home_block_big" style="background-image: url('assets/images/content/bg-products.jpg');">
+      <div class="home_block_big_content">
+        <p class="home_block_title">Productos de inversión, nada nuevo en el horizonte</p>
+        <p class="home_block_text">8 de cada 10 españoles invierte en bienes inmuebles. Y el 46% lo combina además con productos financieros.</p>
+        <a href="" class="btn">
+          Leer más
+        </a>
+      </div>
+    </div>
+    <div class="home_block_small">
+      <div>
+        <span class="percent"><span class="num">86</span><span class="sim">%</span></span>
+        <span class="text">bienes inmuebles</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="home_block digital">
+    <div class="home_block_big" style="background-image: url('assets/images/content/bg-digital.jpg');">
+      <div class="home_block_big_content">
+        <p class="home_block_title">Más digitales, mismos bancos, mismas inversiones</p>
+        <p class="home_block_text">El canal tradicional bancario sigue siendo la vía principal de contratación. La transformación digital del sector no ha mermado las visitas a la oficina física ni ha evolucionado los productos en los que se invierte.</p>
+        <a href="" class="btn">
+          Leer más
+        </a>
+      </div>
+      <div class="home_block_big_chart">
+        <%= image_tag("content/chart-digital.png", :class => '') %>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="home_block saving">
+    <div class="home_block_big" style="background-image: url('assets/images/content/bg-saving.jpg');">
+      <div class="home_block_big_content">
+        <p class="home_block_title">Ahorro insuficiente, inversión deficiente</p>
+        <p class="home_block_text">El 62% de los inversores declara conocer el importe de pensión pública que obtendrá. 3 de cada 4 piensa que será insuficiente.</p>
+        <a href="" class="btn">
+          Leer más
+        </a>
+      </div>
+    </div>
+    <div class="home_block_small">
+      <div>
+        <span class="percent"><span class="num">62</span><span class="sim">%</span></span>
+        <span class="text">Conoce el importe de la pensión pública que obtendrá</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="home_block known">
+    <div class="home_block_big" style="background-image: url('assets/images/content/bg-known.jpg');">
+      <div class="home_block_big_content">
+        <p class="home_block_title">Contratación a sabiendas, sin saber</p>
+        <p class="home_block_text">El inversor sigue teniendo la percepción de que la rentabilidad y la seguridad están reñidas. Aunque se considera una persona formada, que afirma conocer los productos que contrata y que no requiere asesoramiento, la realidad es que no está muy familiarizado con los distintos productos financieros.</p>
+        <a href="" class="btn">
+          Leer más
+        </a>
+      </div>
+      <div class="home_block_big_chart">
+        <%= image_tag("content/chart-known.png", :class => '') %>
+      </div>
+    </div>
+  </div>
+
 </div>
 <%= partial("shared/footer") %>

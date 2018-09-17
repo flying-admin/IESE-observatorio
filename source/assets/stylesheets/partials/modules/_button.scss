@@ -1,0 +1,71 @@
+.btn {
+  display: inline-block;
+  width: auto;
+  width: 224px;
+  padding: 14px;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  text-align: center;
+  color: $white;
+  background-color: $primary;
+  border-radius: 0;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s;
+  &--block {
+    display: block;
+    width: 100%;
+  }
+
+  &--primary {
+    background-color: $primary;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &:hover {
+      
+    }
+    &:active {
+      
+    }
+    &[disabled] {
+      
+    }
+  }
+
+  &--secondary {
+    
+    &:before {
+      
+    }
+    &:hover {
+      
+    }
+    &:active {
+      
+    }
+    &[disabled] {
+      
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@include media("<desktop", ">=tablet"){
+  .btn {
+
+  }
+}
+
+
+@include media("<tablet"){
+  .btn {
+
+  }
+}

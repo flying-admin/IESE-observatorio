@@ -1,5 +1,7 @@
 .footer {
   background-color: $darkgrey;
+  position: relative;
+  z-index: 3;
   .row_logos {
     padding: 50px 40px 50px 40px;
     @include media("<phablet") {

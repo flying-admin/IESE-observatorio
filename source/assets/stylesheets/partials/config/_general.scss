@@ -25,6 +25,7 @@ img {
   position: relative; 
   // max-width: 1200px;
   margin: 0px auto;
+  z-index: 3;
 }
 
 .container {
@@ -38,6 +39,47 @@ img {
 .link {
   color: $primary-text;
   text-decoration: none;
+}
+
+
+body {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 1000px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/content/bg-top.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 2;
+    @include media("<tablet") {
+      top: 0;
+    }
+  }
+  &:after {
+    content: '';
+    display: block;
+    height: auto;
+    position: absolute;
+    top: 1000px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: url(../images/content/bg-bottom.jpg);
+    background-size: 100%;
+    background-repeat: repeat-y;
+    background-position: top center;
+    z-index: 1;
+    @include media("<tablet") {
+      top: 0;
+    }
+  }
 }
 
 /* ========== HELPERS ========== */

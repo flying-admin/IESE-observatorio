@@ -1,0 +1,28 @@
+.know_block {
+  background-color: $white;
+  padding: 90px 0;
+  &_content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    &_title {
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 19px;
+      color: $primary-text;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    &_text {
+      margin-bottom: 80px;
+      p {
+        font-size: 32px;
+        line-height: 48px;
+        color: $blackish;
+      }
+    }
+    .btn {
+      margin: 0 auto;
+    }
+  }
+}

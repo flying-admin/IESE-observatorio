@@ -1,0 +1,24 @@
+<%
+  extra_classes ||= ""
+  prev_title ||= ""
+  next_title ||= ""
+%>
+
+<div class="sections_nav">
+  <a href="" class="sections_nav_link prev">
+    <% if prev_title != "" %>
+      <span class="sections_nav_link_wrap">
+        <span class="sections_nav_link_title">sección anterior</span>
+        <span class="sections_nav_link_section"><%= prev_title %></span>
+      </span>
+    <% end %>
+  </a>
+  <a href="" class="sections_nav_link next">
+    <% if next_title != "" %>
+      <span class="sections_nav_link_wrap">
+        <span class="sections_nav_link_title">siguiente sección</span>
+        <span class="sections_nav_link_section"><%= next_title %></span>
+      </span>
+    <% end %>
+  </a>
+</div>

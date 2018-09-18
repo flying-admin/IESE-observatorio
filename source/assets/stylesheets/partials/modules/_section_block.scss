@@ -43,4 +43,37 @@
       }
     }
   }
+  &.sec_2_grey {
+    background-color: $bg-grey;
+    padding: 80px 115px;
+    .section_block_text {
+      width: 100%;
+      max-width: 700px;
+      margin: 0;
+      text-align: left;
+    }
+  }
+  &.sec_2_grey_2 {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .cnt_graph {
+      padding-right: 115px;
+      width: 50%;
+      transform: translateX(-115px);
+    }
+    .section_block_header {
+      margin: 0;
+      .section_block_title {
+        background-color: $bg-grey;
+        width: 50%;
+        min-width: 800px;
+        min-height: 600px;
+        padding: 90px 230px 90px 115px;
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
 }

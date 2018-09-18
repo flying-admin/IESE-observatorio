@@ -3,6 +3,8 @@
   padding: 90px 0;
   &_content {
     width: 100%;
+    padding-left: 115px;
+    padding-right: 115px;
     margin: 0 auto;
     text-align: center;
     &_title {
@@ -23,6 +25,33 @@
     }
     .btn {
       margin: 0 auto;
+    }
+  }
+  &.sect1 {
+    .know_block_content {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+  &.sect2 {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .know_block_image {
+      padding-left: 115px;
+      width: 50%;
+      transform: translateX(115px);
+    }
+    .know_block_content {
+      background-color: $white;
+      width: 50%;
+      min-width: 800px;
+      min-height: 600px;
+      padding: 90px 115px 90px 230px;
+      border: 1px solid $primary-text;
+      margin: 0;
+      text-align: left;
     }
   }
 }

@@ -1,0 +1,65 @@
+---
+title: Proyect Index
+layout: layout
+---
+
+<%= partial("shared/header", :locals => {
+  :extra_classes => 'bg-transparent'
+}) %>
+
+<div class="content__wrapper">
+
+  <%= partial("modules/hero_section", :locals => {
+    :extra_classes => '',
+    :title => 'Más digitales, mismos bancos, mismas inversiones',
+    :image => 'hero_2.jpg',
+    :extra_content=> "2"
+  }) %>
+
+  <div class="section_block sec_2_grey">
+    <p class="section_block_text">El canal tradicional bancario sigue siendo la vía principal de contratación. La transformación digital del sector no ha mermado las visitas a la oficina física ni ha evolucionado los productos en los que se invierte.</p>
+  </div>
+
+  <div class="section_block">
+    <div class="section_block_header">
+      <p class="section_block_text">Aunque más de la mitad de los inversores lo hacen en oficina física, a día de hoy casi 4 de cada 10 ya contratan productos financieros a través de plataformas digitales.</p>
+    </div>
+    <div class="cnt_graph">
+      <%= image_tag("content/chart_5.png", :class => '') %>
+    </div>
+  </div>
+
+  <div class="know_block sect2">
+    <div class="know_block_image">
+      <%= image_tag("content/inversor.jpg", :class => '') %>
+    </div>
+    <div class="know_block_content">
+      <p class="know_block_content_title">¿Lo sabías?</p>
+      <div class="know_block_content_text">
+        <p>El inversor actual adquiere productos financieros en su banco de toda la vida.</p>
+        <p>No investiga el mercado para comparar con otras alternativas.</p>
+      </div>
+      <button type="button" class="btn btn--secondary btn-share">Compartir</button>
+    </div>
+  </div>
+
+  <div class="section_block sec_2_grey_2">
+    <div class="section_block_header">
+      <p class="section_block_title">1 de cada 3 inversores realiza un seguimiento semanal de sus productos.</p>
+    </div>
+    <div class="cnt_graph">
+      <%= image_tag("content/chart_6.png", :class => '') %>
+    </div>
+  </div>
+
+  <%= partial("modules/download", :locals => {
+    :extra_classes => ''
+  }) %>
+
+  <%= partial("modules/sections_nav", :locals => {
+    :extra_classes => '',
+    :prev_title => 'Productos de inversión, nada nuevo en el horizonte',
+    :next_title => 'Ahorro insuficiente, inversión deficiente'
+  }) %>
+</div>
+<%= partial("shared/footer") %>

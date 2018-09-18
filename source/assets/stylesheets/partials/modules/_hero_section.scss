@@ -61,3 +61,55 @@
     }
   }
 }
+
+.cnt-intro {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.intro_section {
+  width: 33%;
+  min-width: 240px;
+  min-height: 240px;
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $box-shadow;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  margin-top: -210px;
+  margin-right: 115px;
+  float: right;
+  .percent {
+    line-height: 150px;
+    display: block;
+    color: $primary-text;
+    .num {
+      font-size: 130px;
+    }
+    .sim {
+      font-size: 80px;
+    }
+    font-weight: 100;
+  }
+  .text {
+    display: block;
+    padding: 0 55px;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    color: $darkgrey;
+    text-transform: uppercase;
+  }
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+}

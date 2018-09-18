@@ -9,6 +9,7 @@
   left: 0;
   right: 0;
   z-index: 50;
+  transition: all 0.5s;
   @include media("<tablet") {
     height: 50px;
     padding-left: 16px;
@@ -17,6 +18,7 @@
     .logo_bestinver {
       height: 50px;
       margin-right: 35px;
+      transition: all 0.5s;
       @include media("<desktop") {
         height: 30px;
         margin-right: 15px;
@@ -37,6 +39,7 @@
     }
     .logo_iese {
       height: 50px;
+      transition: all 0.5s;
       @include media("<desktop") {
         height: 30px;
       }
@@ -70,6 +73,7 @@
         text-transform: uppercase;
         color: $white;
         text-decoration: none;
+        transition: all 0.5s;
         @include media("<desktop") {
           padding: 0 10px;
         }
@@ -98,6 +102,7 @@
   }
   .btn_menu_mobile {
     display: none;
+    transition: all 0.5s;
     @include media("<tablet") {
       background-color: transparent;
       border: none;
@@ -174,5 +179,44 @@
   }
   &.bg-transparent {
     position: fixed;
+  }
+  &_sticky {
+    background-color: $white;
+    .logos {
+      .logo_bestinver {
+        &.white {
+          display: inline-block;
+        }
+        &.transparent {
+          display: none;
+        }
+      }
+      .logo_iese {
+        &.white {
+          display: inline-block;
+        }
+        &.transparent {
+          display: none;
+        }
+      }
+    }
+    .header_menu {
+      li {
+        a {
+          color: $black;
+        }
+      }
+    }
+    .btn_menu_mobile {
+      @include media("<tablet") {
+        .hamburguer-menu {
+          background-color: $primary;
+          &:after,
+          &:before {
+            background-color: $primary;
+          }
+        }
+      }
+    }
   }
 }

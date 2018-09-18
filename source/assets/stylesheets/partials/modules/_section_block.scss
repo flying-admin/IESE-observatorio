@@ -76,4 +76,28 @@
       }
     }
   }
+  &.sec_3_grey {
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 115px;
+    padding-right: 115px;
+    .cnt_graph {
+      width: auto;
+      transform: translateX(-50px);
+    }
+    .section_block_header {
+      width: 700px;
+      margin: 0;
+      .section_block_title {
+        background-color: $bg-grey;
+        width: 50%;
+        min-width: 700px;
+        padding: 90px 115px;
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
 }

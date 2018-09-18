@@ -113,3 +113,36 @@
     padding-bottom: 100%;
   }
 }
+
+.intro_3 {
+  padding: 0 115px;
+  margin: 90px 0 30px 0;
+  &_content {
+    border-top: 1px solid $primary-text;
+    border-bottom: 1px solid $primary-text;
+    padding: 45px 0 0 0;
+    display: flex;
+    &_percent {
+      .percent {
+        width: 300px;
+        text-align: center;
+        line-height: 150px;
+        display: block;
+        font-weight: 100;
+        color: $primary-text;
+        .num {
+          font-size: 170px;
+        }
+        .sim {
+          font-size: 60px;
+        }
+      }
+    }
+    &_text {
+      width: calc(100% - 300px);
+      font-size: 32px;
+      line-height: 48px;
+      color: $blackish;
+    }
+  }
+}

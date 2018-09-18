@@ -1,0 +1,48 @@
+---
+title: Proyect Index
+layout: layout
+---
+
+<%= partial("shared/header", :locals => {
+  :extra_classes => 'bg-transparent'
+}) %>
+
+<div class="content__wrapper">
+
+  <%= partial("modules/hero_section", :locals => {
+    :extra_classes => '',
+    :title => 'Ahorro insuficiente, inversión deficiente',
+    :image => 'hero_3.jpg',
+    :extra_content=> "3"
+  }) %>
+
+  <div class="section_block sec_3_grey">
+    <div class="section_block_header">
+      <p class="section_block_title">6 de cada 10 inversores consideran que la pensión pública no será suficiente. Aún así, en vez de invertir y agrandar su patrimonio, se mantienen impasibles con un ahorro básico.</p>
+    </div>
+    <div class="cnt_graph">
+      <%= image_tag("content/chart_7.png", :class => '') %>
+    </div>
+  </div>
+
+  <div class="know_block sect3">
+    <div class="know_block_content">
+      <p class="know_block_content_title">¿Lo sabías?</p>
+      <div class="know_block_content_text">
+        <p>El inversor actual que se preocupa por su jubilación es un individuo de más de 54 años con un índice socioeconómico alto que tiende a una mayor contratación de planes de pensiones o seguros de ahorro.</p>
+      </div>
+      <button type="button" class="btn btn--secondary btn-share">Compartir</button>
+    </div>
+  </div>
+
+  <%= partial("modules/download", :locals => {
+    :extra_classes => ''
+  }) %>
+
+  <%= partial("modules/sections_nav", :locals => {
+    :extra_classes => '',
+    :prev_title => 'Más digitales, mismos bancos, mismas inversiones',
+    :next_title => 'Contratación a sabiendas, sin saber'
+  }) %>
+</div>
+<%= partial("shared/footer") %>

@@ -1,10 +1,77 @@
-// @font-face {
-// 	font-family: 'Fontname';
-// 	src: font-url('Fontname-variant.eot');
-//   src: font-url('Fontname-variant.eot?#iefix') format('embedded-opentype'),
-//        font-url('Fontname-variant.woff2') format('woff2'),
-//        font-url('Fontname-variant.woff') format('woff');
-// 	font-weight: normal;
-// 	font-style: normal;
-// }
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro.eot');
+  src: font-url('BlissPro.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro.woff2') format('woff2'),
+       font-url('BlissPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro-Heavy.eot');
+  src: font-url('BlissPro-Heavy.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro-Heavy.woff2') format('woff2'),
+       font-url('BlissPro-Heavy.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro-ExtraBold.eot');
+  src: font-url('BlissPro-ExtraBold.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro-ExtraBold.woff2') format('woff2'),
+       font-url('BlissPro-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro-Bold.eot');
+  src: font-url('BlissPro-Bold.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro-Bold.woff2') format('woff2'),
+       font-url('BlissPro-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro-Medium.eot');
+  src: font-url('BlissPro-Medium.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro-Medium.woff2') format('woff2'),
+       font-url('BlissPro-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro-Light.eot');
+  src: font-url('BlissPro-Light.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro-Light.woff2') format('woff2'),
+       font-url('BlissPro-Light.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'BlissPro';
+  src: font-url('BlissPro-ExtraLight.eot');
+  src: font-url('BlissPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+       font-url('BlissPro-ExtraLight.woff2') format('woff2'),
+       font-url('BlissPro-ExtraLight.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
 

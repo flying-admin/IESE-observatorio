@@ -21,6 +21,10 @@
         font-size: 32px;
         line-height: 48px;
         color: $blackish;
+        font-weight: 500;
+        strong {
+          font-weight: 900;
+        }
       }
     }
     .btn {

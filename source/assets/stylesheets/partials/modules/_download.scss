@@ -1,9 +1,10 @@
 .download {
   width: 100%;
   padding: 70px 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: $bg-grey;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center;
   @include media("<tablet") {
     display: none;
   }
@@ -57,5 +58,8 @@
       line-height: 13px;
       color: $blackish;
     }
+  }
+  &.bg-white {
+    background-color: $white;
   }
 }

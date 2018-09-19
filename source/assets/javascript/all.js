@@ -9,7 +9,15 @@ $(document).on("ready", function(){
 });
 
 $(window).on("load", function(){
+  $('[data-socialize]').socialize();
 
+  $(document).on('click', function(ev) {
+    if( !$(ev.target).closest('.btn-share').length ) {
+      $('.share_wrap.show').removeClass('show');
+    } else {
+      $(ev.target).closest('.btn-share').find('.share_wrap').addClass('show');
+    }
+  });
 });
 
 $(window).on("resize", function(){

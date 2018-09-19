@@ -1,0 +1,207 @@
+//
+// Vars, color and settings
+//
+
+// Base font files path
+$sz-font-path: '/assets/fonts/socialize';
+
+// Icon sise
+$sz-icon-size: 48px;
+
+// Scale factor, determines the "padding" around the icons...
+$sz-icon-padding: 1.2em;
+
+// Default icons with transparent background
+$sz-default-col:         #ccc;
+$sz-default-bgcol:       transparent;
+$sz-default-hover-col:   orange;
+$sz-default-hover-bgcol: transparent;
+
+// Monochromatic hover
+$sz-mono-hover-col:   orange;
+
+// Hover when icons are colored
+$sz-colored-hover-col:   green;
+
+// Filled & rounded
+$sz-filled-col:   #fff;
+$sz-filled-bgcol: #ccc;
+$sz-filled-hover-col:   #fff;
+$sz-filled-hover-bgcol: purple;
+
+// Name // Char // Brand color // Text color when square - circle
+$sz-services:
+('share',        '\eA07', '#666666', '#fff'),
+('facebook',     '\eA01', '#3b5998', '#fff'),
+('google-plus',  '\eA02', '#dd4b39', '#fff'),
+('instagram',    '\eA03', '#517fa4', '#fff'),
+('linkedin',     '\eA04', '#007bb6', '#fff'),
+('pinterest',    '\eA05', '#cb2027', '#fff'),
+('pinterest-alt','\eA0B', '#cb2027', '#fff'),
+('twitter',      '\eA08', '#00aced', '#fff'),
+('youtube',      '\eA09', '#bb0000', '#fff'),
+('flickr',       '\eA0A', '#ff0084', '#fff'),
+('mail',         '\eA0C', '#666666', '#fff'),
+('vimeo',        '\eA0D', '#45bbff', '#fff'),
+('print',        '\eA06', '#666666', '#fff');
+
+//
+// Icon font
+//
+
+@font-face {
+	font-family: 'socialize';
+	src:url("#{$sz-font-path}/socialize.eot?anxeoc");
+	src:url("#{$sz-font-path}/socialize.eot?anxeoc#iefix") format("embedded-opentype"),
+		url("#{$sz-font-path}/socialize.ttf?anxeoc") format("truetype"),
+		url("#{$sz-font-path}/socialize.woff2?anxeoc") format("woff2"),
+		url("#{$sz-font-path}/socialize.woff?anxeoc") format("woff"),
+		url("#{$sz-font-path}/socialize.svg?anxeoc#socialize") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+//
+// CSS styles
+//
+
+[data-socialize] {
+	margin-bottom: 32px;
+
+	.sz {
+		background-color: $sz-default-bgcol;
+
+		/* use !important to prevent issues with browser extensions that change fonts */
+		font-family: 'socialize' !important;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		text-decoration: none;
+		line-height: 1;
+
+		color: $sz-default-col;
+
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		&:before {
+			display: inline-block;
+			width: $sz-icon-padding;
+			height: $sz-icon-padding;
+
+			font-size: $sz-icon-size;
+			text-align: center;
+			line-height: $sz-icon-padding;
+		}
+	}
+
+	&.filled > .sz:before {
+		color: $sz-filled-col;
+		background-color: $sz-filled-bgcol;
+	}
+	&.rounded > .sz,
+	&.rounded > .sz:before {
+		border-radius: 100%;
+	}
+}
+
+
+
+@each $sz-service in $sz-services {
+  [data-socialize] > .sz-#{nth($sz-service,1)} {
+    &:before {
+      content: '#{nth($sz-service,2)}';
+    }
+  }
+	[data-socialize] > a.sz.sz-#{nth($sz-service,1)}:hover {
+		&:before {
+			color: #{nth($sz-service,3)};
+		}
+	}
+	[data-socialize].mono > a.sz.sz-#{nth($sz-service,1)}:hover {
+		&:before {
+			color: $sz-mono-hover-col;
+		}
+	}
+	[data-socialize].colored > .sz-#{nth($sz-service,1)} {
+		&:before {
+			color: #{nth($sz-service,3)};
+		}
+	}
+  [data-socialize].colored > a.sz.sz-#{nth($sz-service,1)}:hover {
+    &:before {
+      color: $sz-colored-hover-col;
+    }
+  }
+	[data-socialize].filled > a.sz.sz-#{nth($sz-service,1)}:hover {
+		&:before {
+			background-color: #{nth($sz-service,3)};
+			color: #{nth($sz-service,4)};
+		}
+	}
+	[data-socialize].filled.colored > .sz-#{nth($sz-service,1)} {
+		&:before {
+			background-color: #{nth($sz-service,3)};
+			color: #{nth($sz-service,4)};
+		}
+	}
+	[data-socialize].filled.colored > a.sz.sz-#{nth($sz-service,1)} {
+		&:hover {
+			&:before {
+				background-color: $sz-filled-hover-bgcol;
+				color: $sz-filled-hover-col;
+			}
+		}
+	}
+}
+
+/*
+.sz-facebook {
+	&:before {
+		content: $sz-facebook;
+	}
+}
+.sz-google-plus {
+	&:before {
+		content: $sz-google-plus;
+	}
+}
+.sz-instagram {
+	&:before {
+		content: $sz-instagram;
+	}
+}
+.sz-linkedin {
+	&:before {
+		content: $sz-linkedin;
+	}
+}
+.sz-pinterest {
+	&:before {
+		content: $sz-pinterest;
+	}
+}
+.sz-print {
+	&:before {
+		content: $sz-print;
+	}
+}
+.sz-share {
+	&:before {
+		content: $sz-share;
+	}
+}
+.sz-twitter {
+	&:before {
+		content: $sz-twitter;
+	}
+}
+.sz-youtube {
+	&:before {
+		content: $sz-youtube;
+	}
+}
+*/

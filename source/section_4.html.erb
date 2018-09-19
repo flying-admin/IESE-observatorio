@@ -1,0 +1,56 @@
+---
+title: Proyect Index
+layout: layout
+---
+
+<%= partial("shared/header", :locals => {
+  :extra_classes => 'bg-transparent'
+}) %>
+
+<div class="content__wrapper">
+
+  <%= partial("modules/hero_section", :locals => {
+    :extra_classes => '',
+    :title => 'Contratación a sabiendas, sin saber',
+    :image => 'hero_4.jpg',
+    :extra_content=> "4"
+  }) %>
+
+  <div class="section_block ">
+    <div class="section_block_header">
+      <p class="section_block_text">El <strong>40% de los ahorradores</strong> reservan <strong>más de 15.000€ al año de sus ingresos anuales</strong>.</p>
+      <p class="section_block_text">¼ del total de estos, van destinados a productos de ahorro e inversión.</p>
+    </div>
+    <div class="cnt_graph">
+      <%= image_tag("content/chart_8.png", :class => '') %>
+    </div>
+  </div>
+
+  <div class="know_block sect4">
+    <div class="know_block_content">
+      <p class="know_block_content_title">¿Lo sabías?</p>
+      <div class="know_block_content_text">
+        <p>Las preocupaciones del ahorrador varían según su edad. Aquellos de <strong>más de 55 años</strong> piensan en <strong>mantener su nivel actual de vida</strong>, mientras que los más <strong>jóvenes</strong> se centran en la <strong>adquisición de una vivienda</strong>.</p>
+      </div>
+      <button type="button" class="btn btn--secondary btn-share">
+        Compartir
+        <span class="share_wrap" data-socialize>
+          <a href="#" class="sz sz-linkedin"></a>
+          <a href="#" class="sz sz-facebook"></a>
+          <a href="#" class="sz sz-twitter"></a>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <%= partial("modules/download", :locals => {
+    :extra_classes => ''
+  }) %>
+
+  <%= partial("modules/sections_nav", :locals => {
+    :extra_classes => '',
+    :prev_title => 'Ahorro insuficiente, inversión deficiente',
+    :next_title => ''
+  }) %>
+</div>
+<%= partial("shared/footer") %>

@@ -147,3 +147,23 @@
     }
   }
 }
+
+.intro_4 {
+  width: 100%;
+  max-width: 930px;
+  margin: -30px auto 0 auto;
+  background-color: $white;
+  padding: 30px 40px;
+  box-shadow: $box-shadow;
+  position: relative;
+  z-index: 4;
+  &_content {
+    font-size: 18px;
+    line-height: 36px;
+    color: $blackish;
+    font-weight: 200;
+    strong {
+      font-weight: 700;
+    }
+  }
+}

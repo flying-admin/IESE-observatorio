@@ -99,4 +99,11 @@
   &.sect3 {
     background-color: transparent;
   }
+  &.sect4 {
+    background-color: $bg-grey;
+    .know_block_content {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
 }

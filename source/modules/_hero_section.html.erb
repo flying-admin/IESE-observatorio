@@ -15,6 +15,11 @@
       <%= image_tag("content/chart_1.png", :class => 'chart') %>
     </div>
   <% end %>
+  <% if extra_content == "4" %>
+    <div class="hero_section_extra_content">
+      <%= image_tag("content/chart-known.png", :class => 'chart') %>
+    </div>
+  <% end %>
 </div>
 <% if extra_content == "1" %>
   <div class="cnt-intro">
@@ -37,6 +42,15 @@
       <div class="intro_3_content_text">
         <p>El 62% de los inversores declara <strong>conocer el importe de pensión pública</strong> que obtendrá. De estos, 3 de cada 4 considera que será insuficiente.</p>
       </div>
+    </div>
+  </div>
+
+<% end %>
+
+<% if extra_content == "4" %>
+  <div class="intro_4">
+    <div class="intro_4_content">
+      <p>El inversor sigue teniendo la percepción de que la rentabilidad y la seguridad están reñidas. Aunque se considera una persona formada, que afirma conocer los productos que contrata y que no requiere asesoramiento, la realidad es que no está muy familiarizado con los distintos productos financieros.</p>
     </div>
   </div>
 

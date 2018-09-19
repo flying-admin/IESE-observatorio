@@ -1,0 +1,32 @@
+---
+title: Proyect Index
+layout: layout
+---
+
+<%= partial("shared/header", :locals => {
+  :extra_classes => 'bg-transparent'
+}) %>
+
+<div class="content__wrapper">
+
+  <%= partial("modules/hero_page", :locals => {
+    :extra_classes => '',
+    :title => 'Sobre el informe',
+    :image => 'hero_about.jpg'
+  }) %>
+
+  <%= partial("modules/intro_about", :locals => {
+    :extra_classes => ''
+  }) %>
+
+  <%= partial("modules/about_data", :locals => {
+    :extra_classes => ''
+  }) %>
+
+  
+
+  <%= partial("modules/download", :locals => {
+    :extra_classes => ''
+  }) %>
+</div>
+<%= partial("shared/footer") %>

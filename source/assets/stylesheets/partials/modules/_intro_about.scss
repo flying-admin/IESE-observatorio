@@ -1,0 +1,47 @@
+.intro_about {
+  padding: 90px 115px;
+  background-color: $white;
+  border-bottom: 1px solid $border-grey;
+  &_content {
+    display: flex;
+    &_images {
+      width: 283px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding-left: 10px;
+      padding-right: 80px;
+      img {
+        width: auto;
+        max-width: 100%;
+      }
+    }
+    &_text {
+      width: calc(100% - 283px);
+      padding-left: 60px;
+      position: relative;
+      p {
+        font-size: 18px;
+        line-height: 36px;
+        font-weight: 200;
+        color: $blackish;
+        margin-bottom: 36px;
+        strong {
+          font-weight: 700;
+        }
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 1px;
+        height: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: $border-grey;
+      }
+    }
+  }
+}

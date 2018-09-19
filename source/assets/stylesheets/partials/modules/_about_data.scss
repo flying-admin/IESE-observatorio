@@ -1,0 +1,55 @@
+.about_data {
+  padding-top: 60px;
+  background-color: $white;
+  &_content {
+
+  }
+  &_title {
+    font-size: 32px;
+    line-height: 48px;
+    font-weight: 100;
+    text-align: center;
+    color: $blackish;
+    margin-bottom: 40px;
+  }
+  &_row {
+    padding: 50px 115px;
+    &_title {
+      font-size: 32px;
+      line-height: 36px;
+      font-weight: 700;
+      color: $blackish;
+      margin-bottom: 15px;
+    }
+    &_text {
+      font-size: 18px;
+      line-height: 36px;
+      color: $blackish;
+      .lead {
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $secondary-text;
+      }
+    }
+    &_list {
+      padding: 22px;
+      font-size: 18px;
+      line-height: 36px;
+      color: $secondary-text;
+      list-style-type: square;
+      list-style-position: outside;
+      li {
+        color: $secondary-text;
+        span {
+          color: $blackish;
+        }
+      }
+    }
+    &.odd {
+      background-color: $bg-grey;
+    }
+    &.even {
+
+    }
+  }
+}

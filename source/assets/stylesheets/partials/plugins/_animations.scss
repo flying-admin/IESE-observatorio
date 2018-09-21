@@ -1,0 +1,187 @@
+/*========== ANIMATION EFFECT CLASSES ==========*/
+.fp_animate{
+    opacity:0 !important;
+    visibility: hidden !important;
+    -webkit-transition: visibility 0.3s ease-out 0s, opacity 0.3s ease-out 0s, -webkit-transform 0.3s ease-out 0s !important;
+    -moz-transition: visibility 0.3s ease-out 0s, opacity 0.3s ease-out 0s, -moz-transform 0.3s ease-out 0s !important;
+    -ms-transition: visibility 0.3s ease-out 0s, opacity 0.3s ease-out 0s, -ms-transform 0.3s ease-out 0s !important;
+    -o-transition: visibility 0.3s ease-out 0s, opacity 0.3s ease-out 0s, -o-transform 0.3s ease-out 0s !important;
+    transition: visibility 0.3s ease-out 0s, opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s !important;
+}
+.fp_animate--transition-short{
+    -webkit-transition: visibility 0.5s ease-out 0s, opacity 0.5s ease-out 0s, -webkit-transform 0.5s ease-out 0s !important;
+    -moz-transition: visibility 0.5s ease-out 0s, opacity 0.5s ease-out 0s, -moz-transform 0.5s ease-out 0s !important;
+    -ms-transition: visibility 0.5s ease-out 0s, opacity 0.5s ease-out 0s, -ms-transform 0.5s ease-out 0s !important;
+    -o-transition: visibility 0.5s ease-out 0s, opacity 0.5s ease-out 0s, -o-transform 0.5s ease-out 0s !important;
+    transition: visibility 0.5s ease-out 0s, opacity 0.5s ease-out 0s, transform 0.5s ease-out 0s !important;
+}
+.fp_animate--transition-medium{
+    -webkit-transition: visibility 0.7s ease-out 0s, opacity 0.7s ease-out 0s, -webkit-transform 0.7s ease-out 0s !important;
+    -moz-transition: visibility 0.7s ease-out 0s, opacity 0.7s ease-out 0s, -moz-transform 0.7s ease-out 0s !important;
+    -ms-transition: visibility 0.7s ease-out 0s, opacity 0.7s ease-out 0s, -ms-transform 0.7s ease-out 0s !important;
+    -o-transition: visibility 0.7s ease-out 0s, opacity 0.7s ease-out 0s, -o-transform 0.7s ease-out 0s !important;
+    transition: visibility 0.7s ease-out 0s, opacity 0.7s ease-out 0s, transform 0.7s ease-out 0s !important;
+}
+.fp_animate--transition-long{
+    -webkit-transition: visibility 1s ease-out 0s, opacity 1s ease-out 0s, -webkit-transform 1s ease-out 0s !important;
+    -moz-transition: visibility 1s ease-out 0s, opacity 1s ease-out 0s, -moz-transform 1s ease-out 0s !important;
+    -ms-transition: visibility 1s ease-out 0s, opacity 1s ease-out 0s, -ms-transform 1s ease-out 0s !important;
+    -o-transition: visibility 1s ease-out 0s, opacity 1s ease-out 0s, -o-transform 1s ease-out 0s !important;
+    transition: visibility 1s ease-out 0s, opacity 1s ease-out 0s, transform 1s ease-out 0s !important;
+}
+.fp_animate--transition-custom{
+    /* Set desired time in data-transition-custom (float) in seconds */
+}
+
+.fp_animate--fadeInUp{
+    -webkit-transform: translate(0, 100px) !important;
+    -moz-transform: translate(0, 100px) !important;
+    -ms-transform: translate(0, 100px) !important;
+    -o-transform: translate(0, 100px) !important;
+    transform: translate(0, 100px) !important;
+}
+.fp_animate--fadeInDown{
+    -webkit-transform: translate(0, -100px) !important;
+    -moz-transform: translate(0, -100px) !important;
+    -ms-transform: translate(0, -100px) !important;
+    -o-transform: translate(0, -100px) !important;
+    transform: translate(0, -100px) !important;
+}
+.fp_animate--fadeInLeft{
+    -webkit-transform: translate(100px, 0) !important;
+    -moz-transform: translate(100px, 0) !important;
+    -ms-transform: translate(100px, 0) !important;
+    -o-transform: translate(100px, 0) !important;
+    transform: translate(100px, 0) !important;
+}
+.fp_animate--fadeInRight{
+    -webkit-transform: translate(-100px, 0) !important;
+    -moz-transform: translate(-100px, 0) !important;
+    -ms-transform: translate(-100px, 0) !important;
+    -o-transform: translate(-100px, 0) !important;
+    transform: translate(-100px, 0) !important;
+}
+
+.fp_animate--fadeInUp.fp_animate--fadeInLeft{
+    -webkit-transform: translate(100px, 100px) !important;
+    -moz-transform: translate(100px, 100px) !important;
+    -ms-transform: translate(100px, 100px) !important;
+    -o-transform: translate(100px, 100px) !important;
+    transform: translate(100px, 100px) !important;
+}
+.fp_animate--fadeInUp.fp_animate--fadeInRight{
+    -webkit-transform: translate(-100px, 100px) !important;
+    -moz-transform: translate(-100px, 100px) !important;
+    -ms-transform: translate(-100px, 100px) !important;
+    -o-transform: translate(-100px, 100px) !important;
+    transform: translate(-100px, 100px) !important;
+}
+.fp_animate--fadeInDown.fp_animate--fadeInLeft{
+    -webkit-transform: translate(100px, -100px) !important;
+    -moz-transform: translate(100px, -100px) !important;
+    -ms-transform: translate(100px, -100px) !important;
+    -o-transform: translate(100px, -100px) !important;
+    transform: translate(100px, -100px) !important;
+}
+.fp_animate--fadeInDown.fp_animate--fadeInRight{
+    -webkit-transform: translate(-100px, -100px) !important;
+    -moz-transform: translate(-100px, -100px) !important;
+    -ms-transform: translate(-100px, -100px) !important;
+    -o-transform: translate(-100px, -100px) !important;
+    transform: translate(-100px, -100px) !important;
+}
+
+.fp_animate.fp_animated{
+    opacity:1 !important;
+    visibility: visible !important;
+    -webkit-transform: translate(0, 0) !important;
+    -moz-transform: translate(0, 0) !important;
+    -ms-transform: translate(0, 0) !important;
+    -o-transform: translate(0, 0) !important;
+    transform: translate(0, 0) !important;
+}
+
+/*========= ANIMATION DETECTION CLASSES ============*/
+.fp_animate--top-in{}
+.fp_animate--bottom-in{}
+.fp_animate--middle-in{}
+.fp_animate--top-quarter-in{}
+.fp_animate--bottom-quarter-in{}
+.fp_animate--top-third-in{}
+.fp_animate--bottom-third-in{}
+.fp_animate--top-eighth-in{}
+.fp_animate--bottom-eighth-in{}
+
+.fp_animate--test-wrapper{
+    display: block;
+    min-height: 250px;
+    padding: 0 10px;
+}
+
+.fp_animate--test{
+    display: block;
+    width: 11.11%;
+    min-height: 250px;
+    float: left;
+}
+.fp_animate--test::before{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    right: 5px;
+    background-color: grey;
+}
+.fp_animate--test::after{
+    content: '';
+    position: absolute;
+    display: block;
+    left:5px;
+    right:5px;
+    height: 2px;
+    margin-top: -1px;
+    background-color: red;
+}
+.fp_animate--test p{
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    padding: 0 5px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(255,255,255);
+    margin-top:-10px;
+    z-index: 2;
+}
+.fp_animate--test.fp_animate--top-in::after{
+    top:0;
+}
+.fp_animate--test.fp_animate--bottom-in::after{
+    bottom:0;
+}
+.fp_animate--test.fp_animate--middle-in::after{
+    top:50%;
+}
+.fp_animate--test.fp_animate--top-quarter-in::after{
+    top:25%;
+}
+.fp_animate--test.fp_animate--bottom-quarter-in::after{
+    bottom:25%;
+}
+.fp_animate--test.fp_animate--top-third-in::after{
+    top:33%;
+}
+.fp_animate--test.fp_animate--bottom-third-in::after{
+    bottom:33%;
+}
+.fp_animate--test.fp_animate--top-eighth-in::after{
+    top:12.5%;
+}
+.fp_animate--test.fp_animate--bottom-eighth-in::after{
+    bottom:12.5%;
+}

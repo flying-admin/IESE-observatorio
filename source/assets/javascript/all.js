@@ -9,6 +9,8 @@ $(document).on("ready", function(){
 });
 
 $(window).on("load", function(){
+
+  // Socialize
   $('[data-socialize]').socialize();
 
   $(document).on('click', function(ev) {

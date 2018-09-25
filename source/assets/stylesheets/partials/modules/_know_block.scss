@@ -22,6 +22,10 @@
         line-height: 48px;
         color: $blackish;
         font-weight: 500;
+        @include media("<phablet") {
+          font-size: 24px;
+          line-height: 36px;
+        }
         strong {
           font-weight: 900;
         }
@@ -73,6 +77,14 @@
     .know_block_content {
       padding-left: 100px;
       padding-right: 100px;
+      @include media("<desktop") {
+        padding-left: 50px;
+        padding-right: 50px;
+      }
+      @include media("<phablet") {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
     }
   }
   &.sect2 {

@@ -42,7 +42,13 @@
           bottom: 0;
           height: 18px;
           font-size: 18px;
-          margin: auto
+          margin: auto;
+          @include media("<desktop") {
+            left: 50px;
+          }
+          @include media("<phablet") {
+            left: 5px;
+          }
         }
       }
     }
@@ -57,7 +63,13 @@
           bottom: 0;
           height: 18px;
           font-size: 18px;
-          margin: auto
+          margin: auto;
+          @include media("<desktop") {
+            right: 50px;
+          }
+          @include media("<phablet") {
+            right: 5px;
+          }
         }
       }
     }

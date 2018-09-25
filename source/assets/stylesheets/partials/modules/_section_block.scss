@@ -1,6 +1,10 @@
 .section_block {
   padding-top: 90px;
   padding-bottom: 60px;
+  @include media("<desktop") {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   &_header {
     margin-bottom: 70px;
   }
@@ -11,6 +15,10 @@
     text-align: center;
     color: $blackish;
     margin-bottom: 20px;
+    @include media("<phablet") {
+      font-size: 24px;
+      line-height: 32px;
+    }
     strong {
       font-weight: 900;
     }
@@ -23,6 +31,10 @@
     max-width: 700px;
     font-weight: 200;
     margin: 0 auto;
+    @include media("<phablet") {
+      font-size: 15px;
+      line-height: 30px;
+    }
     strong {
       font-weight: 700;
     }
@@ -40,8 +52,12 @@
     .cnt_graph {
       display: flex;
       justify-content: center;
+      @include media("<phablet") {
+        display: block;
+      }
       .chart_1 {
         padding: 0 55px;
+        margin-bottom: 50px;
       }
       .chart_2 {
         padding: 0 55px;

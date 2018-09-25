@@ -5,7 +5,7 @@
 %>
 
 <div class="sections_nav">
-  <a href="" class="sections_nav_link prev">
+  <a href="" class="sections_nav_link prev  <% if prev_title == "" %> hide-on-mobile <% end %>">
     <% if prev_title != "" %>
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">sección anterior</span>

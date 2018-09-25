@@ -1,12 +1,18 @@
 .know_block {
   background-color: $white;
   padding: 90px 0;
+  @include media("<phablet") {
+    padding: 50px 0;
+  }
   &_content {
     width: 100%;
     padding-left: 115px;
     padding-right: 115px;
     margin: 0 auto;
     text-align: center;
+    @include media("<phablet") {
+      padding: 0 15px;
+    }
     &_title {
       font-weight: 800;
       font-size: 16px;
@@ -14,21 +20,31 @@
       color: $primary-text;
       text-transform: uppercase;
       margin-bottom: 20px;
+      @include media("<phablet") {
+        font-size: 13px;
+        line-height: 15px;
+        margin-bottom: 30px;
+        text-align: center;
+      }
     }
     &_text {
-      margin-bottom: 80px;
+        margin-bottom: 80px;
+
       p {
         font-size: 32px;
         line-height: 48px;
         color: $blackish;
         font-weight: 500;
         @include media("<phablet") {
-          font-size: 24px;
-          line-height: 36px;
+          font-size: 23px;
+          line-height: 28px;
         }
         strong {
           font-weight: 900;
         }
+      }
+      @include media("<phablet") {
+          margin-bottom: 0px;
       }
     }
     .btn {
@@ -92,10 +108,16 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    @include media("<phablet") {
+      display: block;
+    }
     .know_block_image {
       padding-left: 115px;
       width: 50%;
       transform: translateX(115px);
+      @include media("<phablet") {
+        display: none;
+      }
     }
     .know_block_content {
       background-color: $white;
@@ -106,6 +128,15 @@
       border: 1px solid $primary-text;
       margin: 0;
       text-align: left;
+      @include media("<phablet") {
+        padding: 50px 15px;
+        width: 100%;
+        min-width: auto;
+        min-height: initial;
+        .know_block_content_text {
+          text-align: center;
+        }
+      }
     }
   }
   &.sect3 {

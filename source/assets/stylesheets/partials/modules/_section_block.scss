@@ -8,6 +8,14 @@
   &_header {
     margin-bottom: 70px;
   }
+  &--reverse{
+    .section_block_header{
+      margin-bottom: 0;
+    }
+    .cnt_graph {
+      margin-bottom: 70px;
+    }
+  }
   &_title {
     font-size: 32px;
     line-height: 38px;
@@ -16,8 +24,8 @@
     color: $blackish;
     margin-bottom: 20px;
     @include media("<phablet") {
-      font-size: 24px;
-      line-height: 32px;
+      font-size: 23px;
+      line-height: 28px;
     }
     strong {
       font-weight: 900;
@@ -70,6 +78,16 @@
   &.sec_2_grey {
     background-color: $bg-grey;
     padding: 80px 115px;
+    @include media("<phablet") {
+      padding: 50px 16px 158px;
+      &.grey-expanded{
+        padding-bottom: 158px;
+        & + div {
+          margin-top:-100px;
+          padding-top: 0px; 
+        }
+      }
+    }
     .section_block_text {
       width: 100%;
       max-width: 700px;
@@ -82,14 +100,27 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    flex-direction: row-reverse;
+    @include media("<phablet") {
+      display: block;
+    }
     .cnt_graph {
       padding-right: 115px;
       width: 50%;
       transform: translateX(-115px);
+      @include media("<phablet") {
+        width: 100%;
+        padding: 0 15px;
+        transform: none;
+      }
     }
     .section_block_header {
       width: 50%;
       margin: 0;
+      @include media("<phablet") {
+        width: 100vw;
+        margin: 0 -20px;
+      }
       .section_block_title {
         background-color: $bg-grey;
         
@@ -98,6 +129,12 @@
         padding: 90px 230px 90px 115px;
         margin: 0;
         text-align: left;
+        @include media("<phablet") {
+          padding: 138px 15px 50px;
+          min-width: auto;
+          margin-top: -80px;
+          min-height: auto;
+        }
       }
     }
   }

@@ -3,7 +3,7 @@
 %>
 <footer class="footer <%= extra_classes %>">
   <div class="content__wrapper">
-    <div class="row_logos">
+    <!--<div class="row_logos">
       <a href="" class="logo_bestinver"><%= image_tag("content/logo-bestinver-white.png", :class => '') %></a>
       <a href="" class="logo_iese"><%= image_tag("content/logo-iese-white.png", :class => '') %></a>
     </div>
@@ -29,6 +29,53 @@
           <a href=""><span class="icon-inslides"></span></a>
         </li>
       </ul>
+    </div>-->
+    <div class="footer-row">
+      <div class="footer__logos">
+        <a href="">
+          <%= image_tag("content/logo-bestinver-white.png", :class => '') %></a>
+      </div>
+      <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
+      <div class="footer__rrss">
+        <ul>
+          <li>
+            <a href=""><span class="icon-linkedin"></span></a>
+          </li>
+          <li>
+            <a href=""><span class="icon-youtube"></span></a>
+          </li>
+          <li>
+            <a href=""><span class="icon-twitter"></span></a>
+          </li>
+          <li>
+            <a href=""><span class="icon-facebook"></span></a>
+          </li>
+          <li>
+            <a href=""><span class="icon-inslides-new"></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-row">
+      <div class="footer__links">
+        <ul>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Atención al inversor</a></li>
+          <li><a href="#">Glosario de términos</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Mapa web</a></li>
+          <li><a href="#">Bestinver sv</a></li>
+        </ul>
+      </div>
+      <div class="footer__info">
+          <div>
+            <p>&copy; Bestinver 2018</p>
+            <p class="num-reg">Nº Registro CNMV: 103</p>
+          </div>
+          <%= image_tag("content/cnmv.png", :class => '',:width => 45) %>
+      </div>
     </div>
   </div>
 </footer>

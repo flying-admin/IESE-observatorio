@@ -31,9 +31,12 @@
 .icon-facebook:before,
 .icon-facebook-dark:before,
 .icon-inslides:before,
+.icon-inslides-1:before,
+.icon-inslides-new:before,
 .icon-linkedin:before,
 .icon-linkedin-dark:before,
 .icon-mail:before,
+.icon-mail-1:before,
 .icon-twitter:before,
 .icon-twitter-dark:before,
 .icon-youtube:before {
@@ -58,9 +61,12 @@
 .icon-facebook:before { content: "\f104"; }
 .icon-facebook-dark:before { content: "\f105"; }
 .icon-inslides:before { content: "\f106"; }
+.icon-inslides-1:before { content: "\f115"; }
+.icon-inslides-new:before { content: "\f116"; }
 .icon-linkedin:before { content: "\f107"; }
 .icon-linkedin-dark:before { content: "\f108"; }
 .icon-mail:before { content: "\f109"; }
+.icon-mail-1:before { content: "\f117"; }
 .icon-twitter:before { content: "\f10b"; }
 .icon-twitter-dark:before { content: "\f10c"; }
 .icon-youtube:before { content: "\f10d"; }
@@ -72,9 +78,12 @@ $font-observatorio-icons-chevron-right: "\f103";
 $font-observatorio-icons-facebook: "\f104";
 $font-observatorio-icons-facebook-dark: "\f105";
 $font-observatorio-icons-inslides: "\f106";
+$font-observatorio-icons-inslides-1: "\f115";
+$font-observatorio-icons-inslides-new: "\f116";
 $font-observatorio-icons-linkedin: "\f107";
 $font-observatorio-icons-linkedin-dark: "\f108";
 $font-observatorio-icons-mail: "\f109";
+$font-observatorio-icons-mail-1: "\f117";
 $font-observatorio-icons-twitter: "\f10b";
 $font-observatorio-icons-twitter-dark: "\f10c";
 $font-observatorio-icons-youtube: "\f10d";

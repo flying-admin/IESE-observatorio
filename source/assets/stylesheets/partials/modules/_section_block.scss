@@ -1,21 +1,26 @@
 .section_block {
   padding-top: 90px;
   padding-bottom: 60px;
+
   @include media("<desktop") {
     padding-left: 20px;
     padding-right: 20px;
   }
+
   &_header {
     margin-bottom: 70px;
   }
-  &--reverse{
-    .section_block_header{
+
+  &--reverse {
+    .section_block_header {
       margin-bottom: 0;
     }
+
     .cnt_graph {
       margin-bottom: 70px;
     }
   }
+
   &_title {
     font-size: 32px;
     line-height: 38px;
@@ -23,14 +28,17 @@
     text-align: center;
     color: $blackish;
     margin-bottom: 20px;
+
     @include media("<phablet") {
       font-size: 23px;
       line-height: 28px;
     }
+
     strong {
       font-weight: 900;
     }
   }
+
   &_text {
     font-size: 18px;
     line-height: 36px;
@@ -39,96 +47,152 @@
     max-width: 700px;
     font-weight: 200;
     margin: 0 auto;
+
     @include media("<phablet") {
       font-size: 15px;
       line-height: 30px;
     }
+
     strong {
       font-weight: 700;
     }
   }
+
   .cnt_graph {
     width: 100%;
+
     img {
       width: auto;
       max-width: 100%;
       margin: 0 auto;
     }
   }
+
   &.sec_1_grey {
     background-color: $bg-grey;
+
     .cnt_graph {
       display: flex;
       justify-content: center;
+
       @include media("<phablet") {
         display: block;
       }
+
       .chart_1 {
         padding: 0 55px;
         margin-bottom: 50px;
       }
+
       .chart_2 {
         padding: 0 55px;
       }
+
       img {
         width: auto;
       }
     }
   }
+
   &.sec_2_grey {
     background-color: $bg-grey;
     padding: 80px 115px;
+    padding-left: 50%;
     @include media("<phablet") {
       padding: 50px 16px 158px;
-      &.grey-expanded{
+
+      &.grey-expanded {
         padding-bottom: 158px;
-        & + div {
-          margin-top:-100px;
-          padding-top: 0px; 
+
+        &+div {
+          margin-top: -100px;
+          padding-top: 0px;
         }
       }
     }
+
     .section_block_text {
       width: 100%;
-      max-width: 700px;
+      max-width: auto;
       margin: 0;
       text-align: left;
+      
+
     }
   }
+  &--double{
+    display: flex;
+    
+    @include media("<phablet") {
+      flex-wrap: wrap;
+    }
+    .cnt_graph{
+      width: 50%;
+      position: relative;
+      @include media("<phablet") {
+        width: 100%;
+      }
+      img{
+        margin-top: -50%;
+        @include media("<phablet") {
+          margin-top: 0;
+          margin-bottom: 60px;
+        }
+      }
+    }
+    .section_block_header {
+      width: 50%;
+      @include media("<phablet") {
+        margin-bottom: 0px;
+        width: 100%;
+        .section_block_text{
+          text-align: left;
+        }
+      }
+    }
+    
+  }
+
   &.sec_2_grey_2 {
     background-color: transparent;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: row-reverse;
+
     @include media("<phablet") {
       display: block;
     }
+
     .cnt_graph {
       padding-right: 115px;
       width: 50%;
       transform: translateX(-115px);
+
       @include media("<phablet") {
         width: 100%;
         padding: 0 15px;
         transform: none;
       }
     }
+
     .section_block_header {
       width: 50%;
       margin: 0;
+
       @include media("<phablet") {
         width: 100vw;
         margin: 0 -20px;
       }
+
       .section_block_title {
         background-color: $bg-grey;
-        
         min-width: 800px;
         min-height: 600px;
         padding: 90px 230px 90px 115px;
         margin: 0;
         text-align: left;
+
         @include media("<phablet") {
           padding: 138px 15px 50px;
           min-width: auto;
@@ -137,7 +201,7 @@
         }
       }
     }
-  }
+          }
   &.sec_3_grey {
     background-color: transparent;
     display: flex;
@@ -145,13 +209,16 @@
     align-items: flex-end;
     padding-left: 115px;
     padding-right: 115px;
+
     .cnt_graph {
       width: auto;
       transform: translateX(-50px);
     }
+
     .section_block_header {
       width: 700px;
       margin: 0;
+
       .section_block_title {
         background-color: $bg-grey;
         width: 50%;
@@ -160,6 +227,7 @@
         margin: 0;
         text-align: left;
         font-weight: 200;
+
         strong {
           font-weight: 700;
         }

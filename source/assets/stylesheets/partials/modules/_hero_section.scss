@@ -69,7 +69,8 @@
   &_extra_content {
     width: calc(100% - 815px - 15px);
     @include media("<phablet") {
-      width: 85%
+      width: 85%;
+      margin: 0 auto;
     }
     .chart {
       width: auto;
@@ -78,6 +79,8 @@
 }
 
 .cnt-intro {
+  z-index: 1;
+  position: relative;
   &:after {
     content: '';
     display: table;
@@ -192,6 +195,9 @@
   box-shadow: $box-shadow;
   position: relative;
   z-index: 4;
+  @include media("<phablet") {
+    width: 90%;
+  }
   &_content {
     font-size: 18px;
     line-height: 36px;

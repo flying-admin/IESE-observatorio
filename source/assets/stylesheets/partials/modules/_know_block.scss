@@ -50,6 +50,10 @@
     .btn {
       margin: 0 auto;
       position: relative;
+      @include media("<phablet") {
+        margin: 20px auto 0;
+        display: block;
+      }
       .share_wrap {
         display: none;
         opacity: 0;
@@ -103,32 +107,47 @@
       }
     }
   }
-  &.sect2 {
+
+  &.know_block--transparent {
+    background-color: transparent;
+  }
+
+  &.know_block--grey {
+    background-color: $bg-grey;
+    .know_block_content {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+  &--with-img {
     background-color: transparent;
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: flex-start;
+
     @include media("<phablet") {
-      display: block;
+      flex-wrap: wrap;
+      padding: 0px;
     }
     .know_block_image {
-      padding-left: 115px;
-      width: 50%;
-      transform: translateX(115px);
+      width: 35%;
       @include media("<phablet") {
-        display: none;
+        width: 100%;
       }
     }
     .know_block_content {
       background-color: $white;
-      width: 50%;
-      min-width: 800px;
-      min-height: 600px;
-      padding: 90px 115px 90px 230px;
+      width: 55%;
+      min-width: auto;
+      min-height: auto;
+      padding: 90px 136px 90px 115px;
       border: 1px solid $primary-text;
       margin: 0;
+      margin-top: 100px;  
       text-align: left;
       @include media("<phablet") {
+        margin: 0;
         padding: 50px 15px;
         width: 100%;
         min-width: auto;
@@ -138,15 +157,11 @@
         }
       }
     }
-  }
-  &.sect3 {
-    background-color: transparent;
-  }
-  &.sect4 {
-    background-color: $bg-grey;
-    .know_block_content {
-      padding-left: 100px;
-      padding-right: 100px;
+    .know_block_content_text{
+      margin-bottom: 0;
+    }
+    .know_block_content_text + button {
+      margin-top: 80px;
     }
   }
 }

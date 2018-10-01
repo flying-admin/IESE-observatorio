@@ -16,20 +16,30 @@ layout: layout
     :extra_content=> "2"
   }) %>
 
-  <div class="section_block sec_2_grey grey-expanded fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in">
-    <p class="section_block_text">El <strong>canal tradicional bancario</strong> sigue siendo la <strong>vía principal de contratación</strong>. La transformación digital del sector no ha mermado las visitas a la oficina física ni ha evolucionado los productos en los que se invierte.</p>
+  <div>
+    <div class="section_block sec_2_grey grey-expanded fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in">
+      <p class="section_block_text">El <strong>canal tradicional bancario</strong> sigue siendo la <strong>vía principal de contratación</strong>. La transformación digital del sector no ha mermado las visitas a la oficina física ni ha evolucionado los productos en los que se invierte.</p>
+    </div>
+
+    <div class="section_block section_block--double fp_animate fp_animate--transition-medium fp_animate--fadeInDown fp_animate--top-in">
+      <div class="cnt_graph">
+        <%= image_tag("content/chart_5.png", :class => '') %>
+      </div>
+      <div class="section_block_header">
+        <p class="section_block_text">Aunque <strong>más de la mitad</strong> de los inversores lo hacen en <strong>oficina física</strong>, a día de hoy casi <strong>4 de cada 10</strong> ya contratan productos financieros a través de <strong>plataformas digitales</strong>.</p>
+      </div>
+    </div>
   </div>
 
-  <div class="section_block section_block--reverse fp_animate fp_animate--transition-medium fp_animate--fadeInDown fp_animate--top-in">
-    <div class="cnt_graph">
-      <%= image_tag("content/chart_5.png", :class => '') %>
-    </div>
-    <div class="section_block_header">
-      <p class="section_block_text">Aunque <strong>más de la mitad</strong> de los inversores lo hacen en <strong>oficina física</strong>, a día de hoy casi <strong>4 de cada 10</strong> ya contratan productos financieros a través de <strong>plataformas digitales</strong>.</p>
-    </div>
-  </div>
+  <%= partial("modules/info_block", :locals => {
+    :extra_classes => 'mb-xs-0',
+    :animation => 'fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in',
+    :content => '<p class="title"><strong>1 de cada 3 inversores</strong> realiza un seguimiento semanal de sus productos.</p>',
+    :image => 'content/chart_6.png',
+    :img_right => true,
+  }) %>
 
-  <div class="know_block sect2 fp_animate fp_animate--transition-medium fp_animate--fadeInLeft fp_animate--top-in">
+  <div class="know_block know_block--with-img fp_animate fp_animate--transition-medium fp_animate--fadeInLeft fp_animate--top-in">
     <div class="know_block_image">
       <%= image_tag("content/inversor.jpg", :class => '') %>
     </div>
@@ -39,7 +49,7 @@ layout: layout
         <p>El inversor actual adquiere <strong>productos financieros</strong> en su banco de toda la vida.</p>
         <p><strong>No investiga el mercado</strong> para comparar con otras alternativas.</p>
       </div>
-      <button type="button" class="btn btn--secondary btn-share hide-on-mobile">
+      <button type="button" class="btn btn--secondary btn-share ">
         Compartir
         <span class="share_wrap" data-socialize>
           <a href="#" class="sz sz-linkedin"></a>
@@ -50,14 +60,16 @@ layout: layout
     </div>
   </div>
 
-  <div class="section_block sec_2_grey_2 fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in">
+  <!--<div class="section_block sec_2_grey_2 fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in">
     <div class="cnt_graph">
       <%= image_tag("content/chart_6.png", :class => '') %>
     </div>
     <div class="section_block_header">
       <p class="section_block_title"><strong>1 de cada 3 inversores</strong> realiza un seguimiento semanal de sus productos.</p>
     </div>
-  </div>
+  </div>-->
+
+
 
   <%= partial("modules/download", :locals => {
     :extra_classes => ''

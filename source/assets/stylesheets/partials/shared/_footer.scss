@@ -2,6 +2,11 @@
   background-color: $darkgrey;
   position: relative;
   z-index: 3;
+  padding: 60px 120px 40px;
+  @include media("<phablet") {
+    padding: 60px 42px 40px 22px;
+  }
+  /*
   .row_logos {
     padding: 50px 40px 50px 40px;
     @include media("<phablet") {
@@ -23,6 +28,22 @@
       @include media("<phablet") {
         margin: 0 auto;
       }
+    }
+  }*/
+  .mail{
+    display: none;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 28px;
+    color: $white;
+    @include media("<phablet") {
+      display: block;
+      width: 100%;
+    }
+    span{
+      margin-right: 12px;
+      font-size: 12px;
+      line-height: 16px;
     }
   }
   .footer_bottom {
@@ -108,6 +129,112 @@
             }
           }
         }
+      }
+    }
+  }
+  &-row{
+    display: flex;
+    @include media("<phablet") {
+      flex-wrap: wrap;
+    }
+
+  }
+  &__logos{
+    width: 60%;
+    margin-bottom: 56px;
+    @include media("<phablet") {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+    img{
+      max-width: 156px;
+      @include media("<phablet") {
+        max-width: 138px;
+      }
+    }
+  }
+  &__rrss {
+    width: 40%; 
+    text-align: right;
+    @include media("<phablet") {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      @include media("<phablet") {
+        justify-content: space-between;
+      }
+      li {
+        display: inline-block;
+        & + li {
+          margin-left: 15px; 
+        }
+      }
+    }
+    span{
+      font-size: 18px;
+      color: #fff;
+    }
+    
+  }
+  &__links {
+    width: 60%;
+    @include media("<phablet") {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    ul {
+      margin: 0 -15px;
+    }
+    li{
+      display: inline-block;
+      padding: 0 15px;
+      margin-bottom: 5px;
+      border-right: 1px solid $white;
+      font-size: 12px;
+      line-height: 13px; 
+
+      &:last-child{
+        border: none;
+      }
+    }
+    a{
+     font-size: 12px;
+     line-height: 13px;
+     text-transform: uppercase;
+     color: $white;
+     text-decoration: none;
+    }
+  }
+  &__info {
+    width: 40%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    color: $white;
+    font-size: 13px;
+    line-height: 18px;
+
+    @include media("<phablet") {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    img{
+      width: 45px;
+      display: block;
+      margin-left: 20px;
+      background-color: #414141;   
+      @include media("<phablet") {
+        display: none;
+      } 
+    }
+    .num-reg{
+      @include media("<phablet") {
+        display: none;
       }
     }
   }

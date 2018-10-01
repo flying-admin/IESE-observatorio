@@ -1,0 +1,27 @@
+<%
+  extra_classes ||= ''
+  content ||= ''
+  image ||= ''
+  animation ||= ''
+  img_right ||= ''
+%>
+
+
+<div class="info-block <%= extra_classes %> <% if img_right == true %> info-block--img-right <% end %>  <%= animation %>" >
+
+<% if img_right == true %>
+    <div class="info-block__graph">
+      <%= image_tag(image, :class => '') %>
+    </div>
+    <div class="info-block__content">
+       <%= content %>
+    </div>
+<% else %>
+    <div class="info-block__content">
+      <%= content %>
+    </div>
+    <div class="info-block__graph">
+      <%= image_tag(image, :class => '') %>
+    </div>
+<% end %>
+</div>

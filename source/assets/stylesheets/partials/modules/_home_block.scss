@@ -8,6 +8,7 @@
   }
   @include media("<tablet") {
     display: block;
+    margin-bottom: 0px;
   }
   &_big {
     width: 75%;
@@ -88,7 +89,7 @@
     font-size: 40px;
     line-height: 60px;
     letter-spacing: 2px;
-    font-weight: 700;
+    font-weight: 400;
     color: $white;
     text-transform: uppercase;
     position: relative;
@@ -187,6 +188,7 @@
       @include media("<phablet") {
         padding: 0 15px 30px 15px;
         margin: 0 auto;
+        width: 80%;
       }
     }
     .home_block_title {

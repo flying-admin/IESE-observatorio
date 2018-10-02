@@ -96,28 +96,33 @@
 
   &.sec_2_grey {
     background-color: $bg-grey;
-    padding: 80px 115px;
-    padding-left: 50%;
+    padding: 0 50% 10px 115px;
+    @include media("<tablet") {
+      padding: 40px 15px;
+    }
     @include media("<phablet") {
-      padding: 50px 16px 158px;
 
-      &.grey-expanded {
-        padding-bottom: 158px;
+      // &.grey-expanded {
+      //   padding-bottom: 158px;
 
-        &+div {
-          margin-top: -100px;
-          padding-top: 0px;
-        }
-      }
+      //   &+div {
+      //     margin-top: -100px;
+      //     padding-top: 0px;
+      //   }
+      // }
     }
 
     .section_block_text {
       width: 100%;
-      max-width: auto;
-      margin: 0;
+      max-width: none;
+      margin: 0 0 40px 0;
       text-align: left;
-      
-
+      font-size: 26px;
+      line-height: 39px;
+      @include media("<phablet") {
+        font-size: 23px;
+        line-height: 28px;
+      }
     }
   }
   &--double{

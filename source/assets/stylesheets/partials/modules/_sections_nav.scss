@@ -39,6 +39,10 @@
       color: $blackish;
     }
     &.prev {
+      @include media("<phablet") {
+        padding: 20px 20px 20px 65px;
+        border-bottom: 1px solid $border-grey;
+      }
       .sections_nav_link_wrap {
         text-align: right;
         @extend .icon-chevron-left;
@@ -55,12 +59,15 @@
             left: 50px;
           }
           @include media("<phablet") {
-            left: 5px;
+            left: 20px;
           }
         }
       }
     }
     &.next {
+      @include media("<phablet") {
+        padding: 20px 65px 20px 20px;
+      }
       .sections_nav_link_wrap {
         text-align: left;
         @extend .icon-chevron-right;
@@ -77,7 +84,7 @@
             right: 50px;
           }
           @include media("<phablet") {
-            right: 5px;
+            right: 20px;
           }
         }
       }

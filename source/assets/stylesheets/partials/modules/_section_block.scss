@@ -94,7 +94,7 @@
     }
   }
 
-  &.sec_2_grey {
+  &.sec_1_grey {
     background-color: $bg-grey;
     padding: 0 50% 10px 115px;
     @include media("<tablet") {
@@ -102,14 +102,6 @@
     }
     @include media("<phablet") {
 
-      // &.grey-expanded {
-      //   padding-bottom: 158px;
-
-      //   &+div {
-      //     margin-top: -100px;
-      //     padding-top: 0px;
-      //   }
-      // }
     }
 
     .section_block_text {
@@ -125,34 +117,61 @@
       }
     }
   }
+
+  &.sec_2_grey {
+    padding: 80px 115px 14% 115px;
+    padding-left: 50%;
+    @include media("<tablet") {
+      padding: 60px 15px 40px 15px;
+    }
+
+    .section_block_text {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      text-align: left;
+    }
+  }
   &--double{
+    background-color: $bg-grey;
     display: flex;
-    
-    @include media("<phablet") {
-      flex-wrap: wrap;
+    align-items: flex-start;
+    padding-top: 30px;
+    @include media("<tablet") {
+      padding-top: 0;
+      flex-direction: column-reverse;
     }
     .cnt_graph{
       width: 50%;
       position: relative;
-      @include media("<phablet") {
+      @include media("<tablet") {
         width: 100%;
+        margin-bottom: 60px;
       }
       img{
-        margin-top: -50%;
-        @include media("<phablet") {
-          margin-top: 0;
-          margin-bottom: 60px;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        z-index: 1;
+        @include media("<tablet") {
+          position: static;
+
         }
       }
     }
-    .section_block_header {
+    .section_block_text {
       width: 50%;
-      @include media("<phablet") {
+      max-width: none;
+      padding-right: 115px;
+      text-align: left;
+      font-size: 26px;
+      line-height: 39px;
+      @include media("<tablet") {
+        font-size: 23px;
+        line-height: 28px;
         margin-bottom: 0px;
         width: 100%;
-        .section_block_text{
-          text-align: left;
-        }
+        padding: 50px 0 60px 0;
       }
     }
     

@@ -122,6 +122,7 @@
     @include media("<phablet") {
       font-size: 15px;
       line-height: 30px;
+      font-weight: 200;
     }
   }
   .btn {
@@ -190,6 +191,10 @@
         margin: 0 auto;
         width: 80%;
       }
+      img {
+        width: auto;
+        max-width: 100%;
+      }
     }
     .home_block_title {
       font-size: 50px;
@@ -226,7 +231,7 @@
         }
         @include media("<tablet") {
           width: 100%;
-          padding: 80px 50px 150px 300px;
+          padding: 80px 50px 150px 360px;
         }
         @include media("<phablet") {
           padding: 30px 15px 150px 15px;
@@ -272,6 +277,10 @@
         padding-bottom: 30px;
         padding: 0 15px 30px 15px;
         margin: 0 auto;
+      }
+      img {
+        width: auto;
+        max-width: 100%;
       }
     }
     .home_block_title {

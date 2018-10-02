@@ -1,17 +1,15 @@
 .home_index {
   &_content {
     width: 100%;
-    max-width: 1166px;
+    // max-width: 1166px;
     margin: 0 auto;
     position: relative;
-    padding-bottom: 250px;
-    padding-top: 100px;
+    padding: 100px 115px 250px 115px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     @include media("<tablet") {
-      padding-top: 0;
-      padding-bottom: 0;
+      padding: 0;
       margin-bottom: 60px;
     }
   }

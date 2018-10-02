@@ -11,6 +11,9 @@
     background: $bg-grey;
     width: 60%;
     padding: 110px 154px 120px;
+    @include media("<tablet") {
+      padding: 50px;
+    }
     p{
       font-size: 32px;
       line-height: 48px;
@@ -28,6 +31,9 @@
     width: 40%;
     margin-top: 100px;
     transform: translateX(154px);
+    @include media("<tablet") {
+      transform: translateX(0);
+    }
     @include media("<phablet") {
       width: 100%;
       transform: none;

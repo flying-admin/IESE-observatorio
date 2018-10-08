@@ -1,6 +1,9 @@
 .about_data {
   padding-top: 60px;
   background-color: $white;
+  @include media("<phablet") {
+    padding-top: 50px;
+  }
   &_content {
 
   }
@@ -11,20 +14,41 @@
     text-align: center;
     color: $blackish;
     margin-bottom: 40px;
+    @include media("<phablet") {
+      font-size: 23px;
+      line-height: 28px;
+    }
   }
   &_row {
     padding: 50px 115px;
+    @include media("<tablet") {
+      padding: 50px;
+    }
+    @include media("<phablet") {
+      padding: 30px 20px;
+    }
     &_title {
       font-size: 32px;
       line-height: 36px;
       font-weight: 700;
       color: $blackish;
       margin-bottom: 15px;
+      @include media("<phablet") {
+        font-size: 23px;
+        line-height: 28px;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
     }
     &_text {
       font-size: 18px;
       line-height: 36px;
       color: $blackish;
+      @include media("<phablet") {
+        font-size: 15px;
+        line-height: 30px;
+        font-weight: 200;
+      }
       .lead {
         font-weight: 800;
         text-transform: uppercase;
@@ -38,6 +62,11 @@
       color: $secondary-text;
       list-style-type: square;
       list-style-position: outside;
+      @include media("<phablet") {
+        padding: 20px 15px;
+        font-size: 15px;
+        line-height: 30px;
+      }
       li {
         color: $secondary-text;
         span {

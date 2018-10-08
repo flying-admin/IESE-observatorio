@@ -2,8 +2,17 @@
   padding: 90px 115px;
   background-color: $white;
   border-bottom: 1px solid $border-grey;
+  @include media("<tablet") {
+    padding: 90px 50px;
+  }
+  @include media("<phablet") {
+    padding: 50px 15px;
+  }
   &_content {
     display: flex;
+    @include media("<phablet") {
+      flex-direction: column-reverse;
+    }
     &_images {
       width: 283px;
       display: flex;
@@ -12,21 +21,38 @@
       align-items: center;
       padding-left: 10px;
       padding-right: 80px;
+      @include media("<tablet") {
+        padding-right: 40px;
+      }
+      @include media("<phablet") {
+        width: 100%;
+        padding: 0;
+      }
       img {
         width: auto;
         max-width: 100%;
+        @include media("<phablet") {
+          margin: 0 auto 20px auto;
+        }
       }
     }
     &_text {
       width: calc(100% - 283px);
       padding-left: 60px;
       position: relative;
+      @include media("<phablet") {
+        width: 100%;
+        padding: 0 0 50px 0;
+      }
       p {
         font-size: 18px;
         line-height: 36px;
         font-weight: 200;
         color: $blackish;
         margin-bottom: 36px;
+        @include media("<phablet") {
+          margin-bottom: 0;
+        }
         strong {
           font-weight: 700;
         }
@@ -41,6 +67,9 @@
         bottom: 0;
         left: 0;
         background-color: $border-grey;
+        @include media("<phablet") {
+          display: none;
+        }
       }
     }
   }

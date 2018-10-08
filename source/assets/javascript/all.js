@@ -20,6 +20,12 @@ $(window).on("load", function(){
       $(ev.target).closest('.btn-share').find('.share_wrap').addClass('show');
     }
   });
+
+  $('.btn_menu_mobile').on('click', function(ev) {
+    $(this).toggleClass('open');
+    $('.mobile_menu_overlay').toggleClass('open');
+    $('.mobile_menu').toggleClass('open');
+  });
 });
 
 $(window).on("resize", function(){

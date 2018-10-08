@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Custom Preset</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Custom-Preset" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0,0 L0,3.21428571 L0,18 L24,18 L24,3.21428571 L24,0 L0,0 Z M1.5,1.60714285 L22.5,1.60714285 L22.5,2.34642856 L12,9.64285715 L1.5,2.34642856 L1.5,1.60714285 Z M12,11.5714286 L13.8,10.3178571 L20.97,16.3928571 L2.88,16.3928571 L10.11,10.2535714 L12,11.5714286 Z M8.79,9.32142856 L1.5,15.525 L1.5,4.275 L8.79,9.32142856 Z M22.5,15.6214286 L15.15,9.38571429 L22.5,4.24285714 L22.5,15.6214286 Z" id="path-1" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

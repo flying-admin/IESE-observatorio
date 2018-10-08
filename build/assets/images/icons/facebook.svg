@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Observatorio" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1400_home" transform="translate(-1233.000000, -5360.000000)" fill="#FFFFFF">
+            <g id="footer" transform="translate(0.000000, 5182.000000)">
+                <g id="social-icons" transform="translate(1061.000000, 178.000000)">
+                    <path d="M190,17.052 C190,17.556 189.556,18 189.052,18 L184.3156,18 L184.3156,11.3688 L187.1584,11.3688 L187.1584,8.526 L184.3156,8.526 L184.3156,6.6312 C184.42,5.7912 184.6384,5.256 186.2116,5.6832 L187.1584,5.6832 L187.1584,2.8428 C186.9556,2.7936 186.1024,2.7204 185.2624,2.8428 C183.034,2.7204 181.6144,3.9864 181.474,6.6324 L181.474,8.5284 L179.578,8.5284 L179.578,11.37 L181.474,11.37 L181.474,18 L172.9468,18 C172.429547,17.9855275 172.013817,17.5692713 172,17.052 L172,0.948 C172,0.444 172.444,0 172.948,0 L189.052,0 C189.556,0 190,0.444 190,0.948 L190,17.052" id="icon-facebook"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

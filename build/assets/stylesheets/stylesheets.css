@@ -5317,6 +5317,7 @@ body.no-scroll {
       font-weight: 700; }
   .section_block .cnt_graph {
     width: 100%; }
+    .section_block .cnt_graph .svg_anim,
     .section_block .cnt_graph img {
       width: auto;
       max-width: 100%;

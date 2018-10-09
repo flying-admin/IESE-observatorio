@@ -26,6 +26,26 @@ $(window).on("load", function(){
     $('.mobile_menu_overlay').toggleClass('open');
     $('.mobile_menu').toggleClass('open');
   });
+
+
+  // Animación
+
+  
+
+  var barr1Params = {
+        container: document.getElementById('barr1Anim'),
+        renderer: 'svg',
+        loop: false,
+        autoplay: true,
+        animationData: barr1
+    };
+  var animBarr1;
+
+  $('#barr1Anim').closest('.fp_animate').on('fp_anim', function(ev){
+    setTimeout(function(){
+      animBarr1 = lottie.loadAnimation(barr1Params);
+    }, 700);
+  });
 });
 
 $(window).on("resize", function(){

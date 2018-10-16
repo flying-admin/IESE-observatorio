@@ -315,6 +315,28 @@ $(window).on("load", function(){
   } else if ($('#roscofoto3B').length > 0) {
     animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
   }
+
+
+  // PDF
+
+  var pdfData = {};
+  $('.download_content_form .btn').on('click', function(ev) {
+    ev.preventDefault();
+    pdfData.email = $('.download_content_form .download_content_form_input').val();
+    pdfData.cusEstadoCliente = "Prospect";
+    pdfData.cusOrigen = "MKT";
+    console.log(pdfData.email);
+    $.ajax({
+      method: 'POST',
+      url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
+      statusCode: {
+        200: function() {
+          console.log('working');
+        }
+      },
+      data: pdfData
+    });
+  });
 });
 
 $(window).on("resize", function(){

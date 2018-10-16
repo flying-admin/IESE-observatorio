@@ -42,17 +42,34 @@
       position: relative;
       margin-top: -88px;
     }
+    .svg_anim {
+      width: 468px;
+      max-width: 100%;
+      @include media("<phablet") {
+        margin: 0 auto;
+      }
+    }
   }
   &.info-block--img-right {
     .info-block__graph {
       transform: translateX(-154px);
+      @include media("<tablet") {
+        transform: translateX(-54px);
+      }
       @include media("<phablet") {
         width: 100%;
         transform: none;
         z-index: 1;
         position: relative;
-        margin-bottom: -88px;
+        margin-bottom: -138px;
         margin-top: 0px;
+      }
+      .svg_anim {
+        width: 594px;
+        max-width: 100%;
+        @include media("<phablet") {
+          margin: 0 auto;
+        }
       }
     }
     .info-block__content{

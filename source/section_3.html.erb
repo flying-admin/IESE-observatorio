@@ -36,7 +36,7 @@ layout: layout
     </div>
     <div class="cnt_graph fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in">
       <%#= image_tag("content/chart_8.png", :class => '') %>
-      <div class="svg_anim" id="barr1Anim" style="width: 780px; height: 175px;"></div>
+      <div class="svg_anim stats_horizontal" id="stats_horizontal"></div>
     </div>
   </div>
   
@@ -45,7 +45,8 @@ layout: layout
       <p class="section_block_title">El 80% de los inversores <strong>ahorra más de 5.000€</strong> procedentes de sus ingresos anuales.</p>
     </div>
     <div class="cnt_graph fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in">
-      <%= image_tag("content/chart_5.png", :class => '') %>
+      <%#= image_tag("content/chart_5.png", :class => '') %>
+      <div class="svg_anim" id="roscos_varios_3"></div>
     </div>
   </div>
  
@@ -67,13 +68,23 @@ layout: layout
     </div>
   </div>
   
-   <%= partial("modules/info_block", :locals => {
+   <%#= partial("modules/info_block", :locals => {
     :extra_classes => '',
     :animation => 'fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in',
     :content => '<p class=""><strong>6 de cada 10 inversores</strong> españoles conoce el <strong>importe de su pensión pública</strong>, asumiendo que esta no mantendrá su nivel de vida actual.</p>',
     :image => 'content/chart_7.png',
     :img_right => false,
   }) %>
+  <div class="info-block fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in" >
+
+    <div class="info-block__content">
+      <p class=""><strong>6 de cada 10 inversores</strong> españoles conoce el <strong>importe de su pensión pública</strong>, asumiendo que esta no mantendrá su nivel de vida actual.</p>
+    </div>
+    <div class="info-block__graph">
+      <%#= image_tag('content/chart_7.png', :class => '') %>
+      <div class="svg_anim" id="roscofoto2A"></div>
+    </div>
+  </div>
 
 
   <%= partial("modules/download", :locals => {

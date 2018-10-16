@@ -67,6 +67,34 @@
       max-width: 100%;
       margin: 0 auto;
     }
+
+    .stats_vertical {
+      margin: 0 auto;
+      width: 990px;
+      height: 478px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      @include media("<tablet") {
+        height: 464px;
+      }
+      svg {
+        @include media("<tablet") {
+          min-width: 960px;
+          min-height: 464px;
+        }
+      }
+    }
+    .stats_horizontal {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      max-width: 100%;
+      width: 724px;
+      height: 165px;
+      svg {
+        min-width: 724px;
+        margin: 0 auto;
+      }
+    }
   }
 
   &.sec_1_grey {
@@ -133,30 +161,32 @@
       text-align: left;
     }
   }
-  &--double{
+  &--double {
     background-color: $bg-grey;
     display: flex;
     align-items: flex-start;
     padding-top: 30px;
     @include media("<tablet") {
       padding-top: 0;
+      padding-bottom: 0;
       flex-direction: column-reverse;
+      background-color: transparent;
     }
     .cnt_graph{
       width: 50%;
       position: relative;
       @include media("<tablet") {
         width: 100%;
-        margin-bottom: 60px;
       }
-      img{
+      img,
+      .svg_anim {
+        width: 594px;
         position: absolute;
-        right: 0;
-        top: 20px;
+        right: -30px;
+        top: 60px;
         z-index: 1;
         @include media("<tablet") {
           position: static;
-
         }
       }
     }
@@ -172,7 +202,19 @@
         line-height: 28px;
         margin-bottom: 0px;
         width: 100%;
-        padding: 50px 0 60px 0;
+        padding: 50px 0 0 0;
+        position: relative;
+        &:after {
+          content: '';
+          display: block;
+          background-color: $white;
+          position: absolute;
+          left: -20px;
+          right: -20px;
+          bottom: -100%;
+          top: 0;
+          z-index: -1;
+        }
       }
     }
     
@@ -233,8 +275,18 @@
     @include media("<desktop") {
       padding-left: 20px;
       padding-right: 20px;
+      padding-bottom: 45px;
     }
-
+    .svg_anim {
+      width: 700px;
+      height: 473px;
+      max-width: 100%;
+      margin: 0 auto;
+      @include media("<phablet") {
+        width: 280px;
+        height: 190px;
+      }
+    }
   }
   &.sec_4 {
     padding-left: 115px;
@@ -244,6 +296,16 @@
       padding-right: 15px;
       padding-top: 45px;
       padding-bottom: 55px;
+    }
+    .svg_anim {
+      width: 700px;
+      height: 473px;
+      max-width: 100%;
+      margin: 0 auto;
+      @include media("<phablet") {
+        width: 280px;
+        height: 190px;
+      }
     }
   }
   &.sec_4_grey {
@@ -258,7 +320,7 @@
       background-color: $bg-grey;
       position: absolute;
       top: 0;
-      bottom: 25%;
+      bottom: 33%;
       left: 0;
       right: 0;
       z-index: 1;
@@ -278,12 +340,36 @@
       @include media("<phablet") {
         display: block;
       }
-
+      .chart_title {
+        font-size: 18px;
+        line-height: 18px;
+        text-transform: uppercase;
+        font-weight: 800;
+        margin-bottom: 50px;
+        padding: 0 50px;
+        letter-spacing: 0.85px;
+        @include media("<phablet") {
+          font-size: 13px;
+          padding: 0 15px;
+          letter-spacing: 0.62px;
+          margin-bottom: 30px;
+        }
+      }
       .chart_1 {
         padding-right: 55px;
         @include media("<phablet") {
           padding: 0 15px;
           margin-bottom: 50px;
+        }
+        .chart_title {
+          text-align: left;
+          color: #AF6C56;
+          @include media("<phablet") {
+            text-align: center;
+          }
+        }
+        .svg_anim {
+          width: 100%;
         }
       }
 
@@ -291,6 +377,16 @@
         padding-left: 55px;
         @include media("<phablet") {
           padding: 0 15px;
+        }
+        .chart_title {
+          text-align: right;
+          color: #DEBC5D;
+          @include media("<phablet") {
+            text-align: center;
+          }
+        }
+        .svg_anim {
+          width: 100%;
         }
       }
 

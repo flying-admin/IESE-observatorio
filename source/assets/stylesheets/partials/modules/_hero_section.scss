@@ -19,10 +19,14 @@
     width: 815px;
     padding-left: 115px;
     margin-right: 15px;
+    @include media("<desktop") {
+      width: 70%;
+      padding-left: 50px;
+    }
     @include media("<phablet") {
-      padding-left: 0;
       width: 100%;
-      margin-left: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
     }
     .page_title {
       font-size: 50px;
@@ -68,12 +72,21 @@
   }
   &_extra_content {
     width: calc(100% - 815px - 15px);
+    @include media("<desktop") {
+      width: calc(40% - 15px);
+    }
     @include media("<phablet") {
       width: 85%;
       margin: 0 auto;
     }
-    .chart {
-      width: auto;
+    .svg_anim {
+      margin: 0 auto;
+      width: 365px;
+      height: 343px;
+      max-width: 100%;
+      @include media("<phablet") {
+        margin: 0;
+      }
     }
   }
 }
@@ -82,6 +95,9 @@
   background-color: $bg-grey;
   z-index: 1;
   position: relative;
+  &.intro_3 {
+    background-color: transparent;
+  }
   &:after {
     content: '';
     display: table;

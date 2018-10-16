@@ -12,12 +12,14 @@
   </div>
   <% if extra_content == "2" %>
     <div class="hero_section_extra_content">
-      <%= image_tag("content/chart_1.png", :class => 'chart') %>
+      <%#= image_tag("content/chart_1.png", :class => 'chart') %>
+      <div class="svg_anim rosco1A" id="rosco1A"></div>
     </div>
   <% end %>
   <% if extra_content == "4" %>
     <div class="hero_section_extra_content">
-      <%= image_tag("content/chart-known.png", :class => 'chart') %>
+      <%#= image_tag("content/chart-known.png", :class => 'chart') %>
+      <div class="svg_anim rosco1B" id="rosco1B"></div>
     </div>
   <% end %>
 </div>
@@ -34,7 +36,7 @@
 <% end %>
 
 <% if extra_content == "3" %>
-  <div class="cnt-intro fp_animate fp_animate--transition-medium fp_animate--fadeInUp fp_animate--top-in">
+  <div class="cnt-intro intro_3 fp_animate fp_animate--transition-medium fp_animate--fadeInUp fp_animate--top-in">
     <div class="intro_section intro_3">
       <div>
         <span class="percent"><span class="num">78</span><span class="sim">%</span></span>

@@ -328,6 +328,12 @@ $(window).on("load", function(){
     console.log(pdfData.email);
     $.ajax({
       method: 'POST',
+      'dataType': "jsonp",
+      "crossDomain": true,
+      "headers": {
+        "accept": "application/json",
+        "Access-Control-Allow-Origin":"*"
+      },
       url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
       statusCode: {
         200: function() {

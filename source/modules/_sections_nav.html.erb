@@ -1,11 +1,13 @@
 <%
   extra_classes ||= ""
   prev_title ||= ""
+  prev_url ||= ""
   next_title ||= ""
+  next_url ||= ""
 %>
 
 <div class="sections_nav">
-  <a href="" class="sections_nav_link prev  <% if prev_title == "" %> hide-on-mobile <% end %>">
+  <a href="<%= prev_url %>" class="sections_nav_link prev  <% if prev_title == "" %> hide-on-mobile <% end %>">
     <% if prev_title != "" %>
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">sección anterior</span>
@@ -13,7 +15,7 @@
       </span>
     <% end %>
   </a>
-  <a href="" class="sections_nav_link next">
+  <a href="<%= next_url %>" class="sections_nav_link next">
     <% if next_title != "" %>
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">siguiente sección</span>

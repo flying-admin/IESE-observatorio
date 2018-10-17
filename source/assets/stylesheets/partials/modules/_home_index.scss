@@ -41,6 +41,10 @@
       color: $primary-text;
       text-transform: uppercase;
       margin-bottom: 30px;
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
   }
   &_intro {

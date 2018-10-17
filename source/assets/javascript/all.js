@@ -9,6 +9,20 @@ $(document).on("ready", function(){
 });
 
 $(window).on("load", function(){
+  
+  // Menu scroll
+  $('[data-scroll]').on('click', function(ev) {
+    ev.preventDefault();
+    var headerOffset = $('header.header').height();
+    var target = $($(this).data('scroll'));
+    var offsetTop = parseInt($($(this).data('offsettop'))[0]) > 0 ? parseInt($($(this).data('offsettop'))[0]) : 0;
+
+    var distance = target.offset().top - headerOffset - offsetTop;
+
+    $('html, body').animate({
+        scrollTop: distance + 1
+    }, 1000, function(){ });
+  });
 
   // Socialize
   $('[data-socialize]').socialize();

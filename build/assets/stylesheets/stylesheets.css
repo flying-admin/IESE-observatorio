@@ -570,7 +570,8 @@ body.no-scroll {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      display: none; }
     .header .mobile_menu_logos {
       height: 29px; }
       .header .mobile_menu_logos .logo_bestinver,
@@ -4656,6 +4657,9 @@ body.no-scroll {
   color: #BA9868;
   text-transform: uppercase;
   margin-bottom: 30px; }
+  .home_index_list li a {
+    text-decoration: none;
+    color: inherit; }
 .home_index_intro {
   width: 700px;
   padding: 40px;

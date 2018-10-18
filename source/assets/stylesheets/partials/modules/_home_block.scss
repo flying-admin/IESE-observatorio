@@ -86,10 +86,10 @@
     }
   }
   &_title {
-    font-size: 40px;
+    font-size: 50px;
     line-height: 60px;
-    letter-spacing: 2px;
-    font-weight: 400;
+    letter-spacing: 3px;
+    font-weight: 700;
     color: $white;
     text-transform: uppercase;
     position: relative;
@@ -201,16 +201,6 @@
         max-width: 100%;
       }
     }
-    .home_block_title {
-      font-size: 50px;
-      line-height: 60px;
-      letter-spacing: 3px;
-      @include media("<phablet") {
-        font-size: 25px;
-        line-height: 35px;
-        letter-spacing: 1.5px;
-      }
-    }
   }
   &.saving {
     padding-bottom: 150px;
@@ -288,16 +278,6 @@
       img {
         width: auto;
         max-width: 100%;
-      }
-    }
-    .home_block_title {
-      font-size: 50px;
-      line-height: 60px;
-      letter-spacing: 3px;
-      @include media("<phablet") {
-        font-size: 25px;
-        line-height: 35px;
-        letter-spacing: 1.5px;
       }
     }
   }

@@ -60,6 +60,11 @@
       }
     }
   }
+  .header_right {
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
   .header_menu {
     display: flex;
     @include media("<tablet") {

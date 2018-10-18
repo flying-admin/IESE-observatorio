@@ -10,16 +10,19 @@
     <a href="" class="logo_bestinver transparent"><%= image_tag("content/logo-bestinver-white.png", :class => '') %></a>
     <a href="" class="logo_iese transparent"><%= image_tag("content/logo-iese-white.png", :class => '') %></a>
   </div>
-  <ul class="header_menu">
-    <li>
-      <%= link_to 'Lecturas recomendadas', '/bestof/' %>
-    </li>
-    <li>
-      <%= link_to 'Sobre el informe', '/about/' %>
-    </li>
-  </ul>
 
-  <a href="https://www.bestinver.es" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+  <div class="header_right">
+    <ul class="header_menu">
+      <li>
+        <%= link_to 'Lecturas recomendadas', '/bestof/' %>
+      </li>
+      <li>
+        <%= link_to 'Sobre el informe', '/about/' %>
+      </li>
+    </ul>
+
+    <a href="https://www.bestinver.es" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+  </div>
 
   <button class="btn_menu_mobile"><span class="hamburguer-menu"></span></button>
 

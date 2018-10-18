@@ -95,9 +95,6 @@
   background-color: $bg-grey;
   z-index: 1;
   position: relative;
-  &.intro_3 {
-    background-color: transparent;
-  }
   &:after {
     content: '';
     display: table;
@@ -109,9 +106,6 @@
   width: 33%;
   min-width: 340px;
   min-height: 340px;
-  padding: 30px 50px;
-  background-color: $white;
-  box-shadow: $box-shadow;
   text-align: left;
   position: relative;
   z-index: 1;
@@ -124,7 +118,6 @@
   @include media("<phablet") {
     min-width: 240px;
     min-height: 0;
-    padding: 15px;
     margin-right: 0;
   }
   .percent {

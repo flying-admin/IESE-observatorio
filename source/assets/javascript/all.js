@@ -337,6 +337,58 @@ $(window).on("load", function(){
     animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
   }
 
+  // num78
+  var num78Params = {
+      container: document.getElementById('num78'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: true,
+      animationData: num78
+  };
+  var animnum78;
+
+  if ( $('#num78').closest('.fp_animate').length > 0 ) {
+    $('#num78').closest('.fp_animate').on('fp_anim', function(ev){
+      setTimeout(function(){
+        animnum78 = lottie.loadAnimation(num78Params);
+        $(this).addClass('end_anim');
+      }, 700);
+    });
+
+    if ( $('#num78').closest('.fp_animate').is('.fp_animated') && !$('#num78').is('.end_anim') ) {
+      animnum78 = lottie.loadAnimation(num78Params);
+      $('#num78').addClass('end_anim');
+    }
+  } else if ($('#num78').length > 0) {
+    animnum78 = lottie.loadAnimation(num78Params);
+  }
+
+  // num87
+  var num87Params = {
+      container: document.getElementById('num87'),
+      renderer: 'svg',
+      loop: false,
+      autoplay: true,
+      animationData: num87
+  };
+  var animnum87;
+
+  if ( $('#num87').closest('.fp_animate').length > 0 ) {
+    $('#num87').closest('.fp_animate').on('fp_anim', function(ev){
+      setTimeout(function(){
+        animnum87 = lottie.loadAnimation(num87Params);
+        $(this).addClass('end_anim');
+      }, 700);
+    });
+
+    if ( $('#num87').closest('.fp_animate').is('.fp_animated') && !$('#num87').is('.end_anim') ) {
+      animnum87 = lottie.loadAnimation(num87Params);
+      $('#num87').addClass('end_anim');
+    }
+  } else if ($('#num87').length > 0) {
+    animnum87 = lottie.loadAnimation(num87Params);
+  }
+
 
   // PDF
 

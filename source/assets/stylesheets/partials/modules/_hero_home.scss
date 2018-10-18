@@ -5,8 +5,50 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 700px;
+  overflow: hidden;
   @include media("<phablet") {
     min-height: 520px;
+  }
+  &_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+    z-index: 1;
+    @include media("<phablet") {
+      min-height: 520px;
+    }
+    video {
+      width: 100%;
+      min-height: 700px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include media("<phablet") {
+        min-height: 520px;
+      }
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba($black, .25);
+      z-index: 2;
+    }
+  }
+  &_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    transform: translate(-50%, -50%);
+    z-index: 3;
   }
   &_content {
     width: 100%;
@@ -16,6 +58,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 4;
     .page_title {
       font-size: 50px;
       line-height: 60px;

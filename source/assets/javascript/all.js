@@ -401,19 +401,17 @@ $(window).on("load", function(){
     console.log(pdfData.email);
     $.ajax({
       method: 'POST',
-      'dataType': "jsonp",
-      "crossDomain": true,
-      "headers": {
-        "accept": "application/json",
-        "Access-Control-Allow-Origin":"*"
-      },
+      dataType: "json",
+      contentType: "application/json",
       url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
-      statusCode: {
-        200: function() {
-          console.log('working');
-        }
+      data: JSON.stringify(pdfData),
+      success: function(result, status, jqXHR) {
+        console.log('working');
       },
-      data: pdfData
+      error(jqXHR, textStatus, errorThrown) {
+        // console.log('aqui tendriamos que sacar un mensaje en el input de que no se ha podido guardar el correo');
+        console.log('error');
+      }
     });
   });
 });

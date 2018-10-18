@@ -508,7 +508,9 @@ body.no-scroll {
                     transform: rotate(45deg);
             top: 0; } }
   .header.bg-white {
-    background-color: #fff; }
+    background-color: #fff;
+    -webkit-box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12); }
     .header.bg-white .logos .logo_bestinver.white {
       display: inline-block; }
     .header.bg-white .logos .logo_bestinver.transparent {
@@ -527,7 +529,9 @@ body.no-scroll {
   .header.bg-transparent {
     position: fixed; }
   .header_sticky {
-    background-color: #fff; }
+    background-color: #fff;
+    -webkit-box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12); }
     .header_sticky .logos .logo_bestinver.white {
       display: inline-block; }
     .header_sticky .logos .logo_bestinver.transparent {

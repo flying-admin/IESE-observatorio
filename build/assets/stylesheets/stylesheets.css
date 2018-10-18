@@ -4596,10 +4596,53 @@ body.no-scroll {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 700px; }
+  min-height: 700px;
+  overflow: hidden; }
   @media (max-width: 767px) {
     .hero_home {
       min-height: 520px; } }
+  .hero_home_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 700px;
+    z-index: 1; }
+    @media (max-width: 767px) {
+      .hero_home_video {
+        min-height: 520px; } }
+    .hero_home_video video {
+      min-width: 100%;
+      min-height: 700px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%); }
+      @media (max-width: 767px) {
+        .hero_home_video video {
+          min-height: 520px; } }
+    .hero_home_video:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.25);
+      z-index: 2; }
+  .hero_home_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 3;
+    padding: 0 20px; }
   .hero_home_content {
     width: 100%;
     max-width: 930px;
@@ -4609,7 +4652,8 @@ body.no-scroll {
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    text-align: center; }
+    text-align: center;
+    z-index: 4; }
     .hero_home_content .page_title {
       font-size: 50px;
       line-height: 60px;
@@ -4637,7 +4681,8 @@ body.no-scroll {
           justify-content: space-between;
   -webkit-box-align: start;
       -ms-flex-align: start;
-          align-items: flex-start; }
+          align-items: flex-start;
+  z-index: 10; }
   @media (max-width: 990px) {
     .home_index_content {
       padding: 0;

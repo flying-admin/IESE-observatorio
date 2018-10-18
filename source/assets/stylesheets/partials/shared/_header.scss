@@ -172,6 +172,7 @@
   }
   &.bg-white {
     background-color: $white;
+    box-shadow: $box-shadow;
     .logos {
       .logo_bestinver {
         &.white {
@@ -214,6 +215,7 @@
   }
   &_sticky {
     background-color: $white;
+    box-shadow: $box-shadow;
     .logos {
       .logo_bestinver {
         &.white {

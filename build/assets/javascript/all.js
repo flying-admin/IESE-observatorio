@@ -398,6 +398,7 @@ $(window).on("load", function(){
     pdfData.email = $('.download_content_form .download_content_form_input').val();
     pdfData.cusEstadoCliente = "Prospect";
     pdfData.cusOrigen = "MKT";
+    pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
     console.log(pdfData.email);
     $.ajax({
       method: 'POST',

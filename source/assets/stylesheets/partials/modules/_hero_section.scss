@@ -173,6 +173,7 @@
   box-shadow: $box-shadow;
   position: relative;
   z-index: 4;
+  transition-delay: 1s!important;
   @include media("<phablet") {
     width: 90%;
   }

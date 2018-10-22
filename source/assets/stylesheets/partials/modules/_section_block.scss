@@ -172,6 +172,9 @@
       flex-direction: column-reverse;
       background-color: transparent;
     }
+    .fp_animate {
+      transition-delay: 1s!important;
+    }
     .cnt_graph{
       width: 50%;
       position: relative;
@@ -183,6 +186,7 @@
         width: 594px;
         position: absolute;
         right: -30px;
+        right: 0;
         top: 60px;
         z-index: 1;
         @include media("<tablet") {

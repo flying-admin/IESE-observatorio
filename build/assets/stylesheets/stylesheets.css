@@ -5319,7 +5319,9 @@ body.no-scroll {
   -webkit-box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12);
           box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12);
   position: relative;
-  z-index: 4; }
+  z-index: 4;
+  -webkit-transition-delay: 1s !important;
+          transition-delay: 1s !important; }
   @media (max-width: 767px) {
     .intro_4 {
       width: 90%; } }
@@ -5465,6 +5467,9 @@ body.no-scroll {
             -ms-flex-direction: column-reverse;
                 flex-direction: column-reverse;
         background-color: transparent; } }
+    .section_block--double .fp_animate {
+      -webkit-transition-delay: 1s !important;
+              transition-delay: 1s !important; }
     .section_block--double .cnt_graph {
       width: 50%;
       position: relative; }
@@ -5476,6 +5481,7 @@ body.no-scroll {
         width: 594px;
         position: absolute;
         right: -30px;
+        right: 0;
         top: 60px;
         z-index: 1; }
         @media (max-width: 990px) {

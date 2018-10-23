@@ -5229,6 +5229,9 @@ body.no-scroll {
       text-decoration: none; }
       .hero_section_content .link_back .icon-arrow-left {
         margin-right: 10px; }
+        .hero_section_content .link_back .icon-arrow-left:before {
+          height: 10px;
+          vertical-align: middle; }
   .hero_section_extra_content {
     width: calc(100% - 815px - 15px); }
     @media (max-width: 1199px) {
@@ -5251,6 +5254,8 @@ body.no-scroll {
   background-color: #FCFCFC;
   z-index: 1;
   position: relative; }
+  .cnt-intro.intro_3 {
+    background-color: transparent; }
   .cnt-intro:after {
     content: '';
     display: table;
@@ -5403,7 +5408,25 @@ body.no-scroll {
         min-width: 724px;
         margin: 0 auto; }
   .section_block.sec_1_grey {
-    background-color: #FCFCFC; }
+    background-color: #FCFCFC;
+    padding: 90px 50% 50px 115px; }
+    @media (max-width: 990px) {
+      .section_block.sec_1_grey {
+        padding: 240px 15px 40px 15px; } }
+    @media (max-width: 767px) {
+      .section_block.sec_1_grey {
+        padding: 140px 15px 0; } }
+    .section_block.sec_1_grey .section_block_text {
+      width: 100%;
+      max-width: none;
+      margin: 0 0 40px 0;
+      text-align: left;
+      font-size: 26px;
+      line-height: 39px; }
+      @media (max-width: 767px) {
+        .section_block.sec_1_grey .section_block_text {
+          font-size: 23px;
+          line-height: 28px; } }
     .section_block.sec_1_grey .cnt_graph {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -5421,23 +5444,6 @@ body.no-scroll {
         padding: 0 55px; }
       .section_block.sec_1_grey .cnt_graph img {
         width: auto; }
-  .section_block.sec_1_grey {
-    background-color: #FCFCFC;
-    padding: 0 50% 10px 115px; }
-    @media (max-width: 990px) {
-      .section_block.sec_1_grey {
-        padding: 40px 15px; } }
-    .section_block.sec_1_grey .section_block_text {
-      width: 100%;
-      max-width: none;
-      margin: 0 0 40px 0;
-      text-align: left;
-      font-size: 26px;
-      line-height: 39px; }
-      @media (max-width: 767px) {
-        .section_block.sec_1_grey .section_block_text {
-          font-size: 23px;
-          line-height: 28px; } }
   .section_block.sec_2_grey {
     padding: 80px 115px 14% 115px;
     padding-left: 50%; }
@@ -6021,6 +6027,9 @@ body.no-scroll {
       text-decoration: none; }
       .hero_page_content .link_back .icon-arrow-left {
         margin-right: 10px; }
+        .hero_page_content .link_back .icon-arrow-left:before {
+          height: 10px;
+          vertical-align: middle; }
 
 .intro_about {
   padding: 90px 115px;

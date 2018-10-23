@@ -99,7 +99,25 @@
 
   &.sec_1_grey {
     background-color: $bg-grey;
-
+    padding: 90px 50% 50px 115px;
+    @include media("<tablet") {
+      padding: 240px 15px 40px 15px;
+    }
+    @include media("<phablet") {
+      padding: 140px 15px 0;
+    }
+    .section_block_text {
+      width: 100%;
+      max-width: none;
+      margin: 0 0 40px 0;
+      text-align: left;
+      font-size: 26px;
+      line-height: 39px;
+      @include media("<phablet") {
+        font-size: 23px;
+        line-height: 28px;
+      }
+    }
     .cnt_graph {
       display: flex;
       justify-content: center;
@@ -119,30 +137,6 @@
 
       img {
         width: auto;
-      }
-    }
-  }
-
-  &.sec_1_grey {
-    background-color: $bg-grey;
-    padding: 0 50% 10px 115px;
-    @include media("<tablet") {
-      padding: 40px 15px;
-    }
-    @include media("<phablet") {
-
-    }
-
-    .section_block_text {
-      width: 100%;
-      max-width: none;
-      margin: 0 0 40px 0;
-      text-align: left;
-      font-size: 26px;
-      line-height: 39px;
-      @include media("<phablet") {
-        font-size: 23px;
-        line-height: 28px;
       }
     }
   }

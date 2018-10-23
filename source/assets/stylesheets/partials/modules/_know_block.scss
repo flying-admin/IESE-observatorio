@@ -54,7 +54,7 @@
         display: block;
       }
       .share_wrap {
-        display: none;
+        display: flex;
         opacity: 0;
         background-color: $white;
         box-shadow: $box-shadow;
@@ -62,10 +62,13 @@
         position: absolute;
         top: -9px;
         left: 151px;
-        transition: all .5s;
+        transition: opacity .5s;
+        z-index: -1;
+        pointer-events: none;
         &.show {
-          display: flex;
           opacity: 1;
+          z-index: unset;
+          pointer-events: all;
         }
         .sz {
           display: inline-block;

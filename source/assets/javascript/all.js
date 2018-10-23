@@ -283,7 +283,7 @@ $(window).on("load", function(){
     animroscofoto2A = lottie.loadAnimation(roscofoto2AParams);
   }
 
-  // roscofoto3A
+  // roscofoto3A roscofoto3B
   var roscofoto3AParams = {
       container: document.getElementById('roscofoto3A'),
       renderer: 'svg',
@@ -293,21 +293,6 @@ $(window).on("load", function(){
   };
   var animroscofoto3A;
 
-  if ( $('#roscofoto3A').closest('.fp_animate').length > 0 ) {
-    $('#roscofoto3A').closest('.fp_animate').on('fp_anim', function(ev){
-      animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
-      $(this).addClass('end_anim');
-    });
-
-    if ( $('#roscofoto3A').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3A').is('.end_anim') ) {
-      animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
-      $('#roscofoto3A').addClass('end_anim');
-    }
-  } else if ($('#roscofoto3A').length > 0) {
-    animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
-  }
-
-  // roscofoto3B
   var roscofoto3BParams = {
       container: document.getElementById('roscofoto3B'),
       renderer: 'svg',
@@ -317,17 +302,22 @@ $(window).on("load", function(){
   };
   var animroscofoto3B;
 
-  if ( $('#roscofoto3B').closest('.fp_animate').length > 0 ) {
-    $('#roscofoto3B').closest('.fp_animate').on('fp_anim', function(ev){
+  if ( $('#roscofoto3A').closest('.fp_animate').length > 0 ) {
+    $('#roscofoto3A').closest('.fp_animate').on('fp_anim', function(ev){
+      animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
       animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
       $(this).addClass('end_anim');
+      $('#roscofoto3B').addClass('end_anim');
     });
 
-    if ( $('#roscofoto3B').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3B').is('.end_anim') ) {
+    if ( $('#roscofoto3A').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3A').is('.end_anim') ) {
+      animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
       animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
+      $('#roscofoto3A').addClass('end_anim');
       $('#roscofoto3B').addClass('end_anim');
     }
-  } else if ($('#roscofoto3B').length > 0) {
+  } else if ($('#roscofoto3A').length > 0) {
+    animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
     animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
   }
 

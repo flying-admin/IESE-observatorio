@@ -9,6 +9,16 @@ $(document).on("ready", function(){
 });
 
 $(window).on("load", function(){
+
+  // Hero vídeo
+  if ( $('.hero_home').length > 0 ) {
+    setTimeout(function(){
+      $('.hero_home .hero_home_bg').fadeIn(500, function(){
+        $('.hero_home .page_title').fadeIn(500);
+      });
+
+    }, 1000);
+  }
   
   // Menu scroll
   $('[data-scroll]').on('click', function(ev) {

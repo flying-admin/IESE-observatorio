@@ -2,7 +2,7 @@
   max-width: 1600px;
   margin: 0 auto;
   height: 116px;
-  padding-left: 40px;
+  padding-left: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,20 +12,25 @@
   right: 0;
   z-index: 50;
   transition: all 0.5s;
-  @include media("<tablet") {
+  @include media("<1024px") {
+    padding-left: 60px;
+  }
+  @include media("<phablet") {
+    padding-left: 40px;
     height: 50px;
-    padding-left: 16px;
+  }
+  @include media("<680px") {
+    padding-left: 20px;
   }
   .logos {
     .logo_bestinver {
       height: 50px;
       margin-right: 35px;
       transition: all 0.5s;
-      @include media("<desktop") {
-        height: 30px;
-        margin-right: 15px;
+      @include media("<930px") {
+        height: 46px;
       }
-      @include media("<tablet") {
+      @include media("<phablet") {
         height: 29px;
       }
       &.white {
@@ -42,10 +47,10 @@
     .logo_iese {
       height: 50px;
       transition: all 0.5s;
-      @include media("<desktop") {
-        height: 30px;
+      @include media("<930px") {
+        height: 46px;
       }
-      @include media("<tablet") {
+      @include media("<phablet") {
         height: 29px;
       }
       &.white {
@@ -60,14 +65,15 @@
       }
     }
   }
-  .header_right {
+  .header_left {
     display:flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
   }
   .header_menu {
     display: flex;
-    @include media("<tablet") {
+    padding-left: 30px;
+    @include media("<1024px") {
       display: none;
     }
     li {
@@ -103,14 +109,14 @@
     @include media("<desktop") {
       width: 200px;
     }
-    @include media("<tablet") {
+    @include media("<1024px") {
       display: none;
     }
   }
   .btn_menu_mobile {
     display: none;
     transition: all 0.5s;
-    @include media("<tablet") {
+    @include media("<1024px") {
       background-color: transparent;
       border: none;
       display: block;
@@ -148,7 +154,7 @@
       }
     }
     &.open {
-      @include media("<tablet") {
+      @include media("<1024px") {
         position: fixed;
         top: 12px;
         right: 0;
@@ -199,7 +205,7 @@
       }
     }
     .btn_menu_mobile {
-      @include media("<tablet") {
+      @include media("<1024px") {
         .hamburguer-menu {
           background-color: $primary;
           &:after,
@@ -242,7 +248,7 @@
       }
     }
     .btn_menu_mobile {
-      @include media("<tablet") {
+      @include media("<1024px") {
         .hamburguer-menu {
           background-color: $primary;
           &:after,
@@ -266,7 +272,7 @@
     overflow-y: scroll;
     z-index: 1;
     transition: width 0.5s;
-    @include media("<tablet") {
+    @include media("<1024px") {
       display: flex;
     }
     &_content {
@@ -339,7 +345,7 @@
       width: 100vw;
       opacity: 0;
       transition: opacity 0.5s;
-      @include media("<tablet") {
+      @include media("<1024px") {
         display: block;
       }
       &.open {

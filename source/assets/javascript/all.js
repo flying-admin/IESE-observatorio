@@ -29,10 +29,38 @@ $(window).on("load", function(){
 
     var distance = target.offset().top - headerOffset - offsetTop;
 
-    $('html, body').animate({
+    $('html').animate({
         scrollTop: distance + 1
-    }, 1000, function(){ });
-    $(window).trigger('scroll');
+    }, 1000, function(){
+      var findAnim = target.find('.svg_anim');
+      var idAnim = findAnim.attr('id');
+      if ( idAnim == 'num87home' ) {
+        animnum87home = lottie.loadAnimation(num87homeParams);
+        $('#num87home').addClass('end_anim');
+        $('#num87home').fadeIn('slow', function() {
+          animnum87home.play();
+        });
+      } else if ( idAnim == 'rosco1Ahome' ) {
+        rosco1Ahomehome = lottie.loadAnimation(rosco1AhomeParams);
+        $('#rosco1Ahome').addClass('end_anim');
+        $('#rosco1Ahome').fadeIn('slow', function() {
+          rosco1Ahomehome.play();
+        });
+      } else if ( idAnim == 'num78home' ) {
+        animnum78home = lottie.loadAnimation(num78homeParams);
+        $('#num78home').addClass('end_anim');
+        $('#num78home').fadeIn('slow', function() {
+          animnum78home.play();
+        });
+      } else if ( idAnim == 'rosco1Bhome' ) {
+        rosco1Bhomehome = lottie.loadAnimation(rosco1BhomeParams);
+        $('#rosco1Bhome').addClass('end_anim');
+        $('#rosco1Bhome').fadeIn('slow', function() {
+          rosco1Bhomehome.play();
+        });
+      }
+    });
+
   });
 
   // Socialize
@@ -459,7 +487,6 @@ $(window).on("load", function(){
     $('#num78home').closest('.fp_animate').on('fp_anim', function(ev) {
       setTimeout(function(){
         $(window).on("scroll", function() {
-          console.log('scrolling');
           var animnum78homeTop = $('#num78home').closest('.fp_animate').position().top;
           var scrollYanimnum78home = $(this).scrollTop();
           if ( scrollYanimnum78home > animnum78homeTop && !$('#num78home').is('.end_anim') ) {

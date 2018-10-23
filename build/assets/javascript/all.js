@@ -15,8 +15,8 @@ $(window).on("load", function(){
     setTimeout(function(){
       $('.hero_home .hero_home_bg').fadeIn(500, function(){
         $('.hero_home .page_title').fadeIn(500);
+        $('header').removeClass('header-home');
       });
-
     }, 1000);
   }
   

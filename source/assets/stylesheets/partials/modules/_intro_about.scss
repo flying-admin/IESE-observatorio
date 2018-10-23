@@ -1,7 +1,6 @@
 .intro_about {
   padding: 90px 115px;
   background-color: $white;
-  border-bottom: 1px solid $border-grey;
   @include media("<tablet") {
     padding: 90px 50px;
   }

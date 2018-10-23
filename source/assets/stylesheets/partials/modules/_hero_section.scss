@@ -67,6 +67,10 @@
       text-decoration: none;
       .icon-arrow-left {
         margin-right: 10px;
+        &:before {
+          height: 10px;
+          vertical-align: middle;
+        }
       }
     }
   }

@@ -95,6 +95,9 @@
   background-color: $bg-grey;
   z-index: 1;
   position: relative;
+  &.intro_3 {
+    background-color: transparent;
+  }
   &:after {
     content: '';
     display: table;

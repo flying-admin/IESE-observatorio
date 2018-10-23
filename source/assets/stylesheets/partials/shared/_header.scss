@@ -219,6 +219,10 @@
   &.bg-transparent {
     position: fixed;
   }
+  &.header-home {
+    height: 0;
+    overflow: hidden;
+  }
   &_sticky {
     background-color: $white;
     box-shadow: $box-shadow;

@@ -415,7 +415,7 @@ $(window).on("load", function(){
     $('#num87home').closest('.fp_animate').on('fp_anim', function(ev) {
       setTimeout(function(){
         $(window).on("scroll", function() {
-          var animnum87homeTop = $('#num87home').closest('.fp_animate').position().top;
+          var animnum87homeTop = $('#num87home').closest('.fp_animate').position().top - ($('#num87home').closest('.fp_animate').height()/2);;
           var scrollYanimnum87home = $(this).scrollTop();
           if ( scrollYanimnum87home > animnum87homeTop && !$('#num87home').is('.end_anim') ) {
             animnum87home = lottie.loadAnimation(num87homeParams);
@@ -451,7 +451,7 @@ $(window).on("load", function(){
     $('#rosco1Ahome').closest('.fp_animate').on('fp_anim', function(ev) {
       setTimeout(function(){
         $(window).on("scroll", function() {
-          var rosco1AhomeTop = $('#rosco1Ahome').closest('.fp_animate').position().top;
+          var rosco1AhomeTop = $('#rosco1Ahome').closest('.fp_animate').position().top - ($('#rosco1Ahome').closest('.fp_animate').height()/2);
           var rosco1Ahome = $(this).scrollTop();
           if ( rosco1Ahome > rosco1AhomeTop && !$('#rosco1Ahome').is('.end_anim') ) {
             rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams);
@@ -487,7 +487,7 @@ $(window).on("load", function(){
     $('#num78home').closest('.fp_animate').on('fp_anim', function(ev) {
       setTimeout(function(){
         $(window).on("scroll", function() {
-          var animnum78homeTop = $('#num78home').closest('.fp_animate').position().top;
+          var animnum78homeTop = $('#num78home').closest('.fp_animate').position().top - ($('#num78home').closest('.fp_animate').height()/2);
           var scrollYanimnum78home = $(this).scrollTop();
           if ( scrollYanimnum78home > animnum78homeTop && !$('#num78home').is('.end_anim') ) {
             animnum78home = lottie.loadAnimation(num78homeParams);
@@ -523,7 +523,7 @@ $(window).on("load", function(){
     $('#rosco1Bhome').closest('.fp_animate').on('fp_anim', function(ev) {
       setTimeout(function(){
         $(window).on("scroll", function() {
-          var rosco1BhomeTop = $('#rosco1Bhome').closest('.fp_animate').position().top;
+          var rosco1BhomeTop = $('#rosco1Bhome').closest('.fp_animate').position().top - ($('#rosco1Bhome').closest('.fp_animate').height()/2);;
           var rosco1Bhome = $(this).scrollTop();
           if ( rosco1Bhome > rosco1BhomeTop && !$('#rosco1Bhome').is('.end_anim') ) {
             rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams);

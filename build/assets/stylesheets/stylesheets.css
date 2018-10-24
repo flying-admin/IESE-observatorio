@@ -418,23 +418,26 @@ body.no-scroll {
     @media (max-width: 1023px) {
       .header .header_menu {
         display: none; } }
-    .header .header_menu li a {
-      display: block;
-      padding: 0 20px;
-      font-size: 11px;
-      letter-spacing: 2px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #fff;
-      text-decoration: none;
-      -webkit-transition: all 0.5s;
-      transition: all 0.5s; }
-      @media (max-width: 1199px) {
-        .header .header_menu li a {
-          padding: 0 10px; } }
-      .header .header_menu li a:hover {
-        background-color: #BA9868;
-        color: #fff; }
+    .header .header_menu li {
+      padding: 0 15px; }
+      .header .header_menu li a {
+        display: block;
+        padding: 0 5px;
+        font-size: 11px;
+        line-height: 17px;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s; }
+        @media (max-width: 1199px) {
+          .header .header_menu li a {
+            padding: 0 10px; } }
+        .header .header_menu li a:hover {
+          background-color: #fff;
+          color: #BA9868; }
   .header .btn_header {
     display: block;
     width: 224px;
@@ -534,6 +537,9 @@ body.no-scroll {
       display: none; }
     .header.bg-white .header_menu li a {
       color: #000; }
+      .header.bg-white .header_menu li a:hover {
+        background-color: #BA9868;
+        color: #fff; }
     @media (max-width: 1023px) {
       .header.bg-white .btn_menu_mobile .hamburguer-menu {
         background-color: #B59971; }
@@ -558,6 +564,9 @@ body.no-scroll {
       display: none; }
     .header_sticky .header_menu li a {
       color: #000; }
+      .header_sticky .header_menu li a:hover {
+        background-color: #BA9868;
+        color: #fff; }
     @media (max-width: 1023px) {
       .header_sticky .btn_menu_mobile .hamburguer-menu {
         background-color: #B59971; }
@@ -4748,7 +4757,9 @@ body.no-scroll {
   margin-top: -220px;
   background-color: #fff;
   -webkit-box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12); }
+          box-shadow: 0 4px 13px 1px rgba(0, 0, 0, 0.12);
+  -webkit-transition-delay: 2.5s !important;
+          transition-delay: 2.5s !important; }
   @media (max-width: 990px) {
     .home_index_intro {
       width: 100%;

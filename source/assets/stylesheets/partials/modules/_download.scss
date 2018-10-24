@@ -74,9 +74,20 @@
     .legal {
       max-width: 460px;
       margin: 0 auto;
-      font-size: 11px;
-      line-height: 13px;
-      color: $blackish;
+      position: relative;
+      padding-left: 22px;
+      input {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      label {
+        display: block;
+        font-size: 11px;
+        line-height: 13px;
+        color: $blackish;
+        text-align: left;
+      }
       @include media("<phablet") {
         padding: 0 16px;
        }

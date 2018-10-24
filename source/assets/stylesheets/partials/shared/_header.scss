@@ -90,6 +90,10 @@
         @include media("<desktop") {
           padding: 0 10px;
         }
+        &:hover {
+          background-color: $primary-text;
+          color: $white;
+        }
       }
     }
   }
@@ -106,11 +110,15 @@
     text-align: center;
     background-color: $primary;
     text-decoration: none;
+    transition: all 0.5s;
     @include media("<desktop") {
       width: 200px;
     }
     @include media("<1024px") {
       display: none;
+    }
+    &:hover {
+      background-color: $secondary;
     }
   }
   .btn_menu_mobile {

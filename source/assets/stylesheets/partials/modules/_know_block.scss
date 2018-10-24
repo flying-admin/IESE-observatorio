@@ -93,9 +93,15 @@
           border-bottom: 11px solid transparent;
         }
       }
+      &:hover {
+        background-color: $primary-text;
+        border-color: $primary-text;
+        color: $white;
+      }
     }
   }
   &.sect1 {
+    background-color: transparent;
     .know_block_content {
       padding-left: 100px;
       padding-right: 100px;

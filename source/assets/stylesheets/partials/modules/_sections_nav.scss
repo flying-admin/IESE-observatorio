@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
+    transition: all 0.5s;
     @include media("<phablet") {
       width: 100%;
       position: relative;
@@ -30,6 +31,7 @@
       color: $primary;
       text-transform: uppercase;
       margin-bottom: 5px;
+      transition: all 0.5s;
     }
     &_section {
       display: block;
@@ -37,6 +39,7 @@
       font-size: 18px;
       line-height: 36px;
       color: $blackish;
+      transition: all 0.5s;
     }
     &.prev {
       @include media("<phablet") {
@@ -55,6 +58,7 @@
           height: 18px;
           font-size: 18px;
           margin: auto;
+          transition: all 0.5s;
           @include media("<desktop") {
             left: 50px;
           }
@@ -80,6 +84,7 @@
           height: 18px;
           font-size: 18px;
           margin: auto;
+          transition: all 0.5s;
           @include media("<desktop") {
             right: 50px;
           }
@@ -87,6 +92,16 @@
             right: 20px;
           }
         }
+      }
+    }
+    &:hover {
+      background-color: $primary-text;
+      .sections_nav_link_title,
+      .sections_nav_link_section {
+        color: $white;
+      }
+      .sections_nav_link_wrap::before {
+        color: $white;
       }
     }
   }

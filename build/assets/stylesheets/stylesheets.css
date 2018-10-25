@@ -674,31 +674,7 @@ body.no-scroll {
   background-color: #575757;
   position: relative;
   z-index: 3;
-  padding: 60px 120px 40px;
-  /*
-  .row_logos {
-    padding: 50px 40px 50px 40px;
-    @include media("<phablet") {
-      padding: 40px 15px 10px 15px;
-    }
-    .logo_bestinver,
-    .logo_iese {
-      display: inline-block;
-      height: 50px;
-      margin-right: 40px;
-      @include media("<phablet") {
-        display: block;
-        margin: 0 auto 15px auto;
-      }
-    }
-    img {
-      width: auto;
-      height: 100%;
-      @include media("<phablet") {
-        margin: 0 auto;
-      }
-    }
-  }*/ }
+  padding: 60px 120px 40px; }
   @media (max-width: 767px) {
     .footer {
       padding: 60px 42px 40px 22px; } }
@@ -5187,6 +5163,9 @@ body.no-scroll {
         position: absolute;
         left: 0;
         top: 0; }
+        @media (max-width: 767px) {
+          .download_content .legal input {
+            left: 16px; } }
       .download_content .legal label {
         display: block;
         font-size: 11px;
@@ -5195,7 +5174,7 @@ body.no-scroll {
         text-align: left; }
       @media (max-width: 767px) {
         .download_content .legal {
-          padding: 0 16px; } }
+          padding: 0 16px 0 38px; } }
   .download.bg-white {
     background-color: #fff; }
 

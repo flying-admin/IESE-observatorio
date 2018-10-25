@@ -80,6 +80,9 @@
         position: absolute;
         left: 0;
         top: 0;
+        @include media("<phablet") {
+          left: 16px;
+        }
       }
       label {
         display: block;
@@ -89,7 +92,7 @@
         text-align: left;
       }
       @include media("<phablet") {
-        padding: 0 16px;
+        padding: 0 16px 0 38px;
        }
     }
   }

@@ -553,27 +553,42 @@ $(window).on("load", function(){
   // PDF
 
   var pdfData = {};
+
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
   $('.download_content_form .btn').on('click', function(ev) {
     ev.preventDefault();
-    pdfData.email = $('.download_content_form .download_content_form_input').val();
-    pdfData.cusEstadoCliente = "Prospect";
-    pdfData.cusOrigen = "MKT";
-    pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
-    console.log(pdfData.email);
-    $.ajax({
-      method: 'POST',
-      dataType: "json",
-      contentType: "application/json",
-      url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
-      data: JSON.stringify(pdfData),
-      success: function(result, status, jqXHR) {
-        console.log('working');
-      },
-      error(jqXHR, textStatus, errorThrown) {
-        // console.log('aqui tendriamos que sacar un mensaje en el input de que no se ha podido guardar el correo');
-        console.log('error');
-      }
-    });
+
+    var email = $(".download_content_form .download_content_form_input").val();
+    var isValid = validateEmail(email);
+      
+    if( isValid ) {
+      console.log('email válido');
+      pdfData.email = $('.download_content_form .download_content_form_input').val();
+      pdfData.cusEstadoCliente = "Prospect";
+      pdfData.cusOrigen = "MKT";
+      pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
+      console.log(pdfData.email);
+      $.ajax({
+        method: 'POST',
+        dataType: "json",
+        contentType: "application/json",
+        url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
+        data: JSON.stringify(pdfData),
+        success: function(result, status, jqXHR) {
+          console.log('working');
+        },
+        error(jqXHR, textStatus, errorThrown) {
+          // console.log('aqui tendriamos que sacar un mensaje en el input de que no se ha podido guardar el correo');
+          console.log('error');
+        }
+      });
+    } else {
+      console.log('email NO válido');
+    }
   });
 });
 

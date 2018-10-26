@@ -90,10 +90,10 @@ layout: layout
 </div>
 <%= partial("shared/footer" ,:locals => { :page_name => page_name } ) %>
     <script>
-       console.log('tipo de dispositivo', device );
-       console.log('hora', localeTime );
-       console.log('dia de la semana', weekDay );
-       console.log('tipo de dia de la semana', typeOfDay );
+       
+       
+       
+       
 
       DigitalData.push({
         'event': 'pageview',
@@ -109,7 +109,7 @@ layout: layout
         'Tipo de pagina': 'contenido',
         'Nivel de contenido1': 'area publica',
         'Nivel de contenido2': 'observatorio',
-        'Nivel de contenido3': ''<%= page_name %>'' ,
+        'Nivel de contenido3': '<%= page_name %>' ,
         'Nivel de contenido4': '-',
       }); 
     </script>

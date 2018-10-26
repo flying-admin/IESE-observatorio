@@ -9,6 +9,45 @@
     <title>Observatorio</title>
     <meta name="title" content="Observatorio">
     <link href="assets/stylesheets/stylesheets.css" rel="stylesheet" />
+    <script>
+      window.DigitalData = window.DigitalData || [];
+    </script>
+    <script src="//assets.adobedtm.com/launch-EN2267055cc3114071b44e48093e6f41e3.min.js"></script>
+    <script>
+     
+        var d = new Date();
+        var n = d.getDay();
+        var days = ['Domingo','Lunes', 'Martes','Miercoles','Jueves','Viernes','Sabado'];
+        var weekDay = days[ n ];
+        var typeOfDay = ( n == 0 || n == 6 ) ? 'weekend':'week' ;
+        function deviceOS() {
+          var useragent = navigator.userAgent;
+          
+          if(useragent.match(/Android/i)) {
+                return 'mobile';  //return 'android';
+            } else if(useragent.match(/webOS/i)) {
+                return 'mobile';  //return 'webos';
+            } else if(useragent.match(/iPhone/i)) {
+                return 'mobile';  //return 'iphone';
+            } else if(useragent.match(/iPod/i)) {
+                return 'mobile';  //return 'ipod';
+            } else if(useragent.match(/iPad/i)) {
+                return 'mobile';  //return 'ipad';
+            } else if(useragent.match(/Windows Phone/i)) {
+                return 'mobile';  //return 'windows phone';
+            } else if(useragent.match(/SymbianOS/i)) {
+                return 'mobile';  //return 'symbian';
+            } else if(useragent.match(/RIM/i) || useragent.match(/BB/i)) {
+                return 'mobile';  //return 'blackberry';
+            } else {
+                return 'desktop';
+            }
+        }
+
+        var device = deviceOS();
+        var date = new Date();
+        var localeTime =  d.toLocaleTimeString();
+    </script>
     <script src="assets/javascript/all.fn.js"></script><script src="assets/javascript/all.js"></script>
   </head>
   <body>
@@ -34,7 +73,10 @@
       </li>
     </ul>
   </div>
-  <a href="https://www.bestinver.es" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+  <a  href="https://www.bestinver.es" class="btn_header" 
+      onclick="DigitalData.push({'event':  'event','eventCategory':'ir a bestinver','eventAction': 'lecturas recomendadas','eventLabel':  ''});" >
+      Ir a Bestinver.es <span class="icon-arrow-right"></span>
+  </a>
 
 
   <button class="btn_menu_mobile"><span class="hamburguer-menu"></span></button>
@@ -68,7 +110,7 @@
   
 <div class="hero_page" style="background-image: url(../assets/images/content/hero_bestof.jpg);">
   <div class="hero_page_content">
-    <h1 class="page_title">Lecturas recomendadas</h1>
+    <h1 class="page_title">lecturas recomendadas</h1>
     <a href="index.html" class="link_back"><span class="icon-arrow-left"></span>Inicio</a>
   </div>
 </div>
@@ -77,19 +119,20 @@
   <div class="bestof">
     <div class="bestof_column">
       <p class="bestof_text">Consulta los estudios más relevantes realizados entorno al mundo de las finanzas seleccionados por BESTINVER y el IESE. Abre una puerta a todo el conocimiento de valor sobre ahorro e inversión.</p>
-
       <div class="card fp_animate fp_animate--transition-medium fp_animate--fadeInUp fp_animate--top-in">
         <a href="" class="card_image">
           <img src="assets/images/content/in-search-of-the-virtous-banker.jpg" class="" alt="In search of the virtous banker" />
         </a>
         <div class="card_content">
+          <!-- si se modifica la lectura modificar el codigo de adobeAnalitycs correspondiente -->
           <p class="card_content_title">
-            In Search of the Virtuous Banker
+            In Search of the Virtuous Banker 
           </p>
           <p class="card_content_text">
             A framework to avoid moral bankruptcy. Despite some progress over the past 10 years, the controls put in place to prevent another global financial crisis fail to address two key concerns: corporate culture and individual character. There’s still a lot of work to be done to define and agree what makes a good bank as well as a good banker.
           </p>
-          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/In-Search-of-the-Virtuous-Banker.pdf" class="see_more">Leer más</a>
+          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/In-Search-of-the-Virtuous-Banker.pdf" class="see_more" 
+          onclick="DigitalData.push({'event':'event' ,'eventCategory':'leer mas','eventAction':'In Search of the Virtuous Banker ','eventLabel': 'lecturas recomendadas' });" >Leer más</a>
         </div>
       </div>
       <div class="card fp_animate fp_animate--transition-medium fp_animate--fadeInUp fp_animate--top-in">
@@ -98,12 +141,13 @@
         </a>
         <div class="card_content">
           <p class="card_content_title">
-            How Big Data, AI and Blockchain Are Changing Finance
+            How Big Data, AI and Blockchain Are Changing Finance <!-- si se modifica la lectura modificar el codigo de adobeAnalitycs correspondiente -->
           </p>
           <p class="card_content_text">
             The fintech revolution. Fintech is disrupting the financial industry, adding a glossary of exotic new terms to our business vernacular. What exactly is the fintech revolution all about? Is it a bubble or will it generate true, lasting value?
           </p>
-          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/How-Big-Data-AI-and-Blockchain-are-changing-Finance.pdf" class="see_more">Leer más</a>
+          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/How-Big-Data-AI-and-Blockchain-are-changing-Finance.pdf" class="see_more" 
+          onclick="DigitalData.push({'event':'event' ,'eventCategory':'leer mas','eventAction':'How Big Data, AI and Blockchain Are Changing Finance','eventLabel': 'lecturas recomendadas' });">Leer más</a>
         </div>
       </div>
     </div>
@@ -115,12 +159,13 @@
         </a>
         <div class="card_content">
           <p class="card_content_title">
-            Rentabilidad de los Fondos de Pensiones en España. 2002-2017
+            Rentabilidad de los Fondos de Pensiones en España. 2002-2017 <!-- si se modifica la lectura modificar el codigo de adobeAnalitycs correspondiente -->
           </p>
           <p class="card_content_text">
             En los últimos 15 años, la rentabilidad del IBEX 35 fue 226% y la de los bonos del Estado a 15 años 97%. La rentabilidad media de los fondos de pensiones fue 60%. Entre los 356 fondos de pensiones con 15 años de historia, sólo 4 superaron la rentabilidad del IBEX 35 y 47 la de los bonos del Estado a 15 años. El en siguiente estudio se muestran algunos datos para animar a los lectores de menos de 50 años a ahorrar y tomar acciones ya para complementar su futura pensión de la Seguridad Social.
           </p>
-          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/Rentabilidad-fondos-pensiones-Espana-2002-2017.pdf" class="see_more">Leer más</a>
+          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/Rentabilidad-fondos-pensiones-Espana-2002-2017.pdf" class="see_more" 
+          onclick="DigitalData.push({'event':'event' ,'eventCategory':'leer mas','eventAction':' Rentabilidad de los Fondos de Pensiones en España. 2002-2017','eventLabel': 'lecturas recomendadas' });">Leer más</a>
         </div>
       </div>
       <div class="card fp_animate fp_animate--transition-medium fp_animate--fadeInUp fp_animate--top-in">
@@ -129,12 +174,13 @@
         </a>
         <div class="card_content">
           <p class="card_content_title">
-            The future of Spanish pensions
+            The future of Spanish pensions <!-- si se modifica la lectura modificar el codigo de adobeAnalitycs correspondiente -->
           </p>
           <p class="card_content_text">
             The substantial reduction of pensions and the high welfare costs that the reforms bring about lead us to conjecture that further reforms lurk in the future of Spanish pensions.
           </p>
-          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/The-Future-of-Spanish-Pensions.pdf" class="see_more">Leer más</a>
+          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/The-Future-of-Spanish-Pensions.pdf" class="see_more" 
+          onclick="DigitalData.push({'event':'event' ,'eventCategory':'leer mas','eventAction':'The future of Spanish pensions','eventLabel': 'lecturas recomendadas' });">Leer más</a>
         </div>
       </div>
 
@@ -144,12 +190,13 @@
         </a>
         <div class="card_content">
           <p class="card_content_title">
-            The future of finance
+            The future of finance <!-- si se modifica la lectura modificar el codigo de adobeAnalitycs correspondiente -->
           </p>
           <p class="card_content_text">
             On the 25th anniversary of the Center for International Finance, this dossier reflects on the big ideas shaping the future. Two trends stood out: (1) the explosion of fintech and the emergence of new players organized around the client and data, which have modified value chains and increased competition, forcing the financial sector to operate by new rules; and (2) a new social sensitivity to ethics, sustainability, solidarity and inclusion.
           </p>
-          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/The-Future-of-Finance.pdf" class="see_more">Leer más</a>
+          <a href="https://www.bestinver.es/wp-content/uploads/2018/10/The-Future-of-Finance.pdf" class="see_more" 
+          onclick="DigitalData.push({'event':'event' ,'eventCategory':'leer mas','eventAction':'The future of finance','eventLabel': 'lecturas recomendadas' });">Leer más</a>
         </div>
       </div>
     </div>
@@ -164,7 +211,8 @@
     <p class="download_content_subtitle">Descarga el informe completo</p>
     <div class="download_content_form">
       <input type="text" name="email" id="email" class="download_content_form_input" placeholder="Introduce tu email" />
-      <input type="submit" name="download" value="descargar" class="btn" />
+      <input type="submit" name="download" value="descargar" class="btn" 
+        onclick="DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'lecturas recomendadas'});" />
     </div>
     <div class="legal">
       <input type="checkbox" name="check-legal" id="check-legal" />
@@ -174,59 +222,186 @@
   </div>
 </div>
 </div>
+
 <footer class="footer ">
-  <div class="content__wrapper">
-    <div class="footer-row">
-      <div class="footer__logos">
-        <a href="https://www.bestinver.es">
-          <img src="assets/images/content/logo-bestinver-white.png" class="" alt="Logo bestinver white" /></a>
-      </div>
-      <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
-      <div class="footer__rrss">
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/company/bestinver/" target="_blank"><span class="icon-linkedin"></span></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/BestinverAM" target="_blank"><span class="icon-youtube"></span></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/bestinver" target="_blank"><span class="icon-twitter"></span></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/Bestinver/" target="_blank"><span class="icon-facebook"></span></a>
-          </li>
-          <li>
-            <a href="https://www.slideshare.net/Bestinver" target="_blank"><span class="icon-inslides-new"></span></a>
-          </li>
-        </ul>
-      </div>
+    <div class="content__wrapper">
+        <div class="footer-row">
+            <div class="footer__logos">
+                <a href="https://www.bestinver.es">
+                    <img src="assets/images/content/logo-bestinver-white.png" class="" alt="Logo bestinver white" /></a>
+            </div>
+            <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
+            <div class="footer__rrss">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/company/bestinver/" target="_blank">
+                            <span class="icon-linkedin"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/BestinverAM" target="_blank">
+                            <span class="icon-youtube"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/bestinver" target="_blank">
+                            <span class="icon-twitter"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Bestinver/" target="_blank">
+                            <span class="icon-facebook"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.slideshare.net/Bestinver" target="_blank">
+                            <span class="icon-inslides-new"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-row">
+            <div class="footer__links">
+                <ul>
+                    <li><a href="https://www.bestinver.es/contacto/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Contacto','eventLabel':'lecturas recomendadas'});">Contacto</a></li>
+                    <li><a href="https://www.bestinver.es/atencion-al-inversor/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Atención al inversor','eventLabel':'lecturas recomendadas'});">Atención al inversor</a></li>
+                    <li><a href="https://www.bestinver.es/glosario-de-terminos/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Glosario de términos','eventLabel':'lecturas recomendadas'});">Glosario de términos</a></li>
+                    <li><a href="https://www.bestinver.es/preguntas-frecuentes/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Preguntas frecuentes','eventLabel':'lecturas recomendadas'});">Preguntas frecuentes</a></li>
+                    <li><a href="https://www.bestinver.es/aviso-legal/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Aviso legal','eventLabel':'lecturas recomendadas'});">Aviso legal</a></li>
+                    <li><a href="https://www.bestinver.es/politica-de-privacidad/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Política de privacidad','eventLabel':'lecturas recomendadas'});">Política de privacidad</a></li>
+                    <li><a href="https://www.bestinver.es/mapa-web/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Mapa web','eventLabel':'lecturas recomendadas'});">Mapa web</a></li>
+                    <li><a href="https://www.bestinver.es/sociedad-de-valores/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Bestinver sv','eventLabel':'lecturas recomendadas'});">Bestinver sv</a></li>
+                </ul>
+            </div>
+            <div class="footer__info">
+                <div>
+                    <p>&copy; Bestinver 2018</p>
+                    <p class="num-reg">Nº Registro CNMV: 103</p>
+                </div>
+                <img src="assets/images/content/cnmv.png" class="" width="45" alt="Cnmv" />
+            </div>
+        </div>
     </div>
-    <div class="footer-row">
-      <div class="footer__links">
-        <ul>
-          <li><a href="https://www.bestinver.es/contacto/">Contacto</a></li>
-          <li><a href="https://www.bestinver.es/atencion-al-inversor/">Atención al inversor</a></li>
-          <li><a href="https://www.bestinver.es/glosario-de-terminos/">Glosario de términos</a></li>
-          <li><a href="https://www.bestinver.es/preguntas-frecuentes/">Preguntas frecuentes</a></li>
-          <li><a href="https://www.bestinver.es/aviso-legal/">Aviso legal</a></li>
-          <li><a href="https://www.bestinver.es/politica-de-privacidad/">Política de privacidad</a></li>
-          <li><a href="https://www.bestinver.es/mapa-web/">Mapa web</a></li>
-          <li><a href="https://www.bestinver.es/sociedad-de-valores/">Bestinver sv</a></li>
-        </ul>
-      </div>
-      <div class="footer__info">
-          <div>
-            <p>&copy; Bestinver 2018</p>
-            <p class="num-reg">Nº Registro CNMV: 103</p>
-          </div>
-          <img src="assets/images/content/cnmv.png" class="" width="45" alt="Cnmv" />
-      </div>
-    </div>
-  </div>
 </footer>
 
+    <script>
+       
+       
+       
+       
 
+      // pageview de pagina
+      DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'lecturas recomendadas', // titulo de la página
+        'Nivel de contenido4': '-',
+      }); 
+
+      // pageview de lectura
+       DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'lecturas recomendadas', // titulo de la página
+        'Nivel de contenido4': 'In Search of the Virtuous Banker',// <titulo de la lectura>
+      }); 
+       DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'lecturas recomendadas', // titulo de la página
+        'Nivel de contenido4': 'How Big Data, AI and Blockchain Are Changing Finance',// <titulo de la lectura>
+      }); 
+       DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'lecturas recomendadas', // titulo de la página
+        'Nivel de contenido4': 'Rentabilidad de los Fondos de Pensiones en España.',// <titulo de la lectura>
+      }); 
+       DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'lecturas recomendadas', // titulo de la página
+        'Nivel de contenido4': 'The future of Spanish pensions',// <titulo de la lectura>
+      }); 
+       DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'lecturas recomendadas', // titulo de la página
+        'Nivel de contenido4': 'The future of finance',// <titulo de la lectura>
+      }); 
+      
+
+    </script>
     </div>
   </body>
 </html>

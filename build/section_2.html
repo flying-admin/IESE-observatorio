@@ -9,11 +9,51 @@
     <title>Observatorio</title>
     <meta name="title" content="Observatorio">
     <link href="assets/stylesheets/stylesheets.css" rel="stylesheet" />
+    <script>
+      window.DigitalData = window.DigitalData || [];
+    </script>
+    <script src="//assets.adobedtm.com/launch-EN2267055cc3114071b44e48093e6f41e3.min.js"></script>
+    <script>
+     
+        var d = new Date();
+        var n = d.getDay();
+        var days = ['Domingo','Lunes', 'Martes','Miercoles','Jueves','Viernes','Sabado'];
+        var weekDay = days[ n ];
+        var typeOfDay = ( n == 0 || n == 6 ) ? 'weekend':'week' ;
+        function deviceOS() {
+          var useragent = navigator.userAgent;
+          
+          if(useragent.match(/Android/i)) {
+                return 'mobile';  //return 'android';
+            } else if(useragent.match(/webOS/i)) {
+                return 'mobile';  //return 'webos';
+            } else if(useragent.match(/iPhone/i)) {
+                return 'mobile';  //return 'iphone';
+            } else if(useragent.match(/iPod/i)) {
+                return 'mobile';  //return 'ipod';
+            } else if(useragent.match(/iPad/i)) {
+                return 'mobile';  //return 'ipad';
+            } else if(useragent.match(/Windows Phone/i)) {
+                return 'mobile';  //return 'windows phone';
+            } else if(useragent.match(/SymbianOS/i)) {
+                return 'mobile';  //return 'symbian';
+            } else if(useragent.match(/RIM/i) || useragent.match(/BB/i)) {
+                return 'mobile';  //return 'blackberry';
+            } else {
+                return 'desktop';
+            }
+        }
+
+        var device = deviceOS();
+        var date = new Date();
+        var localeTime =  d.toLocaleTimeString();
+    </script>
     <script src="assets/javascript/all.fn.js"></script><script src="assets/javascript/all.js"></script>
   </head>
   <body>
     <div class="body-wrapper">
-      <header class="header bg-transparent" id="menu">
+      
+<header class="header bg-transparent" id="menu">
 
   <div class="header_left">
     <div class="logos">
@@ -34,7 +74,10 @@
       </li>
     </ul>
   </div>
-  <a href="https://www.bestinver.es" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+  <a  href="https://www.bestinver.es" class="btn_header" 
+      onclick="DigitalData.push({'event':  'event','eventCategory':'ir a bestinver','eventAction': 'mas digitales mismas decisiones','eventLabel':  ''});" >
+      Ir a Bestinver.es <span class="icon-arrow-right"></span>
+  </a>
 
 
   <button class="btn_menu_mobile"><span class="hamburguer-menu"></span></button>
@@ -69,7 +112,7 @@
 <div class="hero_section" style="background-image: url(../assets/images/content/hero_2.jpg);">
   <div class="hero_section_content">
     <h1 class="page_title">Más digitales, mismos bancos, mismas inversiones</h1>
-    <a href="index.html" class="link_back"><span class="icon-arrow-left"></span>Inicio</a>
+<a href="index.html" class="link_back" onclick="DigitalData.push({'event':  'event','eventCategory':'ir a inicio','eventAction': 'mas digitales mismas decisiones','eventLabel':  ''});" ><span class="icon-arrow-left"></span>Inicio</a>
   </div>
     <div class="hero_section_extra_content">
       <div class="svg_anim rosco1A" id="rosco1A"></div>
@@ -112,9 +155,9 @@
       <button type="button" class="btn btn--secondary btn-share ">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" class="sz sz-linkedin" data-title="Observatorio" data-desc="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación."></a>
-          <a href="#" class="sz sz-facebook" data-title="Observatorio" data-desc="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación."></a>
-          <a href="#" class="sz sz-twitter" data-title="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación."></a>
+          <a href="#" class="sz sz-linkedin" data-title="Observatorio" data-desc="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación." onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': 'mas digitales mismas decisiones' });" ></a>
+          <a href="#" class="sz sz-facebook" data-title="Observatorio" data-desc="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación." onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': 'mas digitales mismas decisiones' });"></a>
+          <a href="#" class="sz sz-twitter" data-title="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación." onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': 'mas digitales mismas decisiones' });"></a>
         </span>
       </button>
     </div>
@@ -129,7 +172,8 @@
     <p class="download_content_subtitle">Descarga el informe completo</p>
     <div class="download_content_form">
       <input type="text" name="email" id="email" class="download_content_form_input" placeholder="Introduce tu email" />
-      <input type="submit" name="download" value="descargar" class="btn" />
+      <input type="submit" name="download" value="descargar" class="btn" 
+        onclick="DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'mas digitales mismas decisiones'});" />
     </div>
     <div class="legal">
       <input type="checkbox" name="check-legal" id="check-legal" />
@@ -141,13 +185,15 @@
 
   
 <div class="sections_nav">
-    <a href="/section_1.html" class="sections_nav_link prev  ">
+    <a href="/section_1.html" class="sections_nav_link prev  "  
+    onclick="DigitalData.push({'event':  'event','eventCategory':'cambio de seccion','eventAction': 'anterior seccion','eventLabel': 'Productos de inversión: más oferta pero sin cambios sustanciales'});" >
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">sección anterior</span>
         <span class="sections_nav_link_section">Productos de inversión: más oferta pero sin cambios sustanciales</span>
       </span>
     </a>
-    <a href="/section_3.html" class="sections_nav_link next">
+    <a href="/section_3.html" class="sections_nav_link next"   
+      onclick="DigitalData.push({'event':  'event','eventCategory':'cambio de seccion','eventAction': 'siguiente seccion','eventLabel': 'Ahorro insuficiente, inversión deficiente'});" >
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">siguiente sección</span>
         <span class="sections_nav_link_section">Ahorro insuficiente, inversión deficiente</span>
@@ -155,59 +201,96 @@
     </a>
 </div>
 </div>
+
 <footer class="footer ">
-  <div class="content__wrapper">
-    <div class="footer-row">
-      <div class="footer__logos">
-        <a href="https://www.bestinver.es">
-          <img src="assets/images/content/logo-bestinver-white.png" class="" alt="Logo bestinver white" /></a>
-      </div>
-      <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
-      <div class="footer__rrss">
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/company/bestinver/" target="_blank"><span class="icon-linkedin"></span></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/BestinverAM" target="_blank"><span class="icon-youtube"></span></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/bestinver" target="_blank"><span class="icon-twitter"></span></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/Bestinver/" target="_blank"><span class="icon-facebook"></span></a>
-          </li>
-          <li>
-            <a href="https://www.slideshare.net/Bestinver" target="_blank"><span class="icon-inslides-new"></span></a>
-          </li>
-        </ul>
-      </div>
+    <div class="content__wrapper">
+        <div class="footer-row">
+            <div class="footer__logos">
+                <a href="https://www.bestinver.es">
+                    <img src="assets/images/content/logo-bestinver-white.png" class="" alt="Logo bestinver white" /></a>
+            </div>
+            <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
+            <div class="footer__rrss">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/company/bestinver/" target="_blank">
+                            <span class="icon-linkedin"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/BestinverAM" target="_blank">
+                            <span class="icon-youtube"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/bestinver" target="_blank">
+                            <span class="icon-twitter"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Bestinver/" target="_blank">
+                            <span class="icon-facebook"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.slideshare.net/Bestinver" target="_blank">
+                            <span class="icon-inslides-new"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-row">
+            <div class="footer__links">
+                <ul>
+                    <li><a href="https://www.bestinver.es/contacto/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Contacto','eventLabel':'mas digitales mismas decisiones'});">Contacto</a></li>
+                    <li><a href="https://www.bestinver.es/atencion-al-inversor/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Atención al inversor','eventLabel':'mas digitales mismas decisiones'});">Atención al inversor</a></li>
+                    <li><a href="https://www.bestinver.es/glosario-de-terminos/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Glosario de términos','eventLabel':'mas digitales mismas decisiones'});">Glosario de términos</a></li>
+                    <li><a href="https://www.bestinver.es/preguntas-frecuentes/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Preguntas frecuentes','eventLabel':'mas digitales mismas decisiones'});">Preguntas frecuentes</a></li>
+                    <li><a href="https://www.bestinver.es/aviso-legal/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Aviso legal','eventLabel':'mas digitales mismas decisiones'});">Aviso legal</a></li>
+                    <li><a href="https://www.bestinver.es/politica-de-privacidad/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Política de privacidad','eventLabel':'mas digitales mismas decisiones'});">Política de privacidad</a></li>
+                    <li><a href="https://www.bestinver.es/mapa-web/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Mapa web','eventLabel':'mas digitales mismas decisiones'});">Mapa web</a></li>
+                    <li><a href="https://www.bestinver.es/sociedad-de-valores/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Bestinver sv','eventLabel':'mas digitales mismas decisiones'});">Bestinver sv</a></li>
+                </ul>
+            </div>
+            <div class="footer__info">
+                <div>
+                    <p>&copy; Bestinver 2018</p>
+                    <p class="num-reg">Nº Registro CNMV: 103</p>
+                </div>
+                <img src="assets/images/content/cnmv.png" class="" width="45" alt="Cnmv" />
+            </div>
+        </div>
     </div>
-    <div class="footer-row">
-      <div class="footer__links">
-        <ul>
-          <li><a href="https://www.bestinver.es/contacto/">Contacto</a></li>
-          <li><a href="https://www.bestinver.es/atencion-al-inversor/">Atención al inversor</a></li>
-          <li><a href="https://www.bestinver.es/glosario-de-terminos/">Glosario de términos</a></li>
-          <li><a href="https://www.bestinver.es/preguntas-frecuentes/">Preguntas frecuentes</a></li>
-          <li><a href="https://www.bestinver.es/aviso-legal/">Aviso legal</a></li>
-          <li><a href="https://www.bestinver.es/politica-de-privacidad/">Política de privacidad</a></li>
-          <li><a href="https://www.bestinver.es/mapa-web/">Mapa web</a></li>
-          <li><a href="https://www.bestinver.es/sociedad-de-valores/">Bestinver sv</a></li>
-        </ul>
-      </div>
-      <div class="footer__info">
-          <div>
-            <p>&copy; Bestinver 2018</p>
-            <p class="num-reg">Nº Registro CNMV: 103</p>
-          </div>
-          <img src="assets/images/content/cnmv.png" class="" width="45" alt="Cnmv" />
-      </div>
-    </div>
-  </div>
 </footer>
 
+    <script>
+       
+       
+       
+       
 
+      DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'mas digitales mismas decisiones',
+        'Nivel de contenido4': '-',
+      }); 
+    </script>
     </div>
   </body>
 </html>

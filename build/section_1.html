@@ -9,6 +9,45 @@
     <title>Observatorio</title>
     <meta name="title" content="Observatorio">
     <link href="assets/stylesheets/stylesheets.css" rel="stylesheet" />
+    <script>
+      window.DigitalData = window.DigitalData || [];
+    </script>
+    <script src="//assets.adobedtm.com/launch-EN2267055cc3114071b44e48093e6f41e3.min.js"></script>
+    <script>
+     
+        var d = new Date();
+        var n = d.getDay();
+        var days = ['Domingo','Lunes', 'Martes','Miercoles','Jueves','Viernes','Sabado'];
+        var weekDay = days[ n ];
+        var typeOfDay = ( n == 0 || n == 6 ) ? 'weekend':'week' ;
+        function deviceOS() {
+          var useragent = navigator.userAgent;
+          
+          if(useragent.match(/Android/i)) {
+                return 'mobile';  //return 'android';
+            } else if(useragent.match(/webOS/i)) {
+                return 'mobile';  //return 'webos';
+            } else if(useragent.match(/iPhone/i)) {
+                return 'mobile';  //return 'iphone';
+            } else if(useragent.match(/iPod/i)) {
+                return 'mobile';  //return 'ipod';
+            } else if(useragent.match(/iPad/i)) {
+                return 'mobile';  //return 'ipad';
+            } else if(useragent.match(/Windows Phone/i)) {
+                return 'mobile';  //return 'windows phone';
+            } else if(useragent.match(/SymbianOS/i)) {
+                return 'mobile';  //return 'symbian';
+            } else if(useragent.match(/RIM/i) || useragent.match(/BB/i)) {
+                return 'mobile';  //return 'blackberry';
+            } else {
+                return 'desktop';
+            }
+        }
+
+        var device = deviceOS();
+        var date = new Date();
+        var localeTime =  d.toLocaleTimeString();
+    </script>
     <script src="assets/javascript/all.fn.js"></script><script src="assets/javascript/all.js"></script>
   </head>
   <body>
@@ -34,7 +73,10 @@
       </li>
     </ul>
   </div>
-  <a href="https://www.bestinver.es" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+  <a  href="https://www.bestinver.es" class="btn_header" 
+      onclick="DigitalData.push({'event':  'event','eventCategory':'ir a bestinver','eventAction': 'productos de inversion nada nuevo en el horizonte','eventLabel':  ''});" >
+      Ir a Bestinver.es <span class="icon-arrow-right"></span>
+  </a>
 
 
   <button class="btn_menu_mobile"><span class="hamburguer-menu"></span></button>
@@ -69,7 +111,7 @@
 <div class="hero_section" style="background-image: url(../assets/images/content/hero_1.jpg);">
   <div class="hero_section_content">
     <h1 class="page_title">Productos de inversión: más oferta pero sin cambios sustanciales</h1>
-    <a href="index.html" class="link_back"><span class="icon-arrow-left"></span>Inicio</a>
+<a href="index.html" class="link_back" onclick="DigitalData.push({'event':  'event','eventCategory':'ir a inicio','eventAction': 'productos de inversion nada nuevo en el horizonte','eventLabel':  ''});" ><span class="icon-arrow-left"></span>Inicio</a>
   </div>
 </div>
   <div class="cnt-intro">
@@ -105,9 +147,9 @@
       <button type="button" class="btn btn--secondary btn-share hide-on-mobile">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-linkedin"></a>
-          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-facebook"></a>
-          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-twitter"></a>
+          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': 'productos de inversion nada nuevo en el horizonte' });" ></a>
+          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': 'productos de inversion nada nuevo en el horizonte' });"></a>
+          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': 'productos de inversion nada nuevo en el horizonte' });"></a>
         </span>
       </button>
     </div>
@@ -120,7 +162,8 @@
     <p class="download_content_subtitle">Descarga el informe completo</p>
     <div class="download_content_form">
       <input type="text" name="email" id="email" class="download_content_form_input" placeholder="Introduce tu email" />
-      <input type="submit" name="download" value="descargar" class="btn" />
+      <input type="submit" name="download" value="descargar" class="btn" 
+        onclick="DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'productos de inversion nada nuevo en el horizonte'});" />
     </div>
     <div class="legal">
       <input type="checkbox" name="check-legal" id="check-legal" />
@@ -134,7 +177,8 @@
 <div class="sections_nav">
     <span class="sections_nav_link prev disabled   hide-on-mobile ">
     </span>
-    <a href="/section_2.html" class="sections_nav_link next">
+    <a href="/section_2.html" class="sections_nav_link next"   
+      onclick="DigitalData.push({'event':  'event','eventCategory':'cambio de seccion','eventAction': 'siguiente seccion','eventLabel': 'Más digitales, mismos bancos, mismas inversiones'});" >
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">siguiente sección</span>
         <span class="sections_nav_link_section">Más digitales, mismos bancos, mismas inversiones</span>
@@ -142,59 +186,96 @@
     </a>
 </div>
 </div>
+
 <footer class="footer ">
-  <div class="content__wrapper">
-    <div class="footer-row">
-      <div class="footer__logos">
-        <a href="https://www.bestinver.es">
-          <img src="assets/images/content/logo-bestinver-white.png" class="" alt="Logo bestinver white" /></a>
-      </div>
-      <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
-      <div class="footer__rrss">
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/company/bestinver/" target="_blank"><span class="icon-linkedin"></span></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/BestinverAM" target="_blank"><span class="icon-youtube"></span></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/bestinver" target="_blank"><span class="icon-twitter"></span></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/Bestinver/" target="_blank"><span class="icon-facebook"></span></a>
-          </li>
-          <li>
-            <a href="https://www.slideshare.net/Bestinver" target="_blank"><span class="icon-inslides-new"></span></a>
-          </li>
-        </ul>
-      </div>
+    <div class="content__wrapper">
+        <div class="footer-row">
+            <div class="footer__logos">
+                <a href="https://www.bestinver.es">
+                    <img src="assets/images/content/logo-bestinver-white.png" class="" alt="Logo bestinver white" /></a>
+            </div>
+            <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
+            <div class="footer__rrss">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/company/bestinver/" target="_blank">
+                            <span class="icon-linkedin"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/BestinverAM" target="_blank">
+                            <span class="icon-youtube"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/bestinver" target="_blank">
+                            <span class="icon-twitter"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Bestinver/" target="_blank">
+                            <span class="icon-facebook"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.slideshare.net/Bestinver" target="_blank">
+                            <span class="icon-inslides-new"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-row">
+            <div class="footer__links">
+                <ul>
+                    <li><a href="https://www.bestinver.es/contacto/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Contacto','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Contacto</a></li>
+                    <li><a href="https://www.bestinver.es/atencion-al-inversor/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Atención al inversor','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Atención al inversor</a></li>
+                    <li><a href="https://www.bestinver.es/glosario-de-terminos/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Glosario de términos','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Glosario de términos</a></li>
+                    <li><a href="https://www.bestinver.es/preguntas-frecuentes/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Preguntas frecuentes','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Preguntas frecuentes</a></li>
+                    <li><a href="https://www.bestinver.es/aviso-legal/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Aviso legal','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Aviso legal</a></li>
+                    <li><a href="https://www.bestinver.es/politica-de-privacidad/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Política de privacidad','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Política de privacidad</a></li>
+                    <li><a href="https://www.bestinver.es/mapa-web/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Mapa web','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Mapa web</a></li>
+                    <li><a href="https://www.bestinver.es/sociedad-de-valores/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Bestinver sv','eventLabel':'productos de inversion nada nuevo en el horizonte'});">Bestinver sv</a></li>
+                </ul>
+            </div>
+            <div class="footer__info">
+                <div>
+                    <p>&copy; Bestinver 2018</p>
+                    <p class="num-reg">Nº Registro CNMV: 103</p>
+                </div>
+                <img src="assets/images/content/cnmv.png" class="" width="45" alt="Cnmv" />
+            </div>
+        </div>
     </div>
-    <div class="footer-row">
-      <div class="footer__links">
-        <ul>
-          <li><a href="https://www.bestinver.es/contacto/">Contacto</a></li>
-          <li><a href="https://www.bestinver.es/atencion-al-inversor/">Atención al inversor</a></li>
-          <li><a href="https://www.bestinver.es/glosario-de-terminos/">Glosario de términos</a></li>
-          <li><a href="https://www.bestinver.es/preguntas-frecuentes/">Preguntas frecuentes</a></li>
-          <li><a href="https://www.bestinver.es/aviso-legal/">Aviso legal</a></li>
-          <li><a href="https://www.bestinver.es/politica-de-privacidad/">Política de privacidad</a></li>
-          <li><a href="https://www.bestinver.es/mapa-web/">Mapa web</a></li>
-          <li><a href="https://www.bestinver.es/sociedad-de-valores/">Bestinver sv</a></li>
-        </ul>
-      </div>
-      <div class="footer__info">
-          <div>
-            <p>&copy; Bestinver 2018</p>
-            <p class="num-reg">Nº Registro CNMV: 103</p>
-          </div>
-          <img src="assets/images/content/cnmv.png" class="" width="45" alt="Cnmv" />
-      </div>
-    </div>
-  </div>
 </footer>
 
+    <script>
+       
+       
+       
+       
 
+      DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': 'productos de inversion nada nuevo en el horizonte' ,
+        'Nivel de contenido4': '-',
+      }); 
+    </script>
     </div>
   </body>
 </html>

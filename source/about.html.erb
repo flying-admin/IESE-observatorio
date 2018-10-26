@@ -25,8 +25,6 @@ layout: layout
     :extra_classes => ''
   }) %>
 
-  
-
   <%= partial("modules/download", :locals => {
     :extra_classes => '',
     :page_name =>'sobre el informe' ,
@@ -34,10 +32,10 @@ layout: layout
 </div>
 <%= partial("shared/footer" ,:locals => { :page_name =>'sobre el informe' }) %>
     <script>
-       console.log('tipo de dispositivo', device );
-       console.log('hora', localeTime );
-       console.log('dia de la semana', weekDay );
-       console.log('tipo de dia de la semana', typeOfDay );
+       
+       
+       
+       
 
       DigitalData.push({
         'event': 'pageview',

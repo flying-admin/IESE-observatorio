@@ -3,8 +3,10 @@ title: Proyect Index
 layout: layout
 ---
 
+
 <%= partial("shared/header", :locals => {
-  :extra_classes => 'bg-transparent'
+  :extra_classes => 'bg-transparent',
+  :page_name =>'sobre el informe',
 }) %>
 
 <div class="content__wrapper">
@@ -26,7 +28,33 @@ layout: layout
   
 
   <%= partial("modules/download", :locals => {
-    :extra_classes => ''
+    :extra_classes => '',
+    :page_name =>'sobre el informe' ,
   }) %>
 </div>
-<%= partial("shared/footer") %>
+<%= partial("shared/footer" ,:locals => { :page_name =>'sobre el informe' }) %>
+    <script>
+       console.log('tipo de dispositivo', device );
+       console.log('hora', localeTime );
+       console.log('dia de la semana', weekDay );
+       console.log('tipo de dia de la semana', typeOfDay );
+
+      DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3':'sobre el informe' ,
+        'Nivel de contenido4': '-',
+      }); 
+    </script>
+

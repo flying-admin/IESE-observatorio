@@ -3,8 +3,10 @@ title: Proyect Index
 layout: layout
 ---
 
+<% page_name = 'portada' %>
 <%= partial("shared/header", :locals => {
-  :extra_classes => 'bg-transparent header-home'
+  :extra_classes => 'bg-transparent header-home',
+  :page_name => page_name,
 }) %>
 
 <div class="content__wrapper">
@@ -18,7 +20,7 @@ layout: layout
   }) %>
 
 
-  <div class="home_block prod fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in" id="index1">
+  <div class="home_block prod fp_animate fp_animate--transition-medium fp_animate--fadeInRight fp_animate--top-in" id="index1" >
     <div class="home_block_big" style="background-image: url('./assets/images/content/seccion1_home.jpg');">
       <div class="home_block_big_content">
         <p class="home_block_title">Productos de inversión: más oferta pero sin cambios sustanciales</p>
@@ -74,7 +76,33 @@ layout: layout
   </div>
 
   <%= partial("modules/download", :locals => {
-    :extra_classes => ''
+    :extra_classes => '',
+    :page_name => page_name,
   }) %>
 </div>
-<%= partial("shared/footer") %>
+<%= partial("shared/footer" ,:locals => { :page_name => page_name }) %>
+    <script>
+       console.log('tipo de dispositivo', device );
+       console.log('hora', localeTime );
+       console.log('dia de la semana', weekDay );
+       console.log('tipo de dia de la semana', typeOfDay );
+
+      DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'home observatorio',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': <%= page_name %>,
+        'Nivel de contenido4': '-',
+      }); 
+      
+    </script>

@@ -8,6 +8,45 @@
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Project Name" %></title>
     <%= stylesheet_link_tag("stylesheets") %>
+    <script>
+      window.DigitalData = window.DigitalData || [];
+    </script>
+    <script src="//assets.adobedtm.com/launch-EN2267055cc3114071b44e48093e6f41e3.min.js"></script>
+    <script>
+     
+        var d = new Date();
+        var n = d.getDay();
+        var days = ['Domingo','Lunes', 'Martes','Miercoles','Jueves','Viernes','Sabado'];
+        var weekDay = days[ n ];
+        var typeOfDay = ( n == 0 || n == 6 ) ? 'weekend':'week' ;
+        function deviceOS() {
+          var useragent = navigator.userAgent;
+          
+          if(useragent.match(/Android/i)) {
+                return 'mobile';  //return 'android';
+            } else if(useragent.match(/webOS/i)) {
+                return 'mobile';  //return 'webos';
+            } else if(useragent.match(/iPhone/i)) {
+                return 'mobile';  //return 'iphone';
+            } else if(useragent.match(/iPod/i)) {
+                return 'mobile';  //return 'ipod';
+            } else if(useragent.match(/iPad/i)) {
+                return 'mobile';  //return 'ipad';
+            } else if(useragent.match(/Windows Phone/i)) {
+                return 'mobile';  //return 'windows phone';
+            } else if(useragent.match(/SymbianOS/i)) {
+                return 'mobile';  //return 'symbian';
+            } else if(useragent.match(/RIM/i) || useragent.match(/BB/i)) {
+                return 'mobile';  //return 'blackberry';
+            } else {
+                return 'desktop';
+            }
+        }
+
+        var device = deviceOS();
+        var date = new Date();
+        var localeTime =  d.toLocaleTimeString();
+    </script>
     <%= javascript_include_tag("all.fn", "all") %>
   </head>
   <body>

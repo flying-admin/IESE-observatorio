@@ -7,7 +7,8 @@
 %>
 
 <div class="sections_nav">
-  <a href="<%= prev_url %>" class="sections_nav_link prev  <% if prev_title == "" %> hide-on-mobile <% end %>">
+  <a href="<%= prev_url %>" class="sections_nav_link prev  <% if prev_title == "" %> hide-on-mobile <% end %>" 
+  onclick="DigitalData.push({'event':  'event','eventCategory':'cambio de seccion','eventAction': 'anterior seccion','eventLabel': '<%= prev_title %>'});" >
     <% if prev_title != "" %>
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">sección anterior</span>
@@ -15,7 +16,8 @@
       </span>
     <% end %>
   </a>
-  <a href="<%= next_url %>" class="sections_nav_link next">
+  <a href="<%= next_url %>" class="sections_nav_link next" 
+    onclick="DigitalData.push({'event':  'event','eventCategory':'cambio de seccion','eventAction': 'siguiente seccion','eventLabel': '<%= next_title %>'});" >
     <% if next_title != "" %>
       <span class="sections_nav_link_wrap">
         <span class="sections_nav_link_title">siguiente sección</span>

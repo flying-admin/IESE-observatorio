@@ -3,8 +3,10 @@ title: Proyect Index
 layout: layout
 ---
 
+<% page_name = 'contratacion a sabiendas sin saber' %>
 <%= partial("shared/header", :locals => {
-  :extra_classes => 'bg-transparent'
+  :extra_classes => 'bg-transparent',
+  :page_name => page_name
 }) %>
 
 <div class="content__wrapper">
@@ -13,7 +15,8 @@ layout: layout
     :extra_classes => '',
     :title => 'Contratación a sabiendas, sin saber',
     :image => 'hero_4.jpg',
-    :extra_content=> "4"
+    :extra_content=> "4",
+    :page_name => page_name
   }) %>
   <div class="know_block sect1 fp_animate fp_animate--transition-medium fp_animate--fadeInDown fp_animate--middle-in">
     <div class="know_block_content">
@@ -24,9 +27,9 @@ layout: layout
       <button type="button" class="btn btn--secondary btn-share hide-on-mobile">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" class="sz sz-linkedin"></a>
-          <a href="#" class="sz sz-facebook"></a>
-          <a href="#" class="sz sz-twitter"></a>
+          <a href="#" class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
+          <a href="#" class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
         </span>
       </button>
     </div>
@@ -76,8 +79,8 @@ layout: layout
   </div>
 
   <%= partial("modules/download", :locals => {
-    :extra_classes => 'bg-white'
-  }) %>
+    :extra_classes => 'bg-white',
+    :page_name => page_name }) %>
 
   <%= partial("modules/sections_nav", :locals => {
     :extra_classes => '',
@@ -86,4 +89,28 @@ layout: layout
     :next_title => ''
   }) %>
 </div>
-<%= partial("shared/footer") %>
+<%= partial("shared/footer" ,:locals => { :page_name => page_name } ) %>
+    <script>
+       console.log('tipo de dispositivo', device );
+       console.log('hora', localeTime );
+       console.log('dia de la semana', weekDay );
+       console.log('tipo de dia de la semana', typeOfDay );
+
+      DigitalData.push({
+        'event': 'pageview',
+        'ModoWeb': device, //'<desktop | movil>',
+        'Idioma': '',
+        'Hora': localeTime, //'<HH:MM:SS>',
+        'Dia de la semana':  weekDay , //'<lunes|martes|...|sabado|domingo>',
+        'Tipologia del dia de la semana': typeOfDay ,//'<week|weekend>',
+        'Fecha publicacion': '-',
+        'Pagina no encontrada': '-',
+        'Pagina anterior': '-',
+        'Referente': '-',
+        'Tipo de pagina': 'contenido',
+        'Nivel de contenido1': 'area publica',
+        'Nivel de contenido2': 'observatorio',
+        'Nivel de contenido3': ''<%= page_name %>'' ,
+        'Nivel de contenido4': '-',
+      }); 
+    </script>

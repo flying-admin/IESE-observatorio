@@ -1,5 +1,6 @@
 <%
   extra_classes ||= ''
+  page_name ||= ''
 %>
 <header class="header <%= extra_classes %>" id="menu">
 
@@ -22,7 +23,10 @@
       </li>
     </ul>
   </div>
-  <a href="https://www.bestinver.es" class="btn_header">Ir a Bestinver.es <span class="icon-arrow-right"></span></a>
+  <a  href="https://www.bestinver.es" class="btn_header" 
+      onclick="DigitalData.push({'event':  'event','eventCategory':'ir a bestinver','eventAction': '<%= page_name %>','eventLabel':  ''});" >
+      Ir a Bestinver.es <span class="icon-arrow-right"></span>
+  </a>
 
 
   <button class="btn_menu_mobile"><span class="hamburguer-menu"></span></button>

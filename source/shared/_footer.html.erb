@@ -1,54 +1,69 @@
 <%
   extra_classes ||= ''
+  page_name ||= ''
 %>
+
 <footer class="footer <%= extra_classes %>">
-  <div class="content__wrapper">
-    <div class="footer-row">
-      <div class="footer__logos">
-        <a href="https://www.bestinver.es">
-          <%= image_tag("content/logo-bestinver-white.png", :class => '') %></a>
-      </div>
-      <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
-      <div class="footer__rrss">
-        <ul>
-          <li>
-            <a href="https://www.linkedin.com/company/bestinver/" target="_blank"><span class="icon-linkedin"></span></a>
-          </li>
-          <li>
-            <a href="https://www.youtube.com/user/BestinverAM" target="_blank"><span class="icon-youtube"></span></a>
-          </li>
-          <li>
-            <a href="https://twitter.com/bestinver" target="_blank"><span class="icon-twitter"></span></a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/Bestinver/" target="_blank"><span class="icon-facebook"></span></a>
-          </li>
-          <li>
-            <a href="https://www.slideshare.net/Bestinver" target="_blank"><span class="icon-inslides-new"></span></a>
-          </li>
-        </ul>
-      </div>
+    <div class="content__wrapper">
+        <div class="footer-row">
+            <div class="footer__logos">
+                <a href="https://www.bestinver.es">
+                    <%= image_tag("content/logo-bestinver-white.png", :class => '') %></a>
+            </div>
+            <p class="mail"><span class="icon-mail-1"></span> bestinver@bestinver.es</p>
+            <div class="footer__rrss">
+                <ul>
+                    <li>
+                        <a href="https://www.linkedin.com/company/bestinver/" target="_blank">
+                            <span class="icon-linkedin"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/BestinverAM" target="_blank">
+                            <span class="icon-youtube"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/bestinver" target="_blank">
+                            <span class="icon-twitter"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/Bestinver/" target="_blank">
+                            <span class="icon-facebook"></span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.slideshare.net/Bestinver" target="_blank">
+                            <span class="icon-inslides-new"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-row">
+            <div class="footer__links">
+                <ul>
+                    <li><a href="https://www.bestinver.es/contacto/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Contacto','eventLabel':'<%= page_name %>'});">Contacto</a></li>
+                    <li><a href="https://www.bestinver.es/atencion-al-inversor/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Atención al inversor','eventLabel':'<%= page_name %>'});">Atención al inversor</a></li>
+                    <li><a href="https://www.bestinver.es/glosario-de-terminos/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Glosario de términos','eventLabel':'<%= page_name %>'});">Glosario de términos</a></li>
+                    <li><a href="https://www.bestinver.es/preguntas-frecuentes/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Preguntas frecuentes','eventLabel':'<%= page_name %>'});">Preguntas frecuentes</a></li>
+                    <li><a href="https://www.bestinver.es/aviso-legal/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Aviso legal','eventLabel':'<%= page_name %>'});">Aviso legal</a></li>
+                    <li><a href="https://www.bestinver.es/politica-de-privacidad/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Política de privacidad','eventLabel':'<%= page_name %>'});">Política de privacidad</a></li>
+                    <li><a href="https://www.bestinver.es/mapa-web/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Mapa web','eventLabel':'<%= page_name %>'});">Mapa web</a></li>
+                    <li><a href="https://www.bestinver.es/sociedad-de-valores/" 
+                      onclick="DigitalData.push({'event':'event' ,'eventCategory':'footer','eventAction':'Bestinver sv','eventLabel':'<%= page_name %>'});">Bestinver sv</a></li>
+                </ul>
+            </div>
+            <div class="footer__info">
+                <div>
+                    <p>&copy; Bestinver 2018</p>
+                    <p class="num-reg">Nº Registro CNMV: 103</p>
+                </div>
+                <%= image_tag("content/cnmv.png", :class => '',:width => 45) %>
+            </div>
+        </div>
     </div>
-    <div class="footer-row">
-      <div class="footer__links">
-        <ul>
-          <li><a href="https://www.bestinver.es/contacto/">Contacto</a></li>
-          <li><a href="https://www.bestinver.es/atencion-al-inversor/">Atención al inversor</a></li>
-          <li><a href="https://www.bestinver.es/glosario-de-terminos/">Glosario de términos</a></li>
-          <li><a href="https://www.bestinver.es/preguntas-frecuentes/">Preguntas frecuentes</a></li>
-          <li><a href="https://www.bestinver.es/aviso-legal/">Aviso legal</a></li>
-          <li><a href="https://www.bestinver.es/politica-de-privacidad/">Política de privacidad</a></li>
-          <li><a href="https://www.bestinver.es/mapa-web/">Mapa web</a></li>
-          <li><a href="https://www.bestinver.es/sociedad-de-valores/">Bestinver sv</a></li>
-        </ul>
-      </div>
-      <div class="footer__info">
-          <div>
-            <p>&copy; Bestinver 2018</p>
-            <p class="num-reg">Nº Registro CNMV: 103</p>
-          </div>
-          <%= image_tag("content/cnmv.png", :class => '',:width => 45) %>
-      </div>
-    </div>
-  </div>
 </footer>

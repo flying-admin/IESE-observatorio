@@ -562,32 +562,39 @@ $(window).on("load", function(){
   $('.download_content_form .btn').on('click', function(ev) {
     ev.preventDefault();
 
+    var downloadContentEl = $(this).closest('.download_content');
+    downloadContentEl.find('.error').text('').hide();
     var email = $(".download_content_form .download_content_form_input").val();
     var isValid = validateEmail(email);
-      
-    if( isValid ) {
-      console.log('email válido');
-      pdfData.email = $('.download_content_form .download_content_form_input').val();
-      pdfData.cusEstadoCliente = "Prospect";
-      pdfData.cusOrigen = "MKT";
-      pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
-      console.log(pdfData.email);
-      $.ajax({
-        method: 'POST',
-        dataType: "json",
-        contentType: "application/json",
-        url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
-        data: JSON.stringify(pdfData),
-        success: function(result, status, jqXHR) {
-          console.log('working');
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-          // console.log('aqui tendriamos que sacar un mensaje en el input de que no se ha podido guardar el correo');
-          console.log('error');
-        }
-      });
+    var legalChecked = $(".download_content #check-legal").is(':checked');
+    
+    if ( legalChecked ) {
+      if( isValid ) {
+        pdfData.email = $('.download_content_form .download_content_form_input').val();
+        pdfData.cusEstadoCliente = "Prospect";
+        pdfData.cusOrigen = "MKT";
+        pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
+        $.ajax({
+          method: 'POST',
+          dataType: "json",
+          contentType: "application/json",
+          url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
+          data: JSON.stringify(pdfData),
+          success: function(result, status, jqXHR) {
+            console.log('working');
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            var errorMsg = downloadContentEl.find('.error').data('ajax-error');
+            downloadContentEl.find('.error').text(errorMsg).show();
+          }
+        });
+      } else {
+        var errorMsg = downloadContentEl.find('.error').data('mail-error');
+        downloadContentEl.find('.error').text(errorMsg).show();
+      }
     } else {
-      console.log('email NO válido');
+      var errorMsg = downloadContentEl.find('.error').data('legal-error');
+      downloadContentEl.find('.error').text(errorMsg).show();
     }
   });
 });

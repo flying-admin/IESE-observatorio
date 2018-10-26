@@ -5088,7 +5088,8 @@ body.no-scroll {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
-    text-align: center; }
+    text-align: center;
+    position: relative; }
     .download_content_title {
       font-weight: 800;
       font-size: 16px;
@@ -5175,6 +5176,13 @@ body.no-scroll {
       @media (max-width: 767px) {
         .download_content .legal {
           padding: 0 16px 0 38px; } }
+    .download_content .error {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+      color: #DF040B;
+      font-size: 18px; }
   .download.bg-white {
     background-color: #fff; }
 
@@ -5999,6 +6007,8 @@ body.no-scroll {
         color: #fff; }
       .sections_nav_link:hover .sections_nav_link_wrap::before {
         color: #fff; }
+    .sections_nav_link.disabled {
+      pointer-events: none; }
   .sections_nav:before {
     content: '';
     display: block;

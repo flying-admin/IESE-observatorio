@@ -1,5 +1,5 @@
 ---
-title: Proyect Index
+title: Observatorio
 layout: layout
 ---
 
@@ -38,9 +38,9 @@ layout: layout
       <button type="button" class="btn btn--secondary btn-share hide-on-mobile">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
-          <a href="#" class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
-          <a href="#" class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
+          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" data-title="En la última década, el comportamiento de los inversores más jóvenes ha cambiado: el porcentaje de los que tienen una vivienda en propiedad ha disminuido del 60% al 27%, según datos del INE de 2017." class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
         </span>
       </button>
     </div>
@@ -53,9 +53,8 @@ layout: layout
 
   <%= partial("modules/sections_nav", :locals => {
     :extra_classes => '',
-    :prev_title => '',
     :next_title => 'Más digitales, mismos bancos, mismas inversiones',
-    :next_url => '/section_2/'
+    :next_url => '/section_2.html'
   }) %>
 </div>
 <%= partial("shared/footer") %>

@@ -1,5 +1,5 @@
 ---
-title: Proyect Index
+title: Observatorio
 layout: layout
 ---
 
@@ -46,9 +46,9 @@ layout: layout
       <button type="button" class="btn btn--secondary btn-share">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
-          <a href="#" class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
-          <a href="#" class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" data-title="El inversor español comienza a preocuparse por su jubilación cuando le quedan apenas 10 años para esta. Quienes se preocupan por la jubilación son inversores de más de 54 años, con un índice socioeconómico alto, que tiende a una mayor contratación de planes de pensiones o seguros de ahorro." class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
+          <a href="#" data-title="El inversor español comienza a preocuparse por su jubilación cuando le quedan apenas 10 años para esta. Quienes se preocupan por la jubilación son inversores de más de 54 años, con un índice socioeconómico alto, que tiende a una mayor contratación de planes de pensiones o seguros de ahorro." class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" data-title="El inversor español comienza a preocuparse por su jubilación cuando le quedan apenas 10 años para esta. Quienes se preocupan por la jubilación son inversores de más de 54 años, con un índice socioeconómico alto, que tiende a una mayor contratación de planes de pensiones o seguros de ahorro." class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
         </span>
       </button>
     </div>
@@ -73,9 +73,9 @@ layout: layout
   <%= partial("modules/sections_nav", :locals => {
     :extra_classes => '',
     :prev_title => 'Más digitales, mismos bancos, mismas inversiones',
-    :prev_url => '/section_2/',
+    :prev_url => '/section_2.html',
     :next_title => 'Contratación a sabiendas, sin saber',
-    :next_url => '/section_4/'
+    :next_url => '/section_4.html'
   }) %>
 </div>
 <%= partial("shared/footer" ,:locals => { :page_name => page_name }) %>

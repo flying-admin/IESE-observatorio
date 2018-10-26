@@ -1,5 +1,5 @@
 ---
-title: Proyect Index
+title: Observatorio
 layout: layout
 ---
 
@@ -53,9 +53,9 @@ layout: layout
       <button type="button" class="btn btn--secondary btn-share ">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
-          <a href="#" class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
-          <a href="#" class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" class="sz sz-linkedin" data-title="Observatorio" data-desc="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación." onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
+          <a href="#" class="sz sz-facebook" data-title="Observatorio" data-desc="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación." onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" class="sz sz-twitter" data-title="El tiempo medio dedicado por el inversor español a la información económica es de 2,1 horas semanales, siendo la prensa online el principal medio de comunicación." onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
         </span>
       </button>
     </div>
@@ -71,9 +71,9 @@ layout: layout
   <%= partial("modules/sections_nav", :locals => {
     :extra_classes => '',
     :prev_title => 'Productos de inversión: más oferta pero sin cambios sustanciales',
-    :prev_url => '/section_1/',
+    :prev_url => '/section_1.html',
     :next_title => 'Ahorro insuficiente, inversión deficiente',
-    :next_url => '/section_3/'
+    :next_url => '/section_3.html'
   }) %>
 </div>
 <%= partial("shared/footer" ,:locals => { :page_name => page_name }) %>

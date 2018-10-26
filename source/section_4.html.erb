@@ -1,5 +1,5 @@
 ---
-title: Proyect Index
+title: Observatorio
 layout: layout
 ---
 
@@ -27,9 +27,9 @@ layout: layout
       <button type="button" class="btn btn--secondary btn-share hide-on-mobile">
         Compartir
         <span class="share_wrap" data-socialize>
-          <a href="#" class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
-          <a href="#" class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
-          <a href="#" class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" data-title="1 de cada 3 inversores no analiza la oferta de productos financieros del mercado. Se ciñe, en general, a la oferta común de las entidades bancarias." class="sz sz-linkedin" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'linkedin','eventLabel': '<%= page_name %>' });" ></a>
+          <a href="#" data-title="1 de cada 3 inversores no analiza la oferta de productos financieros del mercado. Se ciñe, en general, a la oferta común de las entidades bancarias." class="sz sz-facebook" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'facebook','eventLabel': '<%= page_name %>' });"></a>
+          <a href="#" data-title="1 de cada 3 inversores no analiza la oferta de productos financieros del mercado. Se ciñe, en general, a la oferta común de las entidades bancarias." class="sz sz-twitter" onclick="DigitalData.push({'event':'event' ,'eventCategory':'compartir rrss','eventAction':'twitter','eventLabel': '<%= page_name %>' });"></a>
         </span>
       </button>
     </div>
@@ -85,8 +85,7 @@ layout: layout
   <%= partial("modules/sections_nav", :locals => {
     :extra_classes => '',
     :prev_title => 'Ahorro insuficiente, inversión deficiente',
-    :prev_url => '/section_3/',
-    :next_title => ''
+    :prev_url => '/section_3.html'
   }) %>
 </div>
 <%= partial("shared/footer" ,:locals => { :page_name => page_name } ) %>

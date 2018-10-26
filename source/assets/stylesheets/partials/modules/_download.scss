@@ -11,6 +11,7 @@
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
     &_title {
       font-weight: 800;
       font-size: 16px;
@@ -94,6 +95,14 @@
       @include media("<phablet") {
         padding: 0 16px 0 38px;
        }
+    }
+    .error {
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+      color: $red;
+      font-size: 18px;
     }
   }
   &.bg-white {

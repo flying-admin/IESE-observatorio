@@ -10,7 +10,7 @@ config[:https] = false
 
 # activate :gzip
 activate :sprockets
-activate :directory_indexes
+# activate :directory_indexes
 activate :autoprefixer do |config|
   config.browsers = ['last 2 versions', 'Explorer >= 9']
 end

@@ -581,7 +581,7 @@ $(window).on("load", function(){
         success: function(result, status, jqXHR) {
           console.log('working');
         },
-        error(jqXHR, textStatus, errorThrown) {
+        error: function(jqXHR, textStatus, errorThrown) {
           // console.log('aqui tendriamos que sacar un mensaje en el input de que no se ha podido guardar el correo');
           console.log('error');
         }

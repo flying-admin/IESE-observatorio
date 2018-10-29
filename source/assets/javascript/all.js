@@ -559,6 +559,38 @@ $(window).on("load", function(){
     return re.test(email);
   }
 
+  function SaveToDisk(fileURL, fileName) {
+    // for non-IE
+    if (!window.ActiveXObject) {
+      var save = document.createElement('a');
+      save.href = fileURL;
+      save.target = '_blank';
+      save.download = fileName || 'unknown';
+
+      try {
+        var evt = new MouseEvent('click', {
+          'view': window,
+          'bubbles': true,
+          'cancelable': false
+        });
+      } catch (e) {
+        window.open(fileURL, fileName);
+      }
+        
+      save.dispatchEvent(evt);
+
+      (window.URL || window.webkitURL).revokeObjectURL(save.href);
+    }
+
+    // for IE < 11
+    else if ( !! window.ActiveXObject && document.execCommand) {
+      var _window = window.open(fileURL, '_blank');
+      _window.document.close();
+      _window.document.execCommand('SaveAs', true, fileName || fileURL);
+      _window.close();
+    }
+  }
+
   $('.download_content_form .btn').on('click', function(ev) {
     ev.preventDefault();
 
@@ -567,6 +599,8 @@ $(window).on("load", function(){
     var email = $(".download_content_form .download_content_form_input").val();
     var isValid = validateEmail(email);
     var legalChecked = $(".download_content #check-legal").is(':checked');
+
+    var pdfUrl = 'https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf';
     
     if ( legalChecked ) {
       if( isValid ) {
@@ -581,7 +615,7 @@ $(window).on("load", function(){
           url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
-            console.log('working');
+            SaveToDisk(pdfUrl, 'observatorio-del-ahorro-y-la-inversion.pdf');
           },
           error: function(jqXHR, textStatus, errorThrown) {
             var errorMsg = downloadContentEl.find('.error').data('ajax-error');
@@ -596,6 +630,7 @@ $(window).on("load", function(){
       var errorMsg = downloadContentEl.find('.error').data('legal-error');
       downloadContentEl.find('.error').text(errorMsg).show();
     }
+
   });
 });
 

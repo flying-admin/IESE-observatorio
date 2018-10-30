@@ -73,7 +73,6 @@
       }
     }
     .legal {
-      max-width: 460px;
       margin: 0 auto;
       position: relative;
       padding-left: 22px;
@@ -91,6 +90,9 @@
         line-height: 13px;
         color: $blackish;
         text-align: left;
+        a {
+          color: $primary-text;
+        }
       }
       @include media("<phablet") {
         padding: 0 16px 0 38px;

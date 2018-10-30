@@ -560,35 +560,16 @@ $(window).on("load", function(){
   }
 
   function SaveToDisk(fileURL, fileName) {
-    // for non-IE
-    if (!window.ActiveXObject) {
-      var save = document.createElement('a');
-      save.href = fileURL;
-      save.target = '_blank';
-      save.download = fileName || 'unknown';
+    
+    const url = window.URL.createObjectURL(
+       new Blob([], {type: 'application/pdf'})
+      );
+    const link = document.createElement('a')
+    link.href = url;
+    link.setAttribute('download', fileName+'.pdf')
+    document.body.appendChild(link) || document.documentElement.appendChild(link)
+    link.click()
 
-      try {
-        var evt = new MouseEvent('click', {
-          'view': window,
-          'bubbles': true,
-          'cancelable': false
-        });
-      } catch (e) {
-        window.open(fileURL, fileName);
-      }
-        
-      save.dispatchEvent(evt);
-
-      (window.URL || window.webkitURL).revokeObjectURL(save.href);
-    }
-
-    // for IE < 11
-    else if ( !! window.ActiveXObject && document.execCommand) {
-      var _window = window.open(fileURL, '_blank');
-      _window.document.close();
-      _window.document.execCommand('SaveAs', true, fileName || fileURL);
-      _window.close();
-    }
   }
 
   $('.download_content_form .btn').on('click', function(ev) {
@@ -615,7 +596,7 @@ $(window).on("load", function(){
           url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
-            SaveToDisk(pdfUrl, 'observatorio-del-ahorro-y-la-inversion.pdf');
+            SaveToDisk(pdfUrl, 'observatorio-del-ahorro-y-la-inversion');
           },
           error: function(jqXHR, textStatus, errorThrown) {
             var errorMsg = downloadContentEl.find('.error').data('ajax-error');

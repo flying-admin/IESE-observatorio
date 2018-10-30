@@ -5176,7 +5176,8 @@ body.no-scroll {
       -webkit-box-pack: justify;
           -ms-flex-pack: justify;
               justify-content: space-between;
-      margin-bottom: 30px; }
+      margin-bottom: 30px;
+      position: relative; }
       @media (max-width: 767px) {
         .download_content_form {
           display: block;
@@ -5212,7 +5213,6 @@ body.no-scroll {
             width: 100%;
             margin-bottom: 20px; } }
     .download_content .legal {
-      max-width: 460px;
       margin: 0 auto;
       position: relative;
       padding-left: 22px; }
@@ -5229,16 +5229,18 @@ body.no-scroll {
         line-height: 13px;
         color: #242424;
         text-align: left; }
+        .download_content .legal label a {
+          color: #BA9868; }
       @media (max-width: 767px) {
         .download_content .legal {
           padding: 0 16px 0 38px; } }
     .download_content .error {
       position: absolute;
-      bottom: -40px;
+      bottom: -25px;
       left: 0;
       right: 0;
       color: #DF040B;
-      font-size: 18px; }
+      font-size: 13px; }
   .download.bg-white {
     background-color: #fff; }
 

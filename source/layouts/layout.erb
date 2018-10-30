@@ -8,6 +8,16 @@
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Project Name" %></title>
     <meta name="title" content="<%= current_page.data.title || "Observatorio" %>">
+
+
+    <meta property="og:site_name" content="<%= current_page.data.title || "Observatorio" %>"/>
+    <% if ( current_page.data.ogTitle ) %>
+        <meta property="og:title" content="<%= current_page.data.ogTitle %>"/>
+    <% end %>
+    <% if ( current_page.data.ogDescription ) %>
+        <meta property="og:description" content="<%= current_page.data.ogDescription %>"/>
+    <% end %>
+
     <%= stylesheet_link_tag("stylesheets") %>
     <script>
       window.DigitalData = window.DigitalData || [];

@@ -8,11 +8,11 @@ require 'fileutils'
 FileUtils.mkdir('log') unless File.exist?('log')
 ::Middleman::Logger.singleton("log/#{ENV['RACK_ENV']}.log")
 
-if ENV['RACK_ENV'] == 'production'
-  use Rack::Auth::Basic, "Restricted Area" do |username, password|
-    [username, password] == [ENV['HTTP_USER'], ENV['HTTP_PASS']]
-  end
-end
+# if ENV['RACK_ENV'] == 'production'
+#   use Rack::Auth::Basic, "Restricted Area" do |username, password|
+#     [username, password] == [ENV['HTTP_USER'], ENV['HTTP_PASS']]
+#   end
+# end
 
 app = ::Middleman::Application.new
 

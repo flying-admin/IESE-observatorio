@@ -67,6 +67,19 @@
           }
         }
       }
+      &:hover {
+        .sections_nav_link_wrap {
+          &:before {
+            left: 90px;
+            @include media("<desktop") {
+              left: 30px;
+            }
+            @include media("<phablet") {
+              left: 20px;
+            }
+          }
+        }
+      }
     }
     &.next {
       @include media("<phablet") {
@@ -93,15 +106,18 @@
           }
         }
       }
-    }
-    &:hover {
-      background-color: $primary-text;
-      .sections_nav_link_title,
-      .sections_nav_link_section {
-        color: $white;
-      }
-      .sections_nav_link_wrap::before {
-        color: $white;
+      &:hover {
+        .sections_nav_link_wrap {
+          &:before {
+            right: 90px;
+            @include media("<desktop") {
+              right: 30px;
+            }
+            @include media("<phablet") {
+              right: 20px;
+            }
+          }
+        }
       }
     }
     &.disabled {

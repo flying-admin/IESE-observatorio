@@ -53,6 +53,10 @@
         margin: 20px auto 0;
         display: block;
       }
+      .btn_val {
+        position: relative;
+        z-index: 2;
+      }
       .share_wrap {
         display: flex;
         opacity: 0;
@@ -93,10 +97,33 @@
           border-bottom: 11px solid transparent;
         }
       }
-      &:hover {
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        transition: all 0.3s cubic-bezier(0.43, 0.39, 0.23, 1.01);
         background-color: $primary-text;
-        border-color: $primary-text;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        transition: all 0.3s cubic-bezier(0.43, 0.39, 0.23, 1.01);
+        background-color: $white;
+      }
+      &:hover {
         color: $white;
+        &:after {
+          transform: scale(0);
+        }
       }
     }
   }

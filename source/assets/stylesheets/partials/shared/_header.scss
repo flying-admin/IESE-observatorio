@@ -93,7 +93,6 @@
           padding: 0 10px;
         }
         &:hover {
-          background-color: $white;
           color: $primary-text;
         }
       }
@@ -111,16 +110,48 @@
     text-transform: uppercase;
     text-align: center;
     background-color: $primary;
+    border: 1px solid $primary;
     text-decoration: none;
     transition: all 0.5s;
+    position: relative;
+    .btn_val {
+      position: relative;
+      z-index: 2;
+    }
     @include media("<desktop") {
       width: 200px;
     }
     @include media("<1024px") {
       display: none;
     }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transition: all 0.3s cubic-bezier(0.43, 0.39, 0.23, 1.01);
+      background-color: $white;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transition: all 0.3s cubic-bezier(0.43, 0.39, 0.23, 1.01);
+      background-color: $primary-text;
+    }
     &:hover {
-      background-color: $secondary;
+      color: $primary-text;
+      &:after {
+        transform: scale(0);
+      }
     }
   }
   .btn_menu_mobile {
@@ -212,8 +243,7 @@
         a {
           color: $black;
           &:hover {
-            background-color: $primary-text;
-            color: $white;
+            color: $primary-text;
           }
         }
       }
@@ -263,8 +293,7 @@
         a {
           color: $black;
           &:hover {
-            background-color: $primary-text;
-            color: $white;
+            color: $primary-text;
           }
         }
       }

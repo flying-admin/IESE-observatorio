@@ -15,6 +15,11 @@
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.5s;
+  position: relative;
+  .btn_val {
+    position: relative;
+    z-index: 2;
+  }
   &--block {
     display: block;
     width: 100%;
@@ -56,10 +61,35 @@
     }
   }
 
-  &:hover {
-    text-decoration: none;
-    background-color: $secondary;
-    border-color: $secondary;
+  &:not(input) {
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transition: all 0.3s cubic-bezier(0.43, 0.39, 0.23, 1.01);
+      background-color: $white;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      transition: all 0.3s cubic-bezier(0.43, 0.39, 0.23, 1.01);
+      background-color: $primary-text;
+    }
+    &:hover {
+      color: $primary-text;
+      &:after {
+        transform: scale(0);
+      }
+    }
   }
 }
 

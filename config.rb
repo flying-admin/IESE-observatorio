@@ -5,7 +5,7 @@ config[:js_dir] = "assets/javascript"
 config[:css_dir] = "assets/stylesheets"
 config[:fonts_dir] = "assets/fonts"
 config[:images_dir] = "assets/images"
-config[:host] = "https://www.projectname.com"
+config[:host] = "http://best-observatorio.herokuapp.com/"
 config[:https] = false
 
 # activate :gzip

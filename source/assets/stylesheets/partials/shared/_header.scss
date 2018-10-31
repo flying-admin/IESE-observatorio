@@ -384,6 +384,22 @@
           }
         }
       }
+      .btn_header {
+        display: block;
+        min-width: 0;
+        width: 78%;
+        height: 40px;
+        line-height: 40px;
+        position: fixed;
+        bottom: 0;
+        left: 22%;
+        right: 0;
+        .icon-arrow-right {
+          margin-left: 20px;
+          position: relative;
+          top: 1px;
+        }
+      }
     }
     &_overlay {
       display: none;

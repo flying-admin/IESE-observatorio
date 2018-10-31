@@ -54,6 +54,7 @@
       color: $blackish;
       width: 60%;
       max-width: 420px;
+      text-align: justify;
       @include media("<phablet") {
         width: 100%;
         max-width: none;

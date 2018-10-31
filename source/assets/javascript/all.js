@@ -81,6 +81,7 @@ $(window).on("load", function(){
     $(this).toggleClass('open');
     $('.mobile_menu_overlay').toggleClass('open');
     $('.mobile_menu').toggleClass('open');
+    $('body').toggleClass('no-scroll');
     if(!$('.mobile_menu').is('.open')) {
       $('.mobile_menu_content').fadeOut('fast');
     } else {

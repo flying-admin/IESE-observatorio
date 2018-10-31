@@ -5298,6 +5298,7 @@ body.no-scroll {
           .download_content .legal input {
             left: 16px; } }
       .download_content .legal label {
+        cursor: default;
         display: block;
         font-size: 11px;
         line-height: 13px;

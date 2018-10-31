@@ -193,6 +193,8 @@ body {
   text-align: right; }
 
 body.no-scroll {
+  position: fixed;
+  max-height: 100vh;
   overflow: hidden; }
 
 .relative {
@@ -650,8 +652,9 @@ body.no-scroll {
           width: auto;
           height: 29px; }
     .header .mobile_menu_menus {
-      min-height: calc(100vh - 29px - 30px);
-      padding: 70px 0; }
+      height: calc(100vh - 29px - 30px - 40px);
+      padding: 50px 0 0 0;
+      overflow-y: scroll; }
       .header .mobile_menu_menus .menu-list-gold li {
         margin-bottom: 25px; }
         .header .mobile_menu_menus .menu-list-gold li a {
@@ -676,6 +679,20 @@ body.no-scroll {
           color: #000;
           text-transform: uppercase;
           text-decoration: none; }
+      .header .mobile_menu_menus .btn_header {
+        display: block;
+        min-width: 0;
+        width: 78%;
+        height: 40px;
+        line-height: 40px;
+        position: fixed;
+        bottom: 0;
+        left: 22%;
+        right: 0; }
+        .header .mobile_menu_menus .btn_header .icon-arrow-right {
+          margin-left: 20px;
+          position: relative;
+          top: 1px; }
     .header .mobile_menu_overlay {
       display: none;
       position: absolute;

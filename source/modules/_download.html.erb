@@ -14,6 +14,7 @@
       <input type="text" name="email" id="email" class="download_content_form_input" placeholder="Introduce tu email" />
       <input type="submit" name="download" value="descargar" class="btn" 
         onclick="DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'});" />
+      <span class="loading" style="display: none;"><span class="loader"></span></span>
       <p class="error" style="display: none" data-mail-error="Por favor, introduzca un email válido" data-ajax-error="No se ha podido guardar su email" data-legal-error="Debe aceptar las condiciones"></p>
     </div>
     <div class="legal">

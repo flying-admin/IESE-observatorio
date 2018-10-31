@@ -70,7 +70,67 @@
         @include media("<phablet") {
           width: 100%;
           margin-bottom: 20px;
-         }
+        }
+      }
+      .loading {
+        background-color: $primary;
+        display: block;
+        position: absolute;
+        width: 224px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        @include media("<phablet") {
+          width: auto;
+          top: 84px;
+          left: 16px;
+          right: 16px;
+          bottom: 20px;
+        }
+        .loader {
+          display: block;
+          font-size: 10px;
+          margin: 12px auto;
+          text-indent: -9999em;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: $white;
+          background: -moz-linear-gradient(left, $white 10%, rgba($primary, 0) 42%);
+          background: -webkit-linear-gradient(left, $white 10%, rgba($primary, 0) 42%);
+          background: -o-linear-gradient(left, $white 10%, rgba($primary, 0) 42%);
+          background: -ms-linear-gradient(left, $white 10%, rgba($primary, 0) 42%);
+          background: linear-gradient(to right, $white 10%, rgba($primary, 0) 42%);
+          position: relative;
+          -webkit-animation: load3 1.4s infinite linear;
+          animation: load3 1.4s infinite linear;
+          -webkit-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          transform: translateZ(0);
+          &:before {
+            width: 50%;
+            height: 50%;
+            background: $white;
+            border-radius: 100% 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+          }
+          &:after {
+            background: $primary;
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            content: '';
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+          }
+        }
       }
     }
     .legal {
@@ -107,9 +167,34 @@
       color: $red;
       font-size: 13px;
       text-align: left;
+      @include media("<phablet") {
+        left: 16px;
+        right: 16px;
+      }
     }
   }
   &.bg-white {
     background-color: $white;
+  }
+}
+
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }

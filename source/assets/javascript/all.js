@@ -562,11 +562,12 @@ $(window).on("load", function(){
 
   function SaveToDisk(fileURL, fileName) {
     
-    const url = window.URL.createObjectURL(
-       new Blob([], {type: 'application/pdf'})
-      );
+    // const url = window.URL.createObjectURL(
+    //    new Blob([], {type: 'application/pdf'})
+    //   );
     const link = document.createElement('a')
-    link.href = url;
+    link.href = fileURL;
+    link.setAttribute('target', '_self')
     link.setAttribute('download', fileName+'.pdf')
     document.body.appendChild(link) || document.documentElement.appendChild(link)
     link.click()

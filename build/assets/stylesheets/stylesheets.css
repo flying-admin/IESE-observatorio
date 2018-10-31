@@ -4802,8 +4802,7 @@ body.no-scroll {
     -webkit-transition: all 0.5s;
     transition: all 0.5s; }
     .home_index_list li a:hover {
-      background-color: #BA9868;
-      color: #fff; }
+      color: #89704D; }
 .home_index_intro {
   width: 700px;
   padding: 40px;
@@ -5262,7 +5261,8 @@ body.no-scroll {
       left: 0;
       right: 0;
       color: #DF040B;
-      font-size: 13px; }
+      font-size: 13px;
+      text-align: left; }
   .download.bg-white {
     background-color: #fff; }
 
@@ -5868,6 +5868,10 @@ body.no-scroll {
         transition: opacity .5s;
         z-index: -1;
         pointer-events: none; }
+        @media (max-width: 767px) {
+          .know_block_content .btn .share_wrap {
+            top: 73px;
+            left: -50px; } }
         .know_block_content .btn .share_wrap.show {
           opacity: 1;
           z-index: unset;
@@ -5891,6 +5895,16 @@ body.no-scroll {
           border-right: 11px solid #fff;
           border-top: 11px solid transparent;
           border-bottom: 11px solid transparent; }
+          @media (max-width: 767px) {
+            .know_block_content .btn .share_wrap:after {
+              border-bottom: 11px solid #fff;
+              border-right: 11px solid transparent;
+              border-left: 11px solid transparent;
+              border-top: none;
+              top: -10px;
+              bottom: auto;
+              left: 0;
+              right: 0; } }
       .know_block_content .btn:before {
         content: '';
         position: absolute;
@@ -5920,7 +5934,9 @@ body.no-scroll {
               -ms-transform: scale(0);
                   transform: scale(0); }
   .know_block.sect1 {
-    background-color: transparent; }
+    background-color: transparent;
+    position: relative;
+    z-index: 2; }
     .know_block.sect1 .know_block_content {
       padding-left: 100px;
       padding-right: 100px; }

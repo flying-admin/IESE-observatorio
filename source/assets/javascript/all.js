@@ -567,7 +567,7 @@ $(window).on("load", function(){
     //   );
     const link = document.createElement('a')
     link.href = fileURL;
-    link.setAttribute('target', '_self')
+    link.setAttribute('target', '_blank')
     link.setAttribute('download', fileName+'.pdf')
     document.body.appendChild(link) || document.documentElement.appendChild(link)
     link.click()

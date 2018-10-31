@@ -583,7 +583,7 @@ $(window).on("load", function(){
     var isValid = validateEmail(email);
     var legalChecked = $(".download_content #check-legal").is(':checked');
 
-    var pdfUrl = 'https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf';
+    var pdfUrl = 'http://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf';
     
     if ( legalChecked ) {
       if( isValid ) {

@@ -94,6 +94,8 @@ body {
 }
 
 body.no-scroll {
+  position: fixed;
+  max-height: 100vh;
   overflow: hidden;
 }
 

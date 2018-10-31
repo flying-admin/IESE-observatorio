@@ -591,6 +591,7 @@ $(window).on("load", function(){
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
+        downloadContentEl.find('.loading').show();
         $.ajax({
           method: 'POST',
           dataType: "json",
@@ -599,10 +600,12 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             SaveToDisk(pdfUrl, 'observatorio-del-ahorro-y-la-inversion');
+            downloadContentEl.find('.loading').hide();
           },
           error: function(jqXHR, textStatus, errorThrown) {
             var errorMsg = downloadContentEl.find('.error').data('ajax-error');
             downloadContentEl.find('.error').text(errorMsg).show();
+            downloadContentEl.find('.loading').hide();
           }
         });
       } else {

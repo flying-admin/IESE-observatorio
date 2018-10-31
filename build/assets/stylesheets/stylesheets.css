@@ -5233,6 +5233,59 @@ body.no-scroll {
           .download_content_form .btn {
             width: 100%;
             margin-bottom: 20px; } }
+      .download_content_form .loading {
+        background-color: #B59971;
+        display: block;
+        position: absolute;
+        width: 224px;
+        top: 0;
+        right: 0;
+        bottom: 0; }
+        @media (max-width: 767px) {
+          .download_content_form .loading {
+            width: auto;
+            top: 84px;
+            left: 16px;
+            right: 16px;
+            bottom: 20px; } }
+        .download_content_form .loading .loader {
+          display: block;
+          font-size: 10px;
+          margin: 12px auto;
+          text-indent: -9999em;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: #fff;
+          background: -webkit-gradient(linear, left top, right top, color-stop(10%, #fff), color-stop(42%, rgba(181, 153, 113, 0)));
+          background: linear-gradient(to right, #fff 10%, rgba(181, 153, 113, 0) 42%);
+          position: relative;
+          -webkit-animation: load3 1.4s infinite linear;
+          animation: load3 1.4s infinite linear;
+          -webkit-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          transform: translateZ(0); }
+          .download_content_form .loading .loader:before {
+            width: 50%;
+            height: 50%;
+            background: #fff;
+            border-radius: 100% 0 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: ''; }
+          .download_content_form .loading .loader:after {
+            background: #B59971;
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            content: '';
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0; }
     .download_content .legal {
       margin: 0 auto;
       position: relative;
@@ -5263,9 +5316,27 @@ body.no-scroll {
       color: #DF040B;
       font-size: 13px;
       text-align: left; }
+      @media (max-width: 767px) {
+        .download_content .error {
+          left: 16px;
+          right: 16px; } }
   .download.bg-white {
     background-color: #fff; }
 
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 .hero_section {
   width: 100%;
   position: relative;

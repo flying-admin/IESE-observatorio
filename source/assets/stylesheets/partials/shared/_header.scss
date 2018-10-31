@@ -350,10 +350,13 @@
       }
     }
     &_menus {
-      height: calc(100vh - 29px - 30px - 40px);
+      height: calc(100vh - 29px - 70px - 50px);
       padding: 50px 0 0 0;
       overflow-y: scroll;
       .menu-list-gold {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid $border-grey;
         li {
           margin-bottom: 25px;
           a {

@@ -4967,6 +4967,7 @@ body.no-scroll {
         line-height: 35px;
         padding-bottom: 20px;
         margin-bottom: 25px;
+        clear: both;
         letter-spacing: 1.5px; } }
     .home_block_title:after {
       content: '';
@@ -5602,7 +5603,8 @@ body.no-scroll {
         @media (max-width: 990px) {
           .section_block--double .cnt_graph img,
           .section_block--double .cnt_graph .svg_anim {
-            position: static; } }
+            position: relative;
+            top: 0; } }
     .section_block--double .section_block_text {
       width: 50%;
       max-width: none;
@@ -5780,6 +5782,10 @@ body.no-scroll {
         padding-left: 55px; }
         @media (max-width: 767px) {
           .section_block.sec_4_grey .cnt_graph .chart_2 {
+            -webkit-transform: none !important;
+                -ms-transform: none !important;
+                    transform: none !important;
+            opacity: 1 !important;
             padding: 0 15px; } }
         .section_block.sec_4_grey .cnt_graph .chart_2 .chart_title {
           text-align: right;

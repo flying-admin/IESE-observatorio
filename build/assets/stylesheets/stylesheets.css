@@ -6433,7 +6433,8 @@ body.no-scroll {
       line-height: 27px;
       color: #242424;
       width: 60%;
-      max-width: 420px; }
+      max-width: 420px;
+      text-align: justify; }
       @media (max-width: 767px) {
         .about_data_row_text {
           width: 100%;

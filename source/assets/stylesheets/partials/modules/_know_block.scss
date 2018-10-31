@@ -69,6 +69,10 @@
         transition: opacity .5s;
         z-index: -1;
         pointer-events: none;
+        @include media("<phablet") {
+          top: 73px;
+          left: -50px;
+        }
         &.show {
           opacity: 1;
           z-index: unset;
@@ -95,6 +99,16 @@
           border-right: 11px solid $white;
           border-top: 11px solid transparent;
           border-bottom: 11px solid transparent;
+          @include media("<phablet") {
+            border-bottom: 11px solid $white;
+            border-right: 11px solid transparent;
+            border-left: 11px solid transparent;
+            border-top: none;
+            top: -10px;
+            bottom: auto;
+            left: 0;
+            right: 0;
+          }
         }
       }
       &:before {
@@ -129,6 +143,8 @@
   }
   &.sect1 {
     background-color: transparent;
+    position: relative;
+    z-index: 2;
     .know_block_content {
       padding-left: 100px;
       padding-right: 100px;

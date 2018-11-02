@@ -95,7 +95,7 @@
               title: data.title,
               summary: data.desc
             };
-            u = 'https://www.linkedin.com/shareArticle?'+$.param(p);
+            u = 'https://www.linkedin.com/sharing/share-offsite/?'+$.param(p);
             window.open(
               u,
               'linkedin',

@@ -67,6 +67,7 @@
       }
       .btn {
         width: 224px;
+        cursor: pointer;
         @include media("<phablet") {
           width: 100%;
           margin-bottom: 20px;

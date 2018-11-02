@@ -4873,7 +4873,7 @@ body.no-scroll {
   @media (max-width: 990px) {
     .home_block {
       display: block;
-      margin-bottom: 0px; } }
+      margin-bottom: 100px; } }
   .home_block_big {
     width: 75%;
     background-size: cover;
@@ -5228,7 +5228,8 @@ body.no-scroll {
             width: 100%;
             margin-bottom: 20px; } }
       .download_content_form .btn {
-        width: 224px; }
+        width: 224px;
+        cursor: pointer; }
         @media (max-width: 767px) {
           .download_content_form .btn {
             width: 100%;

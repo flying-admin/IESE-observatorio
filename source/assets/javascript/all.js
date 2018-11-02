@@ -37,30 +37,32 @@ $(window).on("load", function(){
     }, 1000, function(){
       var findAnim = target.find('.svg_anim');
       var idAnim = findAnim.attr('id');
-      if ( idAnim == 'num87home' ) {
-        animnum87home = lottie.loadAnimation(num87homeParams);
-        $('#num87home').addClass('end_anim');
-        $('#num87home').fadeIn('slow', function() {
-          animnum87home.play();
-        });
-      } else if ( idAnim == 'rosco1Ahome' ) {
-        rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams);
-        $('#rosco1Ahome').addClass('end_anim');
-        $('#rosco1Ahome').fadeIn('slow', function() {
-          rosco1Ahome.play();
-        });
-      } else if ( idAnim == 'num78home' ) {
-        animnum78home = lottie.loadAnimation(num78homeParams);
-        $('#num78home').addClass('end_anim');
-        $('#num78home').fadeIn('slow', function() {
-          animnum78home.play();
-        });
-      } else if ( idAnim == 'rosco1Bhome' ) {
-        rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams);
-        $('#rosco1Bhome').addClass('end_anim');
-        $('#rosco1Bhome').fadeIn('slow', function() {
-          rosco1Bhome.play();
-        });
+      if ( !findAnim.is('.end_anim') ) {
+        if ( idAnim == 'num87home' ) {
+          animnum87home = lottie.loadAnimation(num87homeParams);
+          $('#num87home').addClass('end_anim');
+          $('#num87home').fadeIn('slow', function() {
+            animnum87home.play();
+          });
+        } else if ( idAnim == 'rosco1Ahome' ) {
+          rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams);
+          $('#rosco1Ahome').addClass('end_anim');
+          $('#rosco1Ahome').fadeIn('slow', function() {
+            rosco1Ahome.play();
+          });
+        } else if ( idAnim == 'num78home' ) {
+          animnum78home = lottie.loadAnimation(num78homeParams);
+          $('#num78home').addClass('end_anim');
+          $('#num78home').fadeIn('slow', function() {
+            animnum78home.play();
+          });
+        } else if ( idAnim == 'rosco1Bhome' ) {
+          rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams);
+          $('#rosco1Bhome').addClass('end_anim');
+          $('#rosco1Bhome').fadeIn('slow', function() {
+            rosco1Bhome.play();
+          });
+        }
       }
     });
 

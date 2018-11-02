@@ -10,6 +10,11 @@ $(document).on("ready", function(){
 
 $(window).on("load", function(){
 
+  // Scroll to top
+  $('html').animate({
+    scrollTop: 0
+  }, 10, function(){});
+
   // Hero vídeo
   if ( $('.hero_home').length > 0 ) {
     setTimeout(function(){

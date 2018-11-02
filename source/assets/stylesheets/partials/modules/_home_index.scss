@@ -65,6 +65,7 @@
     }
     @include media("<phablet") {
       padding: 30px 15px;
+      transition-delay: 0s!important;
     }
     &_title {
       font-size: 50px;

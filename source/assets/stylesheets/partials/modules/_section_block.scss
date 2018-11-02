@@ -168,6 +168,9 @@
     }
     .fp_animate {
       transition-delay: 1s!important;
+      @include media("<phablet") {
+        transition-delay: 0s!important;
+      }
     }
     .cnt_graph{
       width: 50%;

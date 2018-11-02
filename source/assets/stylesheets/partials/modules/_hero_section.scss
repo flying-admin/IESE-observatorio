@@ -183,6 +183,7 @@
   transition-delay: 1s!important;
   @include media("<phablet") {
     width: 90%;
+    transition-delay: 0s!important;
   }
   &_content {
     font-size: 18px;

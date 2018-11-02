@@ -18,7 +18,7 @@
 
         e.preventDefault();
         var
-          $doc = $(document)
+          $doc = $(document),
           data = {},
           p = {}, // Params
           u = ''; // Final url
@@ -94,13 +94,12 @@
               mini: 'true',
               url: data.url,
               title: data.title,
-              summary: data.desc,
-              source: ''
+              summary: data.desc
             };
             u = 'https://www.linkedin.com/shareArticle?'+$.param(p);
             window.open(
               u,
-              'Google Plus',
+              'linkedin',
               'height=300,width=550'
             );
           break;

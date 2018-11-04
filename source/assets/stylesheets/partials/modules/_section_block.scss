@@ -56,6 +56,14 @@
     strong {
       font-weight: 700;
     }
+    a {
+      color: $primary-text;
+      text-decoration: none;
+      transition: all 0.5s;
+      &:hover {
+        color: $primary-text-dark;
+      }
+    }
   }
 
   .cnt_graph {

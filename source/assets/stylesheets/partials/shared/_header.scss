@@ -33,6 +33,9 @@
       @include media("<phablet") {
         height: 29px;
       }
+      @include media("<680px") {
+        height: 34px;
+      }
       &.white {
         display: none;
       }

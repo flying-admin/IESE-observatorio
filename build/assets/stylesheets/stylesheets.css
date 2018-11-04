@@ -378,6 +378,9 @@ body.no-scroll {
     @media (max-width: 767px) {
       .header .logos .logo_bestinver {
         height: 29px; } }
+    @media (max-width: 679px) {
+      .header .logos .logo_bestinver {
+        height: 34px; } }
     .header .logos .logo_bestinver.white {
       display: none; }
     .header .logos .logo_bestinver.transparent {
@@ -5565,6 +5568,13 @@ body.no-scroll {
         line-height: 30px; } }
     .section_block_text strong {
       font-weight: 700; }
+    .section_block_text a {
+      color: #BA9868;
+      text-decoration: none;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s; }
+      .section_block_text a:hover {
+        color: #89704D; }
   .section_block .cnt_graph {
     width: 100%; }
     .section_block .cnt_graph .svg_anim,

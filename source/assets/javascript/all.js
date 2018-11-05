@@ -620,6 +620,8 @@ $(window).on("load", function(){
 
   }
 
+  /**********NUEVA FUNCION PARA GENERAR EL PDF************/
+
   function generatePDF() {
     var oReq = new XMLHttpRequest();
             
@@ -674,17 +676,13 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             // SaveToDisk(pdfUrl, 'observatorio-del-ahorro-y-la-inversion');
-            
-
-
-            downloadContentEl.find('.loading').hide();
             generatePDF();
+            downloadContentEl.find('.loading').hide();
           },
           error: function(jqXHR, textStatus, errorThrown) {
             var errorMsg = downloadContentEl.find('.error').data('ajax-error');
             downloadContentEl.find('.error').text(errorMsg).show();
             downloadContentEl.find('.loading').hide();
-            generatePDF();
           }
         });
       } else {

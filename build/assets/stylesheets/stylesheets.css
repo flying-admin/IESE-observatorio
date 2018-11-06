@@ -6579,6 +6579,9 @@ body.no-scroll {
         @media (max-width: 767px) {
           .bestof .card_content_title {
             margin-bottom: 10px; } }
+        .bestof .card_content_title a {
+          color: inherit;
+          text-decoration: none; }
       .bestof .card_content_text {
         font-size: 18px;
         line-height: 36px;

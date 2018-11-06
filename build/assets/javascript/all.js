@@ -626,7 +626,8 @@ $(window).on("load", function(){
     var oReq = new XMLHttpRequest();
             
     // The Endpoint of your server 
-    var URLToPDF = "https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf";
+    // var URLToPDF = "https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf";
+    var URLToPDF = "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf";
 
     // Configure XMLHttpRequest
     oReq.open("GET", URLToPDF, true);

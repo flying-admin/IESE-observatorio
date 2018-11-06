@@ -10,10 +10,12 @@ $(document).on("ready", function(){
 
 $(window).on("load", function(){
 
-  // Scroll to top
-  $('html, body').animate({
-    scrollTop: 0
-  }, 10, function(){});
+  if(!window.location.hash) {
+    // Scroll to top
+    $('html, body').animate({
+      scrollTop: 0
+    }, 10, function(){});
+  }
 
   // Hero vídeo
   if ( $('.hero_home').length > 0 ) {

@@ -344,22 +344,35 @@ $(window).on("load", function(){
   var animroscofoto3B;
 
   if ( $('#roscofoto3A').closest('.fp_animate').length > 0 ) {
-    $('#roscofoto3A').closest('.fp_animate').on('fp_anim', function(ev){
-      animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
-      animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
-      $(this).addClass('end_anim');
-      $('#roscofoto3B').addClass('end_anim');
-    });
+    if ( $(window).width() < 768 ) {
+      $('#roscofoto3A').closest('.fp_animate').on('fp_anim', function(ev) {
+        animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
+        $('#roscofoto3A').addClass('end_anim');
+      });
+      $('#roscofoto3B').closest('.fp_animate').on('fp_anim', function(ev) {
+        animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
+        $('#roscofoto3B').addClass('end_anim');
+      });
+    } else {
+      $('#roscofoto3A').closest('.fp_animate').on('fp_anim', function(ev){
+        animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
+        animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
+        $('#roscofoto3A').addClass('end_anim');
+        $('#roscofoto3B').addClass('end_anim');
+      });
 
-    if ( $('#roscofoto3A').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3A').is('.end_anim') ) {
-      animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
-      animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
-      $('#roscofoto3A').addClass('end_anim');
-      $('#roscofoto3B').addClass('end_anim');
+      if ( $('#roscofoto3A').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3A').is('.end_anim') ) {
+        animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
+        animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
+        $('#roscofoto3A').addClass('end_anim');
+        $('#roscofoto3B').addClass('end_anim');
+      }
     }
   } else if ($('#roscofoto3A').length > 0) {
     animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
     animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
+    $('#roscofoto3A').addClass('end_anim');
+    $('#roscofoto3B').addClass('end_anim');
   }
 
   // num78

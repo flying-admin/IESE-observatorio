@@ -11,7 +11,7 @@ $(document).on("ready", function(){
 $(window).on("load", function(){
 
   // Scroll to top
-  $('html').animate({
+  $('html, body').animate({
     scrollTop: 0
   }, 10, function(){});
 

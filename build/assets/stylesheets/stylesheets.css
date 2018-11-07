@@ -5586,22 +5586,24 @@ body.no-scroll {
     .section_block .cnt_graph .stats_vertical {
       margin: 0 auto;
       width: 990px;
-      height: 478px;
-      overflow-x: scroll;
-      overflow-y: hidden; }
+      height: 478px; }
       @media (max-width: 990px) {
         .section_block .cnt_graph .stats_vertical {
-          height: 464px; } }
+          height: 464px;
+          overflow-x: scroll;
+          overflow-y: hidden; } }
       @media (max-width: 990px) {
         .section_block .cnt_graph .stats_vertical svg {
           min-width: 960px;
           min-height: 464px; } }
     .section_block .cnt_graph .stats_horizontal {
-      overflow-x: scroll;
-      overflow-y: hidden;
       max-width: 100%;
       width: 724px;
       height: 165px; }
+      @media (max-width: 767px) {
+        .section_block .cnt_graph .stats_horizontal {
+          overflow-x: scroll;
+          overflow-y: hidden; } }
       .section_block .cnt_graph .stats_horizontal svg {
         min-width: 724px;
         margin: 0 auto; }

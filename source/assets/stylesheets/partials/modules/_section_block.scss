@@ -80,10 +80,10 @@
       margin: 0 auto;
       width: 990px;
       height: 478px;
-      overflow-x: scroll;
-      overflow-y: hidden;
       @include media("<tablet") {
         height: 464px;
+        overflow-x: scroll;
+        overflow-y: hidden;
       }
       svg {
         @include media("<tablet") {
@@ -93,11 +93,13 @@
       }
     }
     .stats_horizontal {
-      overflow-x: scroll;
-      overflow-y: hidden;
       max-width: 100%;
       width: 724px;
       height: 165px;
+      @include media("<phablet") {
+        overflow-x: scroll;
+        overflow-y: hidden;
+      }
       svg {
         min-width: 724px;
         margin: 0 auto;

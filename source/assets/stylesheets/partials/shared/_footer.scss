@@ -199,16 +199,13 @@
 
     @include media("<phablet") {
       width: 100%;
-      justify-content: flex-start;
+      justify-content: space-between;
     }
     img{
       width: 45px;
       display: block;
       margin-left: 20px;
-      background-color: #414141;   
-      @include media("<phablet") {
-        display: none;
-      } 
+      background-color: #414141;
     }
     .num-reg{
       @include media("<phablet") {

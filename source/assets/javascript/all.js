@@ -664,7 +664,7 @@ $(window).on("load", function(){
       if( isValid ) {
         pdfData.cusCIFNIF = '';
         pdfData.firstName = $('.download_content_form .download_content_form_input').val();
-        pdfData.lastName = $('.download_content_form .download_content_form_input').val();
+        pdfData.lastName = "Observatorio2018";
         pdfData.email = $('.download_content_form .download_content_form_input').val();
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";

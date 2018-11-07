@@ -620,28 +620,12 @@ $(window).on("load", function(){
     return re.test(email);
   }
 
-  function SaveToDisk(fileURL, fileName) {
-    
-    // const url = window.URL.createObjectURL(
-    //    new Blob([], {type: 'application/pdf'})
-    //   );
-    const link = document.createElement('a')
-    link.href = fileURL;
-    link.setAttribute('target', '_blank')
-    link.setAttribute('download', fileName+'.pdf')
-    document.body.appendChild(link) || document.documentElement.appendChild(link)
-    link.click()
-
-  }
-
-  /**********NUEVA FUNCION PARA GENERAR EL PDF************/
-
   function generatePDF() {
     var oReq = new XMLHttpRequest();
             
     // The Endpoint of your server 
-    // var URLToPDF = "https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf";
-    var URLToPDF = "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf";
+    var URLToPDF = "https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf";
+    // var URLToPDF = "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf";
 
     // Configure XMLHttpRequest
     oReq.open("GET", URLToPDF, true);
@@ -693,7 +677,6 @@ $(window).on("load", function(){
           url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
-            // SaveToDisk(pdfUrl, 'observatorio-del-ahorro-y-la-inversion');
             generatePDF();
             downloadContentEl.find('.loading').hide();
           },

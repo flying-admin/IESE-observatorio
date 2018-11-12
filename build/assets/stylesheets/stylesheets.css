@@ -5643,7 +5643,9 @@ body.no-scroll {
         width: auto; }
   .section_block.sec_2_grey {
     padding: 80px 115px 14% 115px;
-    padding-left: 50%; }
+    padding-left: 50%;
+    -webkit-transition-delay: 1.2s !important;
+            transition-delay: 1.2s !important; }
     @media (max-width: 990px) {
       .section_block.sec_2_grey {
         padding: 60px 15px 40px 15px; } }
@@ -6365,7 +6367,7 @@ body.no-scroll {
         max-width: 100%; }
         @media (max-width: 767px) {
           .intro_about_content_images img {
-            margin: 0 auto 20px auto; } }
+            margin: 20px auto; } }
     .intro_about_content_text {
       width: calc(100% - 283px);
       padding-left: 60px;

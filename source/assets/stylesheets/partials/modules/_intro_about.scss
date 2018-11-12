@@ -31,7 +31,7 @@
         width: auto;
         max-width: 100%;
         @include media("<phablet") {
-          margin: 0 auto 20px auto;
+          margin: 20px auto;
         }
       }
     }

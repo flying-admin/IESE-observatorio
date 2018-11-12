@@ -101,6 +101,9 @@
   position: relative;
   &.intro_3 {
     background-color: transparent;
+    @include media("<phablet") {
+      margin-top: -110px;
+    }
   }
   &:after {
     content: '';
@@ -167,6 +170,7 @@
   &.intro_3 {
     @include media("<phablet") {
       width: 100%;
+      margin-top: 0;
     }
   }
 }

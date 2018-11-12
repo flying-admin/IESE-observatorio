@@ -154,6 +154,7 @@
   &.sec_2_grey {
     padding: 80px 115px 14% 115px;
     padding-left: 50%;
+    transition-delay: 1.2s!important;
     @include media("<tablet") {
       padding: 60px 15px 40px 15px;
     }

@@ -100,6 +100,7 @@
       @include media("<phablet") {
         overflow-x: scroll;
         overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
       }
       svg {
         min-width: 724px;
@@ -424,6 +425,22 @@
   
 }
 .stats_vertical::-webkit-scrollbar-track-piece {
+  -webkit-appearance: none;
+  visibility: visible;
+}
+
+.stats_horizontal::-webkit-scrollbar {
+  -webkit-appearance: none;
+  visibility: visible;
+  height: 15px;
+}
+.stats_horizontal::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+.stats_horizontal::-webkit-scrollbar-track {
+  
+}
+.stats_horizontal::-webkit-scrollbar-track-piece {
   -webkit-appearance: none;
   visibility: visible;
 }

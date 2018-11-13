@@ -84,6 +84,7 @@
         height: 464px;
         overflow-x: scroll;
         overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
       }
       svg {
         @include media("<tablet") {
@@ -410,4 +411,19 @@
       }
     }
   }
+}
+.stats_vertical::-webkit-scrollbar {
+  -webkit-appearance: none;
+  visibility: visible;
+  height: 15px;
+}
+.stats_vertical::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+.stats_vertical::-webkit-scrollbar-track {
+  
+}
+.stats_vertical::-webkit-scrollbar-track-piece {
+  -webkit-appearance: none;
+  visibility: visible;
 }

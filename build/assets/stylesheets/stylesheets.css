@@ -5595,7 +5595,8 @@ body.no-scroll {
         .section_block .cnt_graph .stats_vertical {
           height: 464px;
           overflow-x: scroll;
-          overflow-y: hidden; } }
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch; } }
       @media (max-width: 990px) {
         .section_block .cnt_graph .stats_vertical svg {
           min-width: 960px;
@@ -5897,6 +5898,18 @@ body.no-scroll {
           width: 100%; }
       .section_block.sec_4_grey .cnt_graph img {
         width: auto; }
+
+.stats_vertical::-webkit-scrollbar {
+  -webkit-appearance: none;
+  visibility: visible;
+  height: 15px; }
+
+.stats_vertical::-webkit-scrollbar-thumb {
+  visibility: visible; }
+
+.stats_vertical::-webkit-scrollbar-track-piece {
+  -webkit-appearance: none;
+  visibility: visible; }
 
 .know_block {
   background-color: #fff;

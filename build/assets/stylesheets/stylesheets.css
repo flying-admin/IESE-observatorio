@@ -5608,7 +5608,8 @@ body.no-scroll {
       @media (max-width: 767px) {
         .section_block .cnt_graph .stats_horizontal {
           overflow-x: scroll;
-          overflow-y: hidden; } }
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch; } }
       .section_block .cnt_graph .stats_horizontal svg {
         min-width: 724px;
         margin: 0 auto; }
@@ -5651,9 +5652,7 @@ body.no-scroll {
         width: auto; }
   .section_block.sec_2_grey {
     padding: 80px 115px 14% 115px;
-    padding-left: 50%;
-    -webkit-transition-delay: 1.2s !important;
-            transition-delay: 1.2s !important; }
+    padding-left: 50%; }
     @media (max-width: 990px) {
       .section_block.sec_2_grey {
         padding: 60px 15px 40px 15px; } }
@@ -5680,13 +5679,6 @@ body.no-scroll {
             -ms-flex-direction: column-reverse;
                 flex-direction: column-reverse;
         background-color: transparent; } }
-    .section_block--double .fp_animate {
-      -webkit-transition-delay: 1s !important;
-              transition-delay: 1s !important; }
-      @media (max-width: 767px) {
-        .section_block--double .fp_animate {
-          -webkit-transition-delay: 0s !important;
-                  transition-delay: 0s !important; } }
     .section_block--double .cnt_graph {
       width: 50%;
       position: relative; }
@@ -5908,6 +5900,18 @@ body.no-scroll {
   visibility: visible; }
 
 .stats_vertical::-webkit-scrollbar-track-piece {
+  -webkit-appearance: none;
+  visibility: visible; }
+
+.stats_horizontal::-webkit-scrollbar {
+  -webkit-appearance: none;
+  visibility: visible;
+  height: 15px; }
+
+.stats_horizontal::-webkit-scrollbar-thumb {
+  visibility: visible; }
+
+.stats_horizontal::-webkit-scrollbar-track-piece {
   -webkit-appearance: none;
   visibility: visible; }
 

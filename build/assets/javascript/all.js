@@ -169,15 +169,25 @@ $(window).on("load", function(){
     $('#stats_vertical').closest('.fp_animate').on('fp_anim', function(ev){
       animstats_vertical = lottie.loadAnimation(stats_verticalParams);
       $(this).addClass('end_anim');
+      if ( $(window).width() < 991) {
+        new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+      }
     });
 
     if ( $('#stats_vertical').closest('.fp_animate').is('.fp_animated') && !$('#stats_vertical').is('.end_anim') ) {
       animstats_vertical = lottie.loadAnimation(stats_verticalParams);
       $('#stats_vertical').addClass('end_anim');
+      if ( $(window).width() < 991) {
+        new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+      }
     }
   } else if ($('#stats_vertical').length > 0) {
     animstats_vertical = lottie.loadAnimation(stats_verticalParams);
+    if ( 0 && $(window).width() < 991) {
+      new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+    }
   }
+
 
   // roscos_varios_1
   var roscos_varios_1Params = {
@@ -215,15 +225,20 @@ $(window).on("load", function(){
   };
   var animroscos_varios_2;
 
-  if ( $('#roscos_varios_2').length > 0 ) {
-    $(window).on("scroll", function() {
-      var roscos2Top = $('#roscos_varios_2').position().top;
-      var scrollYroscos = $(this).scrollTop();
-      if ( scrollYroscos > roscos2Top && !$('#roscos_varios_2').is('.end_anim') ) {
+  if ( $('#roscos_varios_2').closest('.fp_animate').length > 0 ) {
+    $('#roscos_varios_2').closest('.fp_animate').on('fp_anim', function(ev){
+      // setTimeout(function(){
         animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
-        $('#roscos_varios_2').addClass('end_anim');
-      }
+        $(this).addClass('end_anim');
+      // }, 700);
     });
+
+    if ( $('#roscos_varios_2').closest('.fp_animate').is('.fp_animated') && !$('#roscos_varios_2').is('.end_anim') ) {
+      animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
+      $('#roscos_varios_2').addClass('end_anim');
+    }
+  } else if ($('#roscos_varios_2').length > 0) {
+    animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
   }
 
   // roscos_varios_3
@@ -290,15 +305,25 @@ $(window).on("load", function(){
     $('#stats_horizontal').closest('.fp_animate').on('fp_anim', function(ev){
       animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
       $(this).addClass('end_anim');
+      if ( $(window).width() < 768) {
+        new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      }
     });
 
     if ( $('#stats_horizontal').closest('.fp_animate').is('.fp_animated') && !$('#stats_horizontal').is('.end_anim') ) {
       animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
       $('#stats_horizontal').addClass('end_anim');
+      if ( $(window).width() < 768) {
+        new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      }
     }
   } else if ($('#stats_horizontal').length > 0) {
     animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
+    if ( $(window).width() < 768) {
+      new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+    }
   }
+
 
   // roscofoto2A
   var roscofoto2AParams = {

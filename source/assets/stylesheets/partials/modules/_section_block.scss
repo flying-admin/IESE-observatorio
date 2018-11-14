@@ -81,7 +81,6 @@
       width: 990px;
       height: 478px;
       @include media("<tablet") {
-        height: 464px;
         overflow-x: scroll;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
@@ -101,6 +100,7 @@
         overflow-x: scroll;
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
+        height: auto;
       }
       svg {
         min-width: 724px;

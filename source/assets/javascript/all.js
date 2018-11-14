@@ -214,16 +214,21 @@ $(window).on("load", function(){
       animationData: roscos_varios_2
   };
   var animroscos_varios_2;
-
-  if ( $('#roscos_varios_2').length > 0 ) {
-    $(window).on("scroll", function() {
-      var roscos2Top = $('#roscos_varios_2').position().top;
-      var scrollYroscos = $(this).scrollTop();
-      if ( scrollYroscos > roscos2Top && !$('#roscos_varios_2').is('.end_anim') ) {
+  
+  if ( $('#roscos_varios_2').closest('.fp_animate').length > 0 ) {
+    $('#roscos_varios_2').closest('.fp_animate').on('fp_anim', function(ev){
+      // setTimeout(function(){
         animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
-        $('#roscos_varios_2').addClass('end_anim');
-      }
+        $(this).addClass('end_anim');
+      // }, 700);
     });
+
+    if ( $('#roscos_varios_2').closest('.fp_animate').is('.fp_animated') && !$('#roscos_varios_2').is('.end_anim') ) {
+      animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
+      $('#roscos_varios_2').addClass('end_anim');
+    }
+  } else if ($('#roscos_varios_2').length > 0) {
+    animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
   }
 
   // roscos_varios_3

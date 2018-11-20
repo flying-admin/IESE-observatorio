@@ -8,7 +8,7 @@
   }
   @include media("<tablet") {
     display: block;
-    margin-bottom: 100px;
+    margin-bottom: 160px;
   }
   &_big {
     width: 75%;
@@ -34,6 +34,10 @@
     text-align: center;
     position: relative;
     z-index: 1;
+    @include media("<tablet") {
+      height: 0;
+      min-height: 160px;
+    }
     @include media("<phablet") {
       min-width: 240px;
       min-height: 240px;
@@ -133,13 +137,6 @@
     }
   }
   &.prod {
-    padding-bottom: 150px;
-    @include media("<tablet") {
-      padding-bottom: 0;
-    }
-    @include media("<phablet") {
-      padding-bottom: 150px;
-    }
     .home_block_big {
       .home_block_big_content {
         width: 580px;
@@ -203,14 +200,7 @@
     }
   }
   &.saving {
-    padding-bottom: 150px;
     flex-direction: row-reverse;
-    @include media("<tablet") {
-      padding-bottom: 0;
-    }
-    @include media("<phablet") {
-      padding-bottom: 150px;
-    }
     .home_block_big {
       justify-content: flex-end;
       transform: translate(-11%, 0);

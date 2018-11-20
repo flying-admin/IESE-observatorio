@@ -415,7 +415,7 @@ $(window).on("load", function(){
         setTimeout(function(){
           $('#roscofoto3B').addClass('end_anim');
           animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
-        }, 500);
+        }, 2000);
       });
 
       if ( $('#roscofoto3A').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3A').is('.end_anim') ) {

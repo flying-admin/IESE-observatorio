@@ -411,9 +411,11 @@ $(window).on("load", function(){
     } else {
       $('#roscofoto3A').closest('.fp_animate').on('fp_anim', function(ev){
         animroscofoto3A = lottie.loadAnimation(roscofoto3AParams);
-        animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
         $('#roscofoto3A').addClass('end_anim');
-        $('#roscofoto3B').addClass('end_anim');
+        setTimeout(function(){
+          $('#roscofoto3B').addClass('end_anim');
+          animroscofoto3B = lottie.loadAnimation(roscofoto3BParams);
+        }, 500);
       });
 
       if ( $('#roscofoto3A').closest('.fp_animate').is('.fp_animated') && !$('#roscofoto3A').is('.end_anim') ) {

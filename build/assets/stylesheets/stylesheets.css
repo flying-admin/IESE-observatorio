@@ -4963,13 +4963,10 @@ body.no-scroll {
       -ms-flex-align: end;
           align-items: flex-end;
   margin-bottom: 150px; }
-  @media (max-width: 1199px) {
-    .home_block {
-      margin-bottom: 50px; } }
   @media (max-width: 990px) {
     .home_block {
       display: block;
-      margin-bottom: 100px; } }
+      margin-bottom: 160px; } }
   .home_block_big {
     width: 75%;
     background-size: cover;
@@ -5003,6 +5000,10 @@ body.no-scroll {
     text-align: center;
     position: relative;
     z-index: 1; }
+    @media (max-width: 990px) {
+      .home_block_small {
+        height: 0;
+        min-height: 160px; } }
     @media (max-width: 767px) {
       .home_block_small {
         min-width: 240px;
@@ -5089,39 +5090,31 @@ body.no-scroll {
   @media (max-width: 767px) {
     .home_block .btn {
       width: 100%; } }
-  .home_block.prod {
-    padding-bottom: 150px; }
+  .home_block.prod .home_block_big .home_block_big_content {
+    width: 580px;
+    padding: 80px 100px 80px 120px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(87, 87, 87, 0.4)), to(rgba(0, 0, 0, 0.4)));
+    background-image: linear-gradient(-180deg, rgba(87, 87, 87, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%); }
+    @media (max-width: 1199px) {
+      .home_block.prod .home_block_big .home_block_big_content {
+        padding: 80px 50px 80px 60px; } }
     @media (max-width: 990px) {
-      .home_block.prod {
-        padding-bottom: 0; } }
+      .home_block.prod .home_block_big .home_block_big_content {
+        width: 100%;
+        padding: 80px 50px 150px 60px; } }
     @media (max-width: 767px) {
-      .home_block.prod {
-        padding-bottom: 150px; } }
-    .home_block.prod .home_block_big .home_block_big_content {
-      width: 580px;
-      padding: 80px 100px 80px 120px;
-      background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(87, 87, 87, 0.4)), to(rgba(0, 0, 0, 0.4)));
-      background-image: linear-gradient(-180deg, rgba(87, 87, 87, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%); }
-      @media (max-width: 1199px) {
-        .home_block.prod .home_block_big .home_block_big_content {
-          padding: 80px 50px 80px 60px; } }
-      @media (max-width: 990px) {
-        .home_block.prod .home_block_big .home_block_big_content {
-          width: 100%;
-          padding: 80px 50px 150px 60px; } }
-      @media (max-width: 767px) {
-        .home_block.prod .home_block_big .home_block_big_content {
-          padding: 30px 15px 150px 15px; } }
-    .home_block.prod .home_block_small {
-      -webkit-transform: translate(-66%, 33%);
-          -ms-transform: translate(-66%, 33%);
-              transform: translate(-66%, 33%); }
-      @media (max-width: 990px) {
-        .home_block.prod .home_block_small {
-          -webkit-transform: translate(0, -50%);
-              -ms-transform: translate(0, -50%);
-                  transform: translate(0, -50%);
-          float: right; } }
+      .home_block.prod .home_block_big .home_block_big_content {
+        padding: 30px 15px 150px 15px; } }
+  .home_block.prod .home_block_small {
+    -webkit-transform: translate(-66%, 33%);
+        -ms-transform: translate(-66%, 33%);
+            transform: translate(-66%, 33%); }
+    @media (max-width: 990px) {
+      .home_block.prod .home_block_small {
+        -webkit-transform: translate(0, -50%);
+            -ms-transform: translate(0, -50%);
+                transform: translate(0, -50%);
+        float: right; } }
   .home_block.digital {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -5161,17 +5154,10 @@ body.no-scroll {
         width: auto;
         max-width: 100%; }
   .home_block.saving {
-    padding-bottom: 150px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse; }
-    @media (max-width: 990px) {
-      .home_block.saving {
-        padding-bottom: 0; } }
-    @media (max-width: 767px) {
-      .home_block.saving {
-        padding-bottom: 150px; } }
     .home_block.saving .home_block_big {
       -webkit-box-pack: end;
           -ms-flex-pack: end;

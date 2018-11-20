@@ -39,40 +39,68 @@ $(window).on("load", function(){
 
     var distance = target.offset().top - headerOffset - offsetTop;
 
-    $('html').animate({
-        scrollTop: distance + 1
-    }, 1000, function(){
-      var findAnim = target.find('.svg_anim');
-      var idAnim = findAnim.attr('id');
-      if ( !findAnim.is('.end_anim') ) {
-        if ( idAnim == 'num87home' ) {
-          animnum87home = lottie.loadAnimation(num87homeParams);
-          $('#num87home').addClass('end_anim');
-          $('#num87home').fadeIn('slow', function() {
-            animnum87home.play();
-          });
-        } else if ( idAnim == 'rosco1Ahome' ) {
-          rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams);
-          $('#rosco1Ahome').addClass('end_anim');
-          $('#rosco1Ahome').fadeIn('slow', function() {
-            rosco1Ahome.play();
-          });
-        } else if ( idAnim == 'num78home' ) {
-          animnum78home = lottie.loadAnimation(num78homeParams);
-          $('#num78home').addClass('end_anim');
-          $('#num78home').fadeIn('slow', function() {
-            animnum78home.play();
-          });
-        } else if ( idAnim == 'rosco1Bhome' ) {
-          rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams);
-          $('#rosco1Bhome').addClass('end_anim');
-          $('#rosco1Bhome').fadeIn('slow', function() {
-            rosco1Bhome.play();
-          });
-        }
-      }
-    });
+    if (navigator.userAgent.match(/iPad|iPhone|iPod|Android|Windows Phone/i)) {  
+      function customScrollTo(to, duration) {
+          var start = 0,
+              change = to - start,
+              currentTime = 0,
+              increment = 20;
 
+          var animateScroll = function(){        
+              currentTime += increment;
+              var val = Math.easeInOutQuad(currentTime, start, change, duration);                        
+              window.scrollTo(0,val);
+
+              if(currentTime < duration) {
+                  setTimeout(animateScroll, increment);
+              }
+          };
+          animateScroll();
+      }
+
+      Math.easeInOutQuad = function (t, b, c, d) {
+          t /= d/2;
+          if (t < 1) return c/2*t*t + b;
+          t--;
+          return -c/2 * (t*(t-2) - 1) + b;
+      };
+
+      customScrollTo(distance + 1, 1000);
+    } else {
+      $('html').animate({
+          scrollTop: distance + 1
+      }, 1000, function(){
+        var findAnim = target.find('.svg_anim');
+        var idAnim = findAnim.attr('id');
+        if ( !findAnim.is('.end_anim') ) {
+          if ( idAnim == 'num87home' ) {
+            animnum87home = lottie.loadAnimation(num87homeParams);
+            $('#num87home').addClass('end_anim');
+            $('#num87home').fadeIn('slow', function() {
+              animnum87home.play();
+            });
+          } else if ( idAnim == 'rosco1Ahome' ) {
+            rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams);
+            $('#rosco1Ahome').addClass('end_anim');
+            $('#rosco1Ahome').fadeIn('slow', function() {
+              rosco1Ahome.play();
+            });
+          } else if ( idAnim == 'num78home' ) {
+            animnum78home = lottie.loadAnimation(num78homeParams);
+            $('#num78home').addClass('end_anim');
+            $('#num78home').fadeIn('slow', function() {
+              animnum78home.play();
+            });
+          } else if ( idAnim == 'rosco1Bhome' ) {
+            rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams);
+            $('#rosco1Bhome').addClass('end_anim');
+            $('#rosco1Bhome').fadeIn('slow', function() {
+              rosco1Bhome.play();
+            });
+          }
+        }
+      });
+    }
   });
 
   // Socialize
@@ -227,10 +255,10 @@ $(window).on("load", function(){
 
   if ( $('#roscos_varios_2').closest('.fp_animate').length > 0 ) {
     $('#roscos_varios_2').closest('.fp_animate').on('fp_anim', function(ev){
-      // setTimeout(function(){
+      setTimeout(function(){
         animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
         $(this).addClass('end_anim');
-      // }, 700);
+      }, 700);
     });
 
     if ( $('#roscos_varios_2').closest('.fp_animate').is('.fp_animated') && !$('#roscos_varios_2').is('.end_anim') ) {
@@ -238,7 +266,9 @@ $(window).on("load", function(){
       $('#roscos_varios_2').addClass('end_anim');
     }
   } else if ($('#roscos_varios_2').length > 0) {
-    animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
+    setTimeout(function(){
+      animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
+    }, 700);
   }
 
   // roscos_varios_3
@@ -678,8 +708,7 @@ $(window).on("load", function(){
     var oReq = new XMLHttpRequest();
             
     // The Endpoint of your server 
-    var URLToPDF = "https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf";
-    // var URLToPDF = "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf";
+    var URLToPDF = "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf";
 
     // Configure XMLHttpRequest
     oReq.open("GET", URLToPDF, true);
@@ -697,7 +726,7 @@ $(window).on("load", function(){
         });
         
         // Generate file download directly in the browser !
-        saveAs(file, "observatorio-del-ahorro-y-la-inversion.pdf");
+        saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
     };
 
     oReq.send();
@@ -712,7 +741,6 @@ $(window).on("load", function(){
     var isValid = validateEmail(email);
     var legalChecked = $(".download_content #check-legal").is(':checked');
 
-    // var pdfUrl = 'http://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf';
     
     if ( legalChecked ) {
       if( isValid ) {
@@ -722,7 +750,7 @@ $(window).on("load", function(){
         pdfData.email = $('.download_content_form .download_content_form_input').val();
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
-        pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
+        pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversión 2018|[utm_campaign]|[utm_medium]|[utm_source]|[utm_content]";
         downloadContentEl.find('.loading').show();
         $.ajax({
           method: 'POST',

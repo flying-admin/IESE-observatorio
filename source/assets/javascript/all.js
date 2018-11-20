@@ -678,8 +678,7 @@ $(window).on("load", function(){
     var oReq = new XMLHttpRequest();
             
     // The Endpoint of your server 
-    var URLToPDF = "https://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf";
-    // var URLToPDF = "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf";
+    var URLToPDF = "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf";
 
     // Configure XMLHttpRequest
     oReq.open("GET", URLToPDF, true);
@@ -697,7 +696,7 @@ $(window).on("load", function(){
         });
         
         // Generate file download directly in the browser !
-        saveAs(file, "observatorio-del-ahorro-y-la-inversion.pdf");
+        saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
     };
 
     oReq.send();
@@ -712,7 +711,6 @@ $(window).on("load", function(){
     var isValid = validateEmail(email);
     var legalChecked = $(".download_content #check-legal").is(':checked');
 
-    // var pdfUrl = 'http://www.bestinver.es/wp-content/uploads/2018/10/observatorio-del-ahorro-y-la-inversion.pdf';
     
     if ( legalChecked ) {
       if( isValid ) {

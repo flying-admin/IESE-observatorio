@@ -722,7 +722,7 @@ $(window).on("load", function(){
         pdfData.email = $('.download_content_form .download_content_form_input').val();
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
-        pdfData.cusOrigenDetalle = "Observatorio ahorro inversion 2018";
+        pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversión 2018|[utm_campaign]|[utm_medium]|[utm_source]|[utm_content]";
         downloadContentEl.find('.loading').show();
         $.ajax({
           method: 'POST',

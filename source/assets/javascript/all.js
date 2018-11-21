@@ -45,6 +45,9 @@ $(document).on("ready", function(){
   var animnum78home;
   var rosco1Bhome;
 
+  var statsVBar
+  var statsHBar
+
 $(window).on("load", function(){
 
   if(!window.location.hash) {
@@ -215,7 +218,7 @@ $(window).on("load", function(){
       animrosco1B = lottie.loadAnimation(rosco1BParams);
       $('#rosco1B').addClass('end_anim');
     }
-  } else if ($('#').length > 0) {
+  } else if ($('#rosco1B').length > 0) {
     animrosco1B = lottie.loadAnimation(rosco1BParams);
     $('#rosco1B').addClass('end_anim');
   }
@@ -234,7 +237,7 @@ $(window).on("load", function(){
       animstats_vertical = lottie.loadAnimation(stats_verticalParams);
       $(this).addClass('end_anim');
       if ( $(window).width() < 991) {
-        new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+        statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
       }
     });
 
@@ -242,14 +245,14 @@ $(window).on("load", function(){
       animstats_vertical = lottie.loadAnimation(stats_verticalParams);
       $('#stats_vertical').addClass('end_anim');
       if ( $(window).width() < 991) {
-        new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+        statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
       }
     }
   } else if ($('#stats_vertical').length > 0) {
     animstats_vertical = lottie.loadAnimation(stats_verticalParams);
     $('#stats_vertical').addClass('end_anim');
     if ( 0 && $(window).width() < 991) {
-      new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+      statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
     }
   }
 
@@ -372,7 +375,7 @@ $(window).on("load", function(){
       animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
       $(this).addClass('end_anim');
       if ( $(window).width() < 768) {
-        new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
       }
     });
 
@@ -380,13 +383,13 @@ $(window).on("load", function(){
       animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
       $('#stats_horizontal').addClass('end_anim');
       if ( $(window).width() < 768) {
-        new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
       }
     }
   } else if ($('#stats_horizontal').length > 0) {
     animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
     if ( $(window).width() < 768) {
-      new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
       $('#stats_horizontal').addClass('end_anim');
     }
   }
@@ -857,6 +860,12 @@ $(window).on("resize", function(){
   if ($(this).is('#stats_vertical')) {
     $(this).empty();
     animstats_vertical = lottie.loadAnimation(stats_verticalParams).play();
+    statsVBar.recalculate();
+    setTimeout(function(){
+      if ( $(window).width() < 991) {
+        statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+      }
+    }, 750);
   }
   if ($(this).is('#roscos_varios_1')) {
     $(this).empty();
@@ -877,6 +886,12 @@ $(window).on("resize", function(){
   if ($(this).is('#stats_horizontal')) {
     $(this).empty();
     animstats_horizontal = lottie.loadAnimation(stats_horizontalParams).play();
+    statsHBar.recalculate();
+    setTimeout(function(){
+      if ( $(window).width() < 768) {
+        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      }
+    }, 750);
   }
   if ($(this).is('#roscofoto2A')) {
     $(this).empty();

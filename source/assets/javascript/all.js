@@ -860,6 +860,7 @@ $(window).on("resize", function(){
   if ($(this).is('#stats_vertical')) {
     $(this).empty();
     animstats_vertical = lottie.loadAnimation(stats_verticalParams).play();
+    statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
     statsVBar.recalculate();
     setTimeout(function(){
       if ( $(window).width() < 991) {

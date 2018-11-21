@@ -103,9 +103,3 @@
     min-width: 10px;
     width: auto;
 }
-
-@include media("landscape"){
-  .horizontal.simplebar-track .simplebar-scrollbar {
-    display: none;
-  }
-}

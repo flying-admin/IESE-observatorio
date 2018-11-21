@@ -800,13 +800,6 @@ $(window).on("load", function(){
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
-        // console.log(pdfData.cusOrigenDetalle);
-        // if (iOS) {
-        //   window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
-        // } else {
-        //   generatePDF();
-        // }
-
         $.ajax({
           method: 'POST',
           dataType: "json",

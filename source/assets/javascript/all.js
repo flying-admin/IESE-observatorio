@@ -8,6 +8,43 @@ $(document).on("ready", function(){
   Project.init();
 });
 
+
+  var rosco1AParams;
+  var rosco1BParams;
+  var stats_verticalParams;
+  var roscos_varios_1Params;
+  var roscos_varios_2Params;
+  var roscos_varios_3Params;
+  var rosco2BParams;
+  var stats_horizontalParams;
+  var roscofoto2AParams;
+  var roscofoto3AParams;
+  var roscofoto3BParams;
+  var num78Params;
+  var num87Params;
+  var num87homeParams;
+  var rosco1AhomeParams;
+  var num78homeParams;
+  var rosco1BhomeParams;
+
+  var animrosco1A;
+  var animrosco1B;
+  var animstats_vertical;
+  var animroscos_varios_1;
+  var animroscos_varios_2;
+  var animroscos_varios_3;
+  var animrosco2B;
+  var animstats_horizontal;
+  var animroscofoto2A;
+  var animroscofoto3A;
+  var animroscofoto3B;
+  var animnum78;
+  var animnum87;
+  var animnum87home;
+  var rosco1Ahome;
+  var animnum78home;
+  var rosco1Bhome;
+
 $(window).on("load", function(){
 
   if(!window.location.hash) {
@@ -132,14 +169,13 @@ $(window).on("load", function(){
   // Animación
 
   // rosco1A
-  var rosco1AParams = {
+  rosco1AParams = {
       container: document.getElementById('rosco1A'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: rosco1A
   };
-  var animrosco1A;
 
   if ( $('#rosco1A').closest('.fp_animate').length > 0 ) {
     $('#rosco1A').closest('.fp_animate').on('fp_anim', function(ev){
@@ -158,14 +194,13 @@ $(window).on("load", function(){
   }
 
   // rosco1B
-  var rosco1BParams = {
+  rosco1BParams = {
       container: document.getElementById('rosco1B'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: rosco1B
   };
-  var animrosco1B;
 
   if ( $('#rosco1B').closest('.fp_animate').length > 0 ) {
     $('#rosco1B').closest('.fp_animate').on('fp_anim', function(ev){
@@ -184,14 +219,13 @@ $(window).on("load", function(){
   }
 
   // stats_vertical
-  var stats_verticalParams = {
+  stats_verticalParams = {
       container: document.getElementById('stats_vertical'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: stats_vertical
   };
-  var animstats_vertical;
 
   if ( $('#stats_vertical').closest('.fp_animate').length > 0 ) {
     $('#stats_vertical').closest('.fp_animate').on('fp_anim', function(ev){
@@ -218,14 +252,13 @@ $(window).on("load", function(){
 
 
   // roscos_varios_1
-  var roscos_varios_1Params = {
+  roscos_varios_1Params = {
       container: document.getElementById('roscos_varios_1'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: roscos_varios_1
   };
-  var animroscos_varios_1;
 
   if ( $('#roscos_varios_1').closest('.fp_animate').length > 0 ) {
     $('#roscos_varios_1').closest('.fp_animate').on('fp_anim', function(ev){
@@ -244,14 +277,13 @@ $(window).on("load", function(){
   }
 
   // roscos_varios_2
-  var roscos_varios_2Params = {
+  roscos_varios_2Params = {
       container: document.getElementById('roscos_varios_2'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: roscos_varios_2
   };
-  var animroscos_varios_2;
 
   if ( $('#roscos_varios_2').closest('.fp_animate').length > 0 ) {
     $('#roscos_varios_2').closest('.fp_animate').on('fp_anim', function(ev){
@@ -272,14 +304,13 @@ $(window).on("load", function(){
   }
 
   // roscos_varios_3
-  var roscos_varios_3Params = {
+  roscos_varios_3Params = {
       container: document.getElementById('roscos_varios_3'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: roscos_varios_3
   };
-  var animroscos_varios_3;
 
   if ( $('#roscos_varios_3').closest('.fp_animate').length > 0 ) {
     $('#roscos_varios_3').closest('.fp_animate').on('fp_anim', function(ev){
@@ -298,14 +329,13 @@ $(window).on("load", function(){
   }
 
   // rosco2B
-  var rosco2BParams = {
+  rosco2BParams = {
       container: document.getElementById('rosco2B'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: rosco2B
   };
-  var animrosco2B;
 
   if ( $('#rosco2B').closest('.fp_animate').length > 0 ) {
     $('#rosco2B').closest('.fp_animate').on('fp_anim', function(ev){
@@ -322,14 +352,13 @@ $(window).on("load", function(){
   }
 
   // stats_horizontal
-  var stats_horizontalParams = {
+  stats_horizontalParams = {
       container: document.getElementById('stats_horizontal'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: stats_horizontal
   };
-  var animstats_horizontal;
 
   if ( $('#stats_horizontal').closest('.fp_animate').length > 0 ) {
     $('#stats_horizontal').closest('.fp_animate').on('fp_anim', function(ev){
@@ -356,14 +385,13 @@ $(window).on("load", function(){
 
 
   // roscofoto2A
-  var roscofoto2AParams = {
+  roscofoto2AParams = {
       container: document.getElementById('roscofoto2A'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: roscofoto2A
   };
-  var animroscofoto2A;
 
   if ( $('#roscofoto2A').closest('.fp_animate').length > 0 ) {
     $('#roscofoto2A').closest('.fp_animate').on('fp_anim', function(ev){
@@ -380,23 +408,21 @@ $(window).on("load", function(){
   }
 
   // roscofoto3A roscofoto3B
-  var roscofoto3AParams = {
+  roscofoto3AParams = {
       container: document.getElementById('roscofoto3A'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: roscofoto3A
   };
-  var animroscofoto3A;
 
-  var roscofoto3BParams = {
+  roscofoto3BParams = {
       container: document.getElementById('roscofoto3B'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: roscofoto3B
   };
-  var animroscofoto3B;
 
   if ( $('#roscofoto3A').closest('.fp_animate').length > 0 ) {
 
@@ -422,14 +448,13 @@ $(window).on("load", function(){
   }
 
   // num78
-  var num78Params = {
+  num78Params = {
       container: document.getElementById('num78'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: num78
   };
-  var animnum78;
 
   if ( $('#num78').closest('.fp_animate').length > 0 ) {
     $('#num78').closest('.fp_animate').on('fp_anim', function(ev){
@@ -448,14 +473,13 @@ $(window).on("load", function(){
   }
 
   // num87
-  var num87Params = {
+  num87Params = {
       container: document.getElementById('num87'),
       renderer: 'svg',
       loop: false,
       autoplay: true,
       animationData: num87
   };
-  var animnum87;
 
   if ( $('#num87').closest('.fp_animate').length > 0 ) {
     $('#num87').closest('.fp_animate').on('fp_anim', function(ev){
@@ -474,14 +498,13 @@ $(window).on("load", function(){
   }
 
   // num87home
-  var num87homeParams = {
+  num87homeParams = {
       container: document.getElementById('num87home'),
       renderer: 'svg',
       loop: false,
       autoplay: false,
       animationData: num87
   };
-  var animnum87home;
 
   if ( $('#num87home').length > 0 ) {
     $('#num87home').closest('.fp_animate').on('fp_anim', function(ev) {
@@ -520,14 +543,13 @@ $(window).on("load", function(){
   }
 
   // rosco1Ahome
-  var rosco1AhomeParams = {
+  rosco1AhomeParams = {
       container: document.getElementById('rosco1Ahome'),
       renderer: 'svg',
       loop: false,
       autoplay: false,
       animationData: rosco1A
   };
-  var rosco1Ahome;
 
   if ( $('#rosco1Ahome').length > 0 ) {
     $('#rosco1Ahome').closest('.fp_animate').on('fp_anim', function(ev) {
@@ -579,14 +601,13 @@ $(window).on("load", function(){
   }
 
   // num78home
-  var num78homeParams = {
+  num78homeParams = {
       container: document.getElementById('num78home'),
       renderer: 'svg',
       loop: false,
       autoplay: false,
       animationData: num78
   };
-  var animnum78home;
 
   if ( $('#num78home').length > 0 ) {
     $('#num78home').closest('.fp_animate').on('fp_anim', function(ev) {
@@ -627,14 +648,13 @@ $(window).on("load", function(){
   }
 
   // rosco1Bhome
-  var rosco1BhomeParams = {
+  rosco1BhomeParams = {
       container: document.getElementById('rosco1Bhome'),
       renderer: 'svg',
       loop: false,
       autoplay: false,
       animationData: rosco1B
   };
-  var rosco1Bhome;
 
   if ( $('#rosco1Bhome').length > 0 ) {
     $('#rosco1Bhome').closest('.fp_animate').on('fp_anim', function(ev) {
@@ -820,7 +840,60 @@ $(window).on("load", function(){
 });
 
 $(window).on("resize", function(){
- 
+ $('.end_anim').each(function(){
+  if ($(this).is('#rosco1A')) {
+    $(this).empty();
+    animrosco1A = lottie.loadAnimation(rosco1AParams).play();
+  }
+  if ($(this).is('#rosco1B')) {
+    $(this).empty();
+    animrosco1B = lottie.loadAnimation(rosco1BParams).play();
+  }
+  if ($(this).is('#stats_vertical')) {
+    $(this).empty();
+    animstats_vertical = lottie.loadAnimation(stats_verticalParams).play();
+  }
+  if ($(this).is('#roscos_varios_1')) {
+    $(this).empty();
+    animroscos_varios_1 = lottie.loadAnimation(roscos_varios_1Params).play();
+  }
+  if ($(this).is('#roscos_varios_2')) {
+    $(this).empty();
+    animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params).play();
+  }
+  if ($(this).is('#roscos_varios_3')) {
+    $(this).empty();
+    animroscos_varios_3 = lottie.loadAnimation(roscos_varios_3Params).play();
+  }
+  if ($(this).is('#rosco2B')) {
+    $(this).empty();
+    animrosco2B = lottie.loadAnimation(rosco2BParams).play();
+  }
+  if ($(this).is('#stats_horizontal')) {
+    $(this).empty();
+    animstats_horizontal = lottie.loadAnimation(stats_horizontalParams).play();
+  }
+  if ($(this).is('#roscofoto2A')) {
+    $(this).empty();
+    animroscofoto2A = lottie.loadAnimation(roscofoto2AParams).play();
+  }
+  if ($(this).is('#roscofoto3A')) {
+    $(this).empty();
+    animroscofoto3A = lottie.loadAnimation(roscofoto3AParams).play();
+  }
+  if ($(this).is('#roscofoto3B')) {
+    $(this).empty();
+    animroscofoto3B = lottie.loadAnimation(roscofoto3BParams).play();
+  }
+  if ($(this).is('#rosco1Ahome')) {
+    $(this).empty();
+    rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams).play();
+  }
+  if ($(this).is('#rosco1Bhome')) {
+    $(this).empty();
+    rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams).play();
+  }
+ });
 });
 
 $(window).on("scroll", function(){

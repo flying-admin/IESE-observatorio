@@ -102,4 +102,11 @@
     min-height: 0;
     min-width: 10px;
     width: auto;
+    display: none;
+}
+
+@include media("<phablet"){
+  .horizontal.simplebar-track .simplebar-scrollbar {
+    display: block;
+  }
 }

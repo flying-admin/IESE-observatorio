@@ -191,6 +191,7 @@ $(window).on("load", function(){
     }
   } else if ($('#rosco1A').length > 0) {
     animrosco1A = lottie.loadAnimation(rosco1AParams);
+    $('#rosco1A').addClass('end_anim');
   }
 
   // rosco1B
@@ -214,8 +215,9 @@ $(window).on("load", function(){
       animrosco1B = lottie.loadAnimation(rosco1BParams);
       $('#rosco1B').addClass('end_anim');
     }
-  } else if ($('#rosco1B').length > 0) {
+  } else if ($('#').length > 0) {
     animrosco1B = lottie.loadAnimation(rosco1BParams);
+    $('#rosco1B').addClass('end_anim');
   }
 
   // stats_vertical
@@ -245,6 +247,7 @@ $(window).on("load", function(){
     }
   } else if ($('#stats_vertical').length > 0) {
     animstats_vertical = lottie.loadAnimation(stats_verticalParams);
+    $('#stats_vertical').addClass('end_anim');
     if ( 0 && $(window).width() < 991) {
       new SimpleBar($('#stats_vertical')[0], { autoHide: false });
     }
@@ -274,6 +277,7 @@ $(window).on("load", function(){
     }
   } else if ($('#roscos_varios_1').length > 0) {
     animroscos_varios_1 = lottie.loadAnimation(roscos_varios_1Params);
+    $('#roscos_varios_1').addClass('end_anim');
   }
 
   // roscos_varios_2
@@ -300,6 +304,7 @@ $(window).on("load", function(){
   } else if ($('#roscos_varios_2').length > 0) {
     setTimeout(function(){
       animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params);
+      $('#roscos_varios_2').addClass('end_anim');
     }, 700);
   }
 
@@ -326,6 +331,7 @@ $(window).on("load", function(){
     }
   } else if ($('#roscos_varios_3').length > 0) {
     animroscos_varios_3 = lottie.loadAnimation(roscos_varios_3Params);
+    $('#roscos_varios_3').addClass('end_anim');
   }
 
   // rosco2B
@@ -349,6 +355,7 @@ $(window).on("load", function(){
     }
   } else if ($('#rosco2B').length > 0) {
     animrosco2B = lottie.loadAnimation(rosco2BParams);
+    $('#rosco2B').addClass('end_anim');
   }
 
   // stats_horizontal
@@ -380,6 +387,7 @@ $(window).on("load", function(){
     animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
     if ( $(window).width() < 768) {
       new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      $('#stats_horizontal').addClass('end_anim');
     }
   }
 
@@ -405,6 +413,7 @@ $(window).on("load", function(){
     }
   } else if ($('#roscofoto2A').length > 0) {
     animroscofoto2A = lottie.loadAnimation(roscofoto2AParams);
+    $('#roscofoto2A').addClass('end_anim');
   }
 
   // roscofoto3A roscofoto3B
@@ -470,6 +479,7 @@ $(window).on("load", function(){
     }
   } else if ($('#num78').length > 0) {
     animnum78 = lottie.loadAnimation(num78Params);
+    $('#num78').addClass('end_anim');
   }
 
   // num87
@@ -495,6 +505,7 @@ $(window).on("load", function(){
     }
   } else if ($('#num87').length > 0) {
     animnum87 = lottie.loadAnimation(num87Params);
+    $('#num87').addClass('end_anim');
   }
 
   // num87home
@@ -836,6 +847,7 @@ $(window).on("resize", function(){
  $('.end_anim').each(function(){
   if ($(this).is('#rosco1A')) {
     $(this).empty();
+    console.log('rosco1A');
     animrosco1A = lottie.loadAnimation(rosco1AParams).play();
   }
   if ($(this).is('#rosco1B')) {

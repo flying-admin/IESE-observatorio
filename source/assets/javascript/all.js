@@ -731,7 +731,9 @@ $(window).on("load", function(){
       var sParameterName = sURLVariables[i].split('=');
       if (sParameterName[0] == sParam)
       {
-          return sParameterName[1];
+        return sParameterName[1];
+      } else {
+        return '';
       }
     }
   }
@@ -748,6 +750,8 @@ $(window).on("load", function(){
     
     if ( legalChecked ) {
       if( isValid ) {
+        downloadContentEl.find('.loading').show();
+
         var utm_campaign = GetURLParameter('utm_campaign');
         var utm_medium = GetURLParameter('utm_medium');
         var utm_source = GetURLParameter('utm_source');
@@ -761,7 +765,6 @@ $(window).on("load", function(){
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
-        console.log(pdfData.cusOrigenDetalle);
         $.ajax({
           method: 'POST',
           dataType: "json",

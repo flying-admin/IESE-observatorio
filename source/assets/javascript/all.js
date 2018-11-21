@@ -781,26 +781,32 @@ $(window).on("load", function(){
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
         console.log(pdfData.cusOrigenDetalle);
-        $.ajax({
-          method: 'POST',
-          dataType: "json",
-          contentType: "application/json",
-          url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
-          data: JSON.stringify(pdfData),
-          success: function(result, status, jqXHR) {
-            if (iOS) {
-              window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
-            } else {
-              generatePDF();
-            }
-            downloadContentEl.find('.loading').hide();
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            var errorMsg = downloadContentEl.find('.error').data('ajax-error');
-            downloadContentEl.find('.error').text(errorMsg).show();
-            downloadContentEl.find('.loading').hide();
-          }
-        });
+        if (iOS) {
+          window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
+        } else {
+          generatePDF();
+        }
+
+        // $.ajax({
+        //   method: 'POST',
+        //   dataType: "json",
+        //   contentType: "application/json",
+        //   url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
+        //   data: JSON.stringify(pdfData),
+        //   success: function(result, status, jqXHR) {
+        //     if (iOS) {
+        //       window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
+        //     } else {
+        //       generatePDF();
+        //     }
+        //     downloadContentEl.find('.loading').hide();
+        //   },
+        //   error: function(jqXHR, textStatus, errorThrown) {
+        //     var errorMsg = downloadContentEl.find('.error').data('ajax-error');
+        //     downloadContentEl.find('.error').text(errorMsg).show();
+        //     downloadContentEl.find('.loading').hide();
+        //   }
+        // });
       } else {
         var errorMsg = downloadContentEl.find('.error').data('mail-error');
         downloadContentEl.find('.error').text(errorMsg).show();

@@ -48,6 +48,8 @@ $(document).on("ready", function(){
   var statsVBar
   var statsHBar
 
+
+
 $(window).on("load", function(){
 
   if(!window.location.hash) {
@@ -846,76 +848,105 @@ $(window).on("load", function(){
   });
 });
 
-$(window).on("resize", function(){
- $('.end_anim').each(function(){
-  if ($(this).is('#rosco1A')) {
-    $(this).empty();
-    console.log('rosco1A');
-    animrosco1A = lottie.loadAnimation(rosco1AParams).play();
+//always refresh page
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
   }
-  if ($(this).is('#rosco1B')) {
-    $(this).empty();
-    animrosco1B = lottie.loadAnimation(rosco1BParams).play();
-  }
-  if ($(this).is('#stats_vertical')) {
-    $(this).empty();
-    animstats_vertical = lottie.loadAnimation(stats_verticalParams).play();
-    statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
-    statsVBar.recalculate();
-    setTimeout(function(){
-      if ( $(window).width() < 991) {
-        statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
-      }
-    }, 750);
-  }
-  if ($(this).is('#roscos_varios_1')) {
-    $(this).empty();
-    animroscos_varios_1 = lottie.loadAnimation(roscos_varios_1Params).play();
-  }
-  if ($(this).is('#roscos_varios_2')) {
-    $(this).empty();
-    animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params).play();
-  }
-  if ($(this).is('#roscos_varios_3')) {
-    $(this).empty();
-    animroscos_varios_3 = lottie.loadAnimation(roscos_varios_3Params).play();
-  }
-  if ($(this).is('#rosco2B')) {
-    $(this).empty();
-    animrosco2B = lottie.loadAnimation(rosco2BParams).play();
-  }
-  if ($(this).is('#stats_horizontal')) {
-    $(this).empty();
-    animstats_horizontal = lottie.loadAnimation(stats_horizontalParams).play();
-    statsHBar.recalculate();
-    setTimeout(function(){
-      if ( $(window).width() < 768) {
-        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
-      }
-    }, 750);
-  }
-  if ($(this).is('#roscofoto2A')) {
-    $(this).empty();
-    animroscofoto2A = lottie.loadAnimation(roscofoto2AParams).play();
-  }
-  if ($(this).is('#roscofoto3A')) {
-    $(this).empty();
-    animroscofoto3A = lottie.loadAnimation(roscofoto3AParams).play();
-  }
-  if ($(this).is('#roscofoto3B')) {
-    $(this).empty();
-    animroscofoto3B = lottie.loadAnimation(roscofoto3BParams).play();
-  }
-  if ($(this).is('#rosco1Ahome')) {
-    $(this).empty();
-    rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams).play();
-  }
-  if ($(this).is('#rosco1Bhome')) {
-    $(this).empty();
-    rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams).play();
-  }
- });
 });
+
+$(document).ready(function($) {
+
+  var windowWidth = $(window).width();
+
+  $(window).resize(function(){
+    console.log('resize');
+
+    
+    if($(window).width() != windowWidth){
+
+      windowWidth = $(window).width();
+
+      $('.svg_anim').each(function(){
+        console.log($(this));
+
+        if ($(this).is('#rosco1A')) {
+          $(this).empty();
+          console.log('rosco1A');
+          animrosco1A = lottie.loadAnimation(rosco1AParams).play();
+        }
+        if ($(this).is('#rosco1B')) {
+          $(this).empty();
+          animrosco1B = lottie.loadAnimation(rosco1BParams).play();
+        }
+        if ($(this).is('#stats_vertical')) {
+          $(this).empty();
+          animstats_vertical = lottie.loadAnimation(stats_verticalParams).play();
+          statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+          statsVBar.recalculate();
+          setTimeout(function(){
+            if ( $(window).width() < 991) {
+              statsVBar = new SimpleBar($('#stats_vertical')[0], { autoHide: false });
+            }
+          }, 750);
+        }
+        if ($(this).is('#roscos_varios_1')) {
+          $(this).empty();
+          animroscos_varios_1 = lottie.loadAnimation(roscos_varios_1Params).play();
+        }
+        if ($(this).is('#roscos_varios_2')) {
+          $(this).empty();
+          animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params).play();
+        }
+        if ($(this).is('#roscos_varios_3')) {
+          $(this).empty();
+          animroscos_varios_3 = lottie.loadAnimation(roscos_varios_3Params).play();
+        }
+        if ($(this).is('#rosco2B')) {
+          $(this).empty();
+          animrosco2B = lottie.loadAnimation(rosco2BParams).play();
+        }
+        if ($(this).is('#stats_horizontal')) {
+          $(this).empty();
+          animstats_horizontal = lottie.loadAnimation(stats_horizontalParams).play();
+          statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+          statsHBar.recalculate();
+          setTimeout(function(){
+            if ( $(window).width() < 768) {
+              statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+            }
+          }, 750);
+        }
+        if ($(this).is('#roscofoto2A')) {
+          console.log('aqui');
+          $(this).empty();
+          animroscofoto2A = lottie.loadAnimation(roscofoto2AParams).play();
+        }
+        if ($(this).is('#roscofoto3A')) {
+          $(this).empty();
+          animroscofoto3A = lottie.loadAnimation(roscofoto3AParams).play();
+        }
+        if ($(this).is('#roscofoto3B')) {
+          $(this).empty();
+          animroscofoto3B = lottie.loadAnimation(roscofoto3BParams).play();
+        }
+        if ($(this).is('#rosco1Ahome')) {
+          $(this).empty();
+          rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams).play();
+        }
+        if ($(this).is('#rosco1Bhome')) {
+          $(this).empty();
+          rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams).play();
+        }
+      });
+    }
+  });
+});
+
 
 $(window).on("scroll", function(){
   var scrollY = $(this).scrollTop();

@@ -522,7 +522,7 @@ $(window).on("load", function(){
   // rosco1Ahome
   var rosco1AhomeParams = {
       container: document.getElementById('rosco1Ahome'),
-      renderer: 'canvas',
+      renderer: 'svg',
       loop: false,
       autoplay: false,
       animationData: rosco1A

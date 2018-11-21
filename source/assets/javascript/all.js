@@ -215,7 +215,7 @@ $(window).on("load", function(){
       animrosco1B = lottie.loadAnimation(rosco1BParams);
       $('#rosco1B').addClass('end_anim');
     }
-  } else if ($('#').length > 0) {
+  } else if ($('#rosco1B').length > 0) {
     animrosco1B = lottie.loadAnimation(rosco1BParams);
     $('#rosco1B').addClass('end_anim');
   }

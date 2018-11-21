@@ -14,7 +14,7 @@
     <% if ( current_page.data.ogTitle ) %>
         <meta property="og:site_name" content="<%= current_page.data.title || 'Observatorio' %>"/>
         <meta property="og:image" content="<%= config[:host] %><%= config[:images_dir] %>/content/<%= current_page.data.ogImage %>"/>
-        <meta property="og:url" content="www.bestinver.es/observatorio"/>
+        <meta property="og:url" content="<%= config[:host] %><%= current_page.data.ogUrl %>"/>
         <meta property="og:type" content="article" />
         <meta property="og:title" content="<%= current_page.data.ogTitle %>"/>
     <% end %>

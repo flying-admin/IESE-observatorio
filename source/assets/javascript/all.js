@@ -938,10 +938,10 @@ $(document).ready(function($) {
           $(this).empty();
           rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams).play();
         }
-        if ($(this).is('#rosco1Bhome')) {
-          $(this).empty();
-          rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams).play();
-        }
+        // if ($(this).is('#rosco1Bhome')) {
+        //   $(this).empty();
+        //   rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams).play();
+        // }
       });
     }
   });

@@ -816,6 +816,7 @@ $(window).on("load", function(){
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
+
         $.ajax({
           method: 'POST',
           dataType: "json",
@@ -824,7 +825,7 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             if (iOS) {
-              window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
+              $("<a>").attr("href", "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf").attr("target", "_blank")[0].click();
             } else {
               generatePDF();
             }
@@ -871,8 +872,7 @@ $(document).ready(function($) {
 
       windowWidth = $(window).width();
 
-      $('.svg_anim').each(function(){
-        console.log($(this));
+      $('.end_anim').each(function(){
 
         if ($(this).is('#rosco1A')) {
           $(this).empty();

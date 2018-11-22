@@ -816,10 +816,6 @@ $(window).on("load", function(){
         pdfData.cusEstadoCliente = "Prospect";
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
-        
-        if (iOS) {
-          $("<a>").attr("href", "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf").attr("target", "_blank")[0].click();
-        }
 
         $.ajax({
           method: 'POST',
@@ -829,7 +825,7 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             if (iOS) {
-              $("<a>").attr("href", "https://mozilla.github.io/pdf.js/web/compressed.tracemonkey-pldi-09.pdf").attr("target", "_blank")[0].click();
+              $("<a>").attr("href", "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf").attr("target", "_blank")[0].click();
             } else {
               generatePDF();
             }

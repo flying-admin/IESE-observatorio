@@ -871,8 +871,7 @@ $(document).ready(function($) {
 
       windowWidth = $(window).width();
 
-      $('.svg_anim').each(function(){
-        console.log($(this));
+      $('.end_anim').each(function(){
 
         if ($(this).is('#rosco1A')) {
           $(this).empty();

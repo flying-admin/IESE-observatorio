@@ -824,7 +824,8 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             if (iOS) {
-              window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
+              // window.open("https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf",'_blank');
+              $("<a>").attr("href", "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf").attr("target", "_blank")[0].click();
             } else {
               generatePDF();
             }

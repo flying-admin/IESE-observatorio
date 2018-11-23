@@ -796,9 +796,11 @@ $(window).on("load", function(){
     } else if (!isValid) {
       var errorMsg = error.data('mail-error');
       error.text(errorMsg).show();
+      $('.btnIOS').addClass('disabled');
     } else if (!legalChecked) {
       var errorMsg = error.data('legal-error');
       error.text(errorMsg).show();
+      $('.btnIOS').addClass('disabled');
     }
   }
 

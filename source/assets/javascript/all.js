@@ -746,7 +746,7 @@ $(window).on("load", function(){
     return re.test(email);
   }
 
-  function generatePDF() {
+  function generatePDF(downloadContentEl) {
     var oReq = new XMLHttpRequest();
             
     // The Endpoint of your server 
@@ -761,14 +761,19 @@ $(window).on("load", function(){
     // When the file request finishes
     // Is up to you, the configuration for error events etc.
     oReq.onload = function() {
-        // Once the file is downloaded, open a new window with the PDF
-        // Remember to allow the POP-UPS in your browser
-        var file = new Blob([oReq.response], { 
-            type: 'application/pdf' 
-        });
-        
-        // Generate file download directly in the browser !
-        saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
+      // Once the file is downloaded, open a new window with the PDF
+      // Remember to allow the POP-UPS in your browser
+      var file = new Blob([oReq.response], { 
+          type: 'application/pdf' 
+      });
+      
+      // Generate file download directly in the browser !
+      saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
+      downloadContentEl.find('.loading').hide();
+    };
+
+    oReq.onerror = function() {
+      downloadContentEl.find('.loading').hide();
     };
 
     oReq.send();
@@ -847,6 +852,8 @@ $(window).on("load", function(){
         pdfData.cusOrigen = "MKT";
         pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
 
+        generatePDF(downloadContentEl);
+
         $.ajax({
           method: 'POST',
           dataType: "json",
@@ -855,13 +862,10 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
-            generatePDF();
-            downloadContentEl.find('.loading').hide();
           },
           error: function(jqXHR, textStatus, errorThrown) {
             var errorMsg = downloadContentEl.find('.error').data('ajax-error');
             downloadContentEl.find('.error').text(errorMsg).show();
-            downloadContentEl.find('.loading').hide();
           }
         });
       } else {

@@ -779,12 +779,14 @@ $(window).on("load", function(){
     oReq.send();
   }
 
-  $('#email').change(function(ev) {
+  var emailInput = document.querySelector('#email')
+  emailInput.addEventListener('keydown', function(ev) {
     isValid = validateEmail(ev.currentTarget.value);
     checkValidations();
   });
 
-  $('#check-legal').change(function(ev) {
+  var legalInput = document.querySelector('#check-legal')
+  legalInput.addEventListener('keydown', function(ev) {
     legalChecked = $(".download_content #check-legal").is(':checked');
     checkValidations();
   });

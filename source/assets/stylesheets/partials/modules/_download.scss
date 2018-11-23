@@ -97,6 +97,10 @@
           margin-bottom: 20px;
         }
       }
+      .btnIOS:selection {
+        background: transparent;
+        color: #fff;
+      }
 
       .disabled {
         pointer-events: none;

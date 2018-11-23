@@ -73,6 +73,31 @@
           margin-bottom: 20px;
         }
       }
+      .btnIOS{
+        display: inline-block;
+        width: auto;
+        width: 224px;
+        padding: 13px;
+        font-weight: 800;
+        font-size: 13px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #fff;
+        background-color: #B59971;
+        border-radius: 0;
+        border: 1px solid #B59971;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        position: relative;
+      }
+
+      .disabled {
+        pointer-events: none;
+      }
+
       .loading {
         background-color: $primary;
         display: block;

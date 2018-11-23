@@ -48,8 +48,24 @@ $(document).on("ready", function(){
   var statsVBar
   var statsHBar
 
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  var windowWidth = $(window).width();
+  var isValid,legalChecked;
+  var pdfData = {};
 
-
+  function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam)
+      {
+        return sParameterName[1];
+      }
+    }
+  }
+  
 $(window).on("load", function(){
 
   if(!window.location.hash) {
@@ -725,7 +741,6 @@ $(window).on("load", function(){
 
   // PDF
 
-  var pdfData = {};
   function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+(com|org|net|int|edu|es)))$/;
     return re.test(email);
@@ -759,16 +774,31 @@ $(window).on("load", function(){
     oReq.send();
   }
 
-  function GetURLParameter(sParam) {
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++)
-    {
-      var sParameterName = sURLVariables[i].split('=');
-      if (sParameterName[0] == sParam)
-      {
-        return sParameterName[1];
-      }
+  $('#email').change(function(ev) {
+    isValid = validateEmail(ev.currentTarget.value);
+    checkValidations();
+  });
+
+  $('#check-legal').change(function(ev) {
+    legalChecked = $(".download_content #check-legal").is(':checked');
+    checkValidations();
+  });
+
+  function checkValidations() {
+    var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
+    console.log(isValid);
+    console.log(legalChecked);
+    var error = $('.error');
+    
+    if (isValid && legalChecked) {
+      $('.btnIOS').removeClass('disabled');
+      $('.error').hide();
+    } else if (!isValid) {
+      var errorMsg = error.data('mail-error');
+      error.text(errorMsg).show();
+    } else if (!legalChecked) {
+      var errorMsg = error.data('legal-error');
+      error.text(errorMsg).show();
     }
   }
 
@@ -790,8 +820,6 @@ $(window).on("load", function(){
         var utm_medium = '';
         var utm_source = '';
         var utm_content = '';
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        var iOS = true;
 
         if (GetURLParameter('utm_campaign') != undefined) {
           utm_campaign = GetURLParameter('utm_campaign');
@@ -824,12 +852,8 @@ $(window).on("load", function(){
           url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
-            if (iOS) {
-              // $('#iosBtn').append('<a href="https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf" target="_blank"></a>')
-              $("<a>").attr("href", "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf").attr("target", "_blank")[0].click();
-            } else {
-              generatePDF();
-            }
+            DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
+            generatePDF();
             downloadContentEl.find('.loading').hide();
           },
           error: function(jqXHR, textStatus, errorThrown) {
@@ -851,19 +875,73 @@ $(window).on("load", function(){
 });
 
 //always refresh page
-window.addEventListener( "pageshow", function ( event ) {
-  var historyTraversal = event.persisted || 
-                         ( typeof window.performance != "undefined" && 
-                              window.performance.navigation.type === 2 );
-  if ( historyTraversal ) {
-    // Handle page restore.
-    window.location.reload();
-  }
-});
+// window.addEventListener( "pageshow", function ( event ) {
+//   var historyTraversal = event.persisted || 
+//                          ( typeof window.performance != "undefined" && 
+//                               window.performance.navigation.type === 2 );
+//   if ( historyTraversal ) {
+//     // Handle page restore.
+//     window.location.reload();
+//   }
+// });
 
 $(document).ready(function($) {
 
-  var windowWidth = $(window).width();
+  if (iOS) {
+    var button = $("<a href='https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf' target='_blank' class='btnIOS disabled'>Descargar</a>");
+    $('.download_content_form_input').after(button);
+    button.on('click', function() {
+      if (isValid && legalChecked) {
+        
+        var utm_campaign = '';
+        var utm_medium = '';
+        var utm_source = '';
+        var utm_content = '';
+
+        if (GetURLParameter('utm_campaign') != undefined) {
+          utm_campaign = GetURLParameter('utm_campaign');
+        }
+
+        if (GetURLParameter('utm_medium') != undefined) {
+          utm_medium = GetURLParameter('utm_medium');
+        }
+
+        if (GetURLParameter('utm_source') != undefined) {
+          utm_source = GetURLParameter('utm_source');
+        }
+
+        if (GetURLParameter('utm_content') != undefined) {
+          utm_content = GetURLParameter('utm_content');
+        }
+
+        pdfData.cusCIFNIF = '';
+        pdfData.firstName = $('.download_content_form .download_content_form_input').val();
+        pdfData.lastName = "Observatorio2018";
+        pdfData.email = $('.download_content_form .download_content_form_input').val();
+        pdfData.cusEstadoCliente = "Prospect";
+        pdfData.cusOrigen = "MKT";
+        pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
+
+        $.ajax({
+          method: 'POST',
+          dataType: "json",
+          contentType: "application/json",
+          url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
+          data: JSON.stringify(pdfData),
+          success: function(result, status, jqXHR) {
+            DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            var errorMsg = $('.error').data('ajax-error');
+            $('.error').text(errorMsg).show();
+          }
+        });
+      }
+    });
+  } else {
+    var button = $("<input type='submit' name='download' value='descargar' class='btn'/>");
+    $('.download_content_form_input').after(button);
+  }
 
   $(window).resize(function(){
     console.log('resize');

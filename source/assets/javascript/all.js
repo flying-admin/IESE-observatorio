@@ -789,6 +789,16 @@ $(window).on("load", function(){
     checkValidations();
   });
 
+  $('#email').blur(function(ev) {
+    isValid = validateEmail(ev.currentTarget.value);
+    checkValidations();
+  });
+
+  $('#check-legal').blur(function(ev) {
+    legalChecked = $(".download_content #check-legal").is(':checked');
+    checkValidations();
+  });
+
   function checkValidations() {
     var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
     console.log(isValid);

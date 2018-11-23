@@ -65,6 +65,37 @@ $(document).on("ready", function(){
       }
     }
   }
+
+    function checkValidations() {
+    var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
+    console.log(isValid);
+    console.log(legalChecked);
+    var error = $('.error');
+    
+    if (isValid && legalChecked) {
+      togglePDFUrl(true)
+      $('.error').hide();
+    } else if (!isValid) {
+      var errorMsg = error.data('mail-error');
+      error.text(errorMsg).show();
+      togglePDFUrl(false)
+    } else if (!legalChecked) {
+      var errorMsg = error.data('legal-error');
+      error.text(errorMsg).show();
+      togglePDFUrl(false)
+    }
+  }
+
+    function togglePDFUrl(bool) {
+    var btnIos = $('.btnIOS')
+    if(bool) {
+      btnIos.attr('href', href='https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf')
+      btnIos.attr('target', '_blank')
+    } else {
+      btnIos.attr('href', null)
+      btnIos.attr('target', null)
+    }
+  }
   
 $(window).on("load", function(){
 
@@ -780,7 +811,7 @@ $(window).on("load", function(){
   }
 
   var emailInput = document.querySelector('#email')
-  emailInput.addEventListener('keydown input', function(ev) {
+  emailInput.addEventListener('input', function(ev) {
     isValid = validateEmail(ev.currentTarget.value);
     checkValidations();
   });
@@ -800,26 +831,6 @@ $(window).on("load", function(){
     legalChecked = $(".download_content #check-legal").is(':checked');
     checkValidations();
   });
-
-  function checkValidations() {
-    var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
-    console.log(isValid);
-    console.log(legalChecked);
-    var error = $('.error');
-    
-    if (isValid && legalChecked) {
-      $('.btnIOS').removeClass('disabled');
-      $('.error').hide();
-    } else if (!isValid) {
-      var errorMsg = error.data('mail-error');
-      error.text(errorMsg).show();
-      $('.btnIOS').addClass('disabled');
-    } else if (!legalChecked) {
-      var errorMsg = error.data('legal-error');
-      error.text(errorMsg).show();
-      $('.btnIOS').addClass('disabled');
-    }
-  }
 
   $('.download_content_form .btn').on('click', function(ev) {
     ev.preventDefault();
@@ -906,9 +917,10 @@ $(window).on("load", function(){
 $(document).ready(function($) {
 
   if (iOS) {
-    var button = $("<a href='https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf' target='_blank' class='btnIOS disabled'>Descargar</a>");
+    var button = $("<a class='btnIOS'>Descargar</a>");
     $('.download_content_form_input').after(button);
     button.on('click', function() {
+      checkValidations();
       if (isValid && legalChecked) {
         
         var utm_campaign = '';

@@ -780,7 +780,7 @@ $(window).on("load", function(){
   }
 
   var emailInput = document.querySelector('#email')
-  emailInput.addEventListener('keydown touchend', function(ev) {
+  emailInput.addEventListener('keydown input', function(ev) {
     isValid = validateEmail(ev.currentTarget.value);
     checkValidations();
   });
@@ -876,8 +876,8 @@ $(window).on("load", function(){
             DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            var errorMsg = downloadContentEl.find('.error').data('ajax-error');
-            downloadContentEl.find('.error').text(errorMsg).show();
+            // var errorMsg = downloadContentEl.find('.error').data('ajax-error');
+            // downloadContentEl.find('.error').text(errorMsg).show();
           }
         });
       } else {
@@ -950,8 +950,8 @@ $(document).ready(function($) {
             DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            var errorMsg = $('.error').data('ajax-error');
-            $('.error').text(errorMsg).show();
+            // var errorMsg = $('.error').data('ajax-error');
+            // $('.error').text(errorMsg).show();
           }
         });
       }

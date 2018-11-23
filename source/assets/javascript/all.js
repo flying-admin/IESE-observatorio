@@ -780,7 +780,7 @@ $(window).on("load", function(){
   }
 
   var emailInput = document.querySelector('#email')
-  emailInput.addEventListener('keydown', function(ev) {
+  emailInput.addEventListener('keydown touchend', function(ev) {
     isValid = validateEmail(ev.currentTarget.value);
     checkValidations();
   });

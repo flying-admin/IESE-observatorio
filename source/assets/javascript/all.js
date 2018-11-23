@@ -791,7 +791,7 @@ $(window).on("load", function(){
         var utm_source = '';
         var utm_content = '';
         var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
+        var iOS = true;
 
         if (GetURLParameter('utm_campaign') != undefined) {
           utm_campaign = GetURLParameter('utm_campaign');
@@ -825,6 +825,7 @@ $(window).on("load", function(){
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
             if (iOS) {
+              // $('#iosBtn').append('<a href="https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf" target="_blank"></a>')
               $("<a>").attr("href", "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf").attr("target", "_blank")[0].click();
             } else {
               generatePDF();

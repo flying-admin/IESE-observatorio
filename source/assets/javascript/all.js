@@ -786,7 +786,7 @@ $(window).on("load", function(){
   });
 
   var legalInput = document.querySelector('#check-legal')
-  legalInput.addEventListener('keydown', function(ev) {
+  legalInput.addEventListener('change', function(ev) {
     legalChecked = $(".download_content #check-legal").is(':checked');
     checkValidations();
   });

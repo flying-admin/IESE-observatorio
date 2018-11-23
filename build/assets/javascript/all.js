@@ -48,8 +48,53 @@ $(document).on("ready", function(){
   var statsVBar
   var statsHBar
 
+  var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  var windowWidth = $(window).width();
+  var isValid,legalChecked;
+  var pdfData = {};
 
+  function GetURLParameter(sParam) {
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+      var sParameterName = sURLVariables[i].split('=');
+      if (sParameterName[0] == sParam)
+      {
+        return sParameterName[1];
+      }
+    }
+  }
 
+    function checkValidations() {
+    var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
+    var error = $('.error');
+    
+    if (isValid && legalChecked) {
+      togglePDFUrl(true)
+      $('.error').hide();
+    } else if (!isValid) {
+      var errorMsg = error.data('mail-error');
+      error.text(errorMsg).show();
+      togglePDFUrl(false)
+    } else if (!legalChecked) {
+      var errorMsg = error.data('legal-error');
+      error.text(errorMsg).show();
+      togglePDFUrl(false)
+    }
+  }
+
+    function togglePDFUrl(bool) {
+    var btnIos = $('.btnIOS')
+    if(bool) {
+      btnIos.attr('href', href='https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf')
+      btnIos.attr('target', '_blank')
+    } else {
+      btnIos.attr('href', null)
+      btnIos.attr('target', null)
+    }
+  }
+  
 $(window).on("load", function(){
 
   if(!window.location.hash) {
@@ -725,13 +770,12 @@ $(window).on("load", function(){
 
   // PDF
 
-  var pdfData = {};
   function validateEmail(email) {
     var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+(com|org|net|int|edu|es)))$/;
     return re.test(email);
   }
 
-  function generatePDF() {
+  function generatePDF(downloadContentEl) {
     var oReq = new XMLHttpRequest();
             
     // The Endpoint of your server 
@@ -746,31 +790,45 @@ $(window).on("load", function(){
     // When the file request finishes
     // Is up to you, the configuration for error events etc.
     oReq.onload = function() {
-        // Once the file is downloaded, open a new window with the PDF
-        // Remember to allow the POP-UPS in your browser
-        var file = new Blob([oReq.response], { 
-            type: 'application/pdf' 
-        });
-        
-        // Generate file download directly in the browser !
-        saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
+      // Once the file is downloaded, open a new window with the PDF
+      // Remember to allow the POP-UPS in your browser
+      var file = new Blob([oReq.response], { 
+          type: 'application/pdf' 
+      });
+      
+      // Generate file download directly in the browser !
+      saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
+      downloadContentEl.find('.loading').hide();
+    };
+
+    oReq.onerror = function() {
+      downloadContentEl.find('.loading').hide();
     };
 
     oReq.send();
   }
 
-  function GetURLParameter(sParam) {
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++)
-    {
-      var sParameterName = sURLVariables[i].split('=');
-      if (sParameterName[0] == sParam)
-      {
-        return sParameterName[1];
-      }
-    }
-  }
+  var emailInput = document.querySelector('#email')
+  emailInput.addEventListener('input', function(ev) {
+    isValid = validateEmail(ev.currentTarget.value);
+    checkValidations();
+  });
+
+  var legalInput = document.querySelector('#check-legal')
+  legalInput.addEventListener('change', function(ev) {
+    legalChecked = $(".download_content #check-legal").is(':checked');
+    checkValidations();
+  });
+
+  $('#email').blur(function(ev) {
+    isValid = validateEmail(ev.currentTarget.value);
+    checkValidations();
+  });
+
+  $('#check-legal').blur(function(ev) {
+    legalChecked = $(".download_content #check-legal").is(':checked');
+    checkValidations();
+  });
 
   $('.download_content_form .btn').on('click', function(ev) {
     ev.preventDefault();
@@ -790,8 +848,83 @@ $(window).on("load", function(){
         var utm_medium = '';
         var utm_source = '';
         var utm_content = '';
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
+        if (GetURLParameter('utm_campaign') != undefined) {
+          utm_campaign = GetURLParameter('utm_campaign');
+        }
+
+        if (GetURLParameter('utm_medium') != undefined) {
+          utm_medium = GetURLParameter('utm_medium');
+        }
+
+        if (GetURLParameter('utm_source') != undefined) {
+          utm_source = GetURLParameter('utm_source');
+        }
+
+        if (GetURLParameter('utm_content') != undefined) {
+          utm_content = GetURLParameter('utm_content');
+        }
+
+        pdfData.cusCIFNIF = '';
+        pdfData.firstName = $('.download_content_form .download_content_form_input').val();
+        pdfData.lastName = "Observatorio2018";
+        pdfData.email = $('.download_content_form .download_content_form_input').val();
+        pdfData.cusEstadoCliente = "Prospect";
+        pdfData.cusOrigen = "MKT";
+        pdfData.cusOrigenDetalle = "Observatorio|Observatorio ahorro e inversion 2018|"+utm_campaign+"|"+utm_medium+"|"+utm_source+"|"+utm_content;
+
+        generatePDF(downloadContentEl);
+
+        $.ajax({
+          method: 'POST',
+          dataType: "json",
+          contentType: "application/json",
+          url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
+          data: JSON.stringify(pdfData),
+          success: function(result, status, jqXHR) {
+            DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            // var errorMsg = downloadContentEl.find('.error').data('ajax-error');
+            // downloadContentEl.find('.error').text(errorMsg).show();
+          }
+        });
+      } else {
+        var errorMsg = downloadContentEl.find('.error').data('mail-error');
+        downloadContentEl.find('.error').text(errorMsg).show();
+      }
+    } else {
+      var errorMsg = downloadContentEl.find('.error').data('legal-error');
+      downloadContentEl.find('.error').text(errorMsg).show();
+    }
+
+  });
+});
+
+//always refresh page
+// window.addEventListener( "pageshow", function ( event ) {
+//   var historyTraversal = event.persisted || 
+//                          ( typeof window.performance != "undefined" && 
+//                               window.performance.navigation.type === 2 );
+//   if ( historyTraversal ) {
+//     // Handle page restore.
+//     window.location.reload();
+//   }
+// });
+
+$(document).ready(function($) {
+
+  if (iOS) {
+    var button = $("<a class='btnIOS'>Descargar</a>");
+    $('.download_content_form_input').after(button);
+    button.on('click', function() {
+      checkValidations();
+      if (isValid && legalChecked) {
+        
+        var utm_campaign = '';
+        var utm_medium = '';
+        var utm_source = '';
+        var utm_content = '';
 
         if (GetURLParameter('utm_campaign') != undefined) {
           utm_campaign = GetURLParameter('utm_campaign');
@@ -824,49 +957,21 @@ $(window).on("load", function(){
           url: "https://bstnvr.westeurope.cloudapp.azure.com/MICROCAMPAIGN/api/Campaigns/clientprospect",
           data: JSON.stringify(pdfData),
           success: function(result, status, jqXHR) {
-            if (iOS) {
-              $("<a>").attr("href", "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf").attr("target", "_blank")[0].click();
-            } else {
-              generatePDF();
-            }
-            downloadContentEl.find('.loading').hide();
+            DigitalData.push({'event':'event' ,'eventCategory':'descarga pdf','eventAction':'observatorio-del-ahorro-y-la-inversion.pdf','eventLabel':'<%= page_name %>'})
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            var errorMsg = downloadContentEl.find('.error').data('ajax-error');
-            downloadContentEl.find('.error').text(errorMsg).show();
-            downloadContentEl.find('.loading').hide();
+            // var errorMsg = $('.error').data('ajax-error');
+            // $('.error').text(errorMsg).show();
           }
         });
-      } else {
-        var errorMsg = downloadContentEl.find('.error').data('mail-error');
-        downloadContentEl.find('.error').text(errorMsg).show();
       }
-    } else {
-      var errorMsg = downloadContentEl.find('.error').data('legal-error');
-      downloadContentEl.find('.error').text(errorMsg).show();
-    }
-
-  });
-});
-
-//always refresh page
-window.addEventListener( "pageshow", function ( event ) {
-  var historyTraversal = event.persisted || 
-                         ( typeof window.performance != "undefined" && 
-                              window.performance.navigation.type === 2 );
-  if ( historyTraversal ) {
-    // Handle page restore.
-    window.location.reload();
+    });
+  } else {
+    var button = $("<input type='submit' name='download' value='descargar' class='btn'/>");
+    $('.download_content_form_input').after(button);
   }
-});
-
-$(document).ready(function($) {
-
-  var windowWidth = $(window).width();
 
   $(window).resize(function(){
-    console.log('resize');
-
     
     if($(window).width() != windowWidth){
 
@@ -874,15 +979,6 @@ $(document).ready(function($) {
 
       $('.end_anim').each(function(){
 
-        if ($(this).is('#rosco1A')) {
-          $(this).empty();
-          console.log('rosco1A');
-          animrosco1A = lottie.loadAnimation(rosco1AParams).play();
-        }
-        if ($(this).is('#rosco1B')) {
-          $(this).empty();
-          animrosco1B = lottie.loadAnimation(rosco1BParams).play();
-        }
         if ($(this).is('#stats_vertical')) {
           $(this).empty();
           animstats_vertical = lottie.loadAnimation(stats_verticalParams).play();
@@ -894,22 +990,7 @@ $(document).ready(function($) {
             }
           }, 750);
         }
-        if ($(this).is('#roscos_varios_1')) {
-          $(this).empty();
-          animroscos_varios_1 = lottie.loadAnimation(roscos_varios_1Params).play();
-        }
-        if ($(this).is('#roscos_varios_2')) {
-          $(this).empty();
-          animroscos_varios_2 = lottie.loadAnimation(roscos_varios_2Params).play();
-        }
-        if ($(this).is('#roscos_varios_3')) {
-          $(this).empty();
-          animroscos_varios_3 = lottie.loadAnimation(roscos_varios_3Params).play();
-        }
-        if ($(this).is('#rosco2B')) {
-          $(this).empty();
-          animrosco2B = lottie.loadAnimation(rosco2BParams).play();
-        }
+
         if ($(this).is('#stats_horizontal')) {
           $(this).empty();
           animstats_horizontal = lottie.loadAnimation(stats_horizontalParams).play();
@@ -920,27 +1001,6 @@ $(document).ready(function($) {
               statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
             }
           }, 750);
-        }
-        if ($(this).is('#roscofoto2A')) {
-          console.log('aqui');
-          $(this).empty();
-          animroscofoto2A = lottie.loadAnimation(roscofoto2AParams).play();
-        }
-        if ($(this).is('#roscofoto3A')) {
-          $(this).empty();
-          animroscofoto3A = lottie.loadAnimation(roscofoto3AParams).play();
-        }
-        if ($(this).is('#roscofoto3B')) {
-          $(this).empty();
-          animroscofoto3B = lottie.loadAnimation(roscofoto3BParams).play();
-        }
-        if ($(this).is('#rosco1Ahome')) {
-          $(this).empty();
-          rosco1Ahome = lottie.loadAnimation(rosco1AhomeParams).play();
-        }
-        if ($(this).is('#rosco1Bhome')) {
-          $(this).empty();
-          rosco1Bhome = lottie.loadAnimation(rosco1BhomeParams).play();
         }
       });
     }

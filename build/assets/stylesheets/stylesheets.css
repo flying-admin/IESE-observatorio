@@ -5318,6 +5318,34 @@ body.no-scroll {
           .download_content_form .btn {
             width: 100%;
             margin-bottom: 20px; } }
+      .download_content_form .btnIOS {
+        display: inline-block;
+        width: auto;
+        width: 224px;
+        padding: 13px;
+        font-weight: 800;
+        font-size: 13px;
+        line-height: 36px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #fff;
+        background-color: #B59971;
+        border-radius: 0;
+        border: 1px solid #B59971;
+        text-decoration: none;
+        text-transform: uppercase;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        position: relative; }
+        @media (max-width: 767px) {
+          .download_content_form .btnIOS {
+            width: 100%;
+            margin-bottom: 20px; } }
+      .download_content_form .btnIOS:selection {
+        background: transparent;
+        color: #fff; }
+      .download_content_form .disabled {
+        pointer-events: none; }
       .download_content_form .loading {
         background-color: #B59971;
         display: block;

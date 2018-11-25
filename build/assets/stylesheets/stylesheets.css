@@ -193,7 +193,6 @@ body {
   text-align: right; }
 
 body.no-scroll {
-  position: fixed;
   max-height: 100vh;
   overflow: hidden; }
 

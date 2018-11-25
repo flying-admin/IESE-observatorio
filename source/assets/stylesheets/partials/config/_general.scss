@@ -22,7 +22,7 @@ img {
 
 .content__wrapper {
   display: block;
-  position: relative; 
+  position: relative;
   // max-width: 1200px;
   margin: 0px auto;
   z-index: 3;
@@ -94,7 +94,7 @@ body {
 }
 
 body.no-scroll {
-  position: fixed;
+  // position: fixed; -->  Makes scroll position jump to top of page - DO NOT UNCOMMENT
   max-height: 100vh;
   overflow: hidden;
 }

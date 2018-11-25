@@ -1,7 +1,7 @@
 var Project = {};
 
 Project.init = function(){
-  
+
 };
 
 $(document).on("ready", function(){
@@ -69,7 +69,7 @@ $(document).on("ready", function(){
     function checkValidations() {
     var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
     var error = $('.error');
-    
+
     if (isValid && legalChecked) {
       togglePDFUrl(true)
       $('.error').hide();
@@ -94,7 +94,7 @@ $(document).on("ready", function(){
       btnIos.attr('target', null)
     }
   }
-  
+
 $(window).on("load", function(){
 
   if(!window.location.hash) {
@@ -116,7 +116,7 @@ $(window).on("load", function(){
       });
     }, 1000);
   }
-  
+
   // Menu scroll
   $('[data-scroll]').on('click', function(ev) {
     ev.preventDefault();
@@ -126,16 +126,16 @@ $(window).on("load", function(){
 
     var distance = target.offset().top - headerOffset - offsetTop;
 
-    if (navigator.userAgent.match(/iPad|iPhone|iPod|Android|Windows Phone/i)) {  
+    if (navigator.userAgent.match(/iPad|iPhone|iPod|Android|Windows Phone/i)) {
       function customScrollTo(to, duration) {
           var start = 0,
               change = to - start,
               currentTime = 0,
               increment = 20;
 
-          var animateScroll = function(){        
+          var animateScroll = function(){
               currentTime += increment;
-              var val = Math.easeInOutQuad(currentTime, start, change, duration);                        
+              var val = Math.easeInOutQuad(currentTime, start, change, duration);
               window.scrollTo(0,val);
 
               if(currentTime < duration) {
@@ -777,8 +777,8 @@ $(window).on("load", function(){
 
   function generatePDF(downloadContentEl) {
     var oReq = new XMLHttpRequest();
-            
-    // The Endpoint of your server 
+
+    // The Endpoint of your server
     var URLToPDF = "https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf";
 
     // Configure XMLHttpRequest
@@ -792,10 +792,10 @@ $(window).on("load", function(){
     oReq.onload = function() {
       // Once the file is downloaded, open a new window with the PDF
       // Remember to allow the POP-UPS in your browser
-      var file = new Blob([oReq.response], { 
-          type: 'application/pdf' 
+      var file = new Blob([oReq.response], {
+          type: 'application/pdf'
       });
-      
+
       // Generate file download directly in the browser !
       saveAs(file, "observatorio_ahorro_inversion_2018.pdf");
       downloadContentEl.find('.loading').hide();
@@ -839,7 +839,7 @@ $(window).on("load", function(){
     var isValid = validateEmail(email);
     var legalChecked = $(".download_content #check-legal").is(':checked');
 
-    
+
     if ( legalChecked ) {
       if( isValid ) {
         downloadContentEl.find('.loading').show();
@@ -903,8 +903,8 @@ $(window).on("load", function(){
 
 //always refresh page
 // window.addEventListener( "pageshow", function ( event ) {
-//   var historyTraversal = event.persisted || 
-//                          ( typeof window.performance != "undefined" && 
+//   var historyTraversal = event.persisted ||
+//                          ( typeof window.performance != "undefined" &&
 //                               window.performance.navigation.type === 2 );
 //   if ( historyTraversal ) {
 //     // Handle page restore.
@@ -920,7 +920,7 @@ $(document).ready(function($) {
     button.on('click', function() {
       checkValidations();
       if (isValid && legalChecked) {
-        
+
         var utm_campaign = '';
         var utm_medium = '';
         var utm_source = '';
@@ -972,7 +972,7 @@ $(document).ready(function($) {
   }
 
   $(window).resize(function(){
-    
+
     if($(window).width() != windowWidth){
 
       windowWidth = $(window).width();

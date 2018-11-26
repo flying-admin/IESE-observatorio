@@ -5398,6 +5398,16 @@ body.no-scroll {
             left: 0;
             bottom: 0;
             right: 0; }
+    .download_content .label-legal {
+      display: block;
+      padding-left: 22px;
+      padding-bottom: 5px;
+      font-size: 11px;
+      line-height: 13px;
+      color: #242424;
+      text-align: left; }
+      .download_content .label-legal a {
+        color: #BA9868; }
     .download_content .legal {
       margin: 0 auto;
       position: relative;

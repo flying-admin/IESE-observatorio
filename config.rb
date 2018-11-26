@@ -61,8 +61,8 @@ end
 configure :build do
   activate :relative_assets
   set :relative_links, true
-  # activate :minify_css
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_javascript
   # activate :minify_html do |html|
   #   html.remove_multi_spaces        = true   # Remove multiple spaces
   #   html.remove_comments            = true   # Remove comments

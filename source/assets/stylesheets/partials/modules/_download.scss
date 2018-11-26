@@ -167,6 +167,18 @@
         }
       }
     }
+    .label-legal {
+      display: block;
+      padding-left: 22px;
+      padding-bottom: 5px;
+      font-size: 11px;
+      line-height: 13px;
+      color: $blackish;
+      text-align: left;
+      a {
+        color: $primary-text;
+      }
+    }
     .legal {
       margin: 0 auto;
       position: relative;

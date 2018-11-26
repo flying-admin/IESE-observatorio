@@ -54,7 +54,6 @@ $(document).on("ready", function(){
   var pdfData = {};
 
   var targetElement = $(".mobile_menu");
-  console.log(targetElement);
 
 
   function GetURLParameter(sParam) {
@@ -70,7 +69,7 @@ $(document).on("ready", function(){
     }
   }
 
-    function checkValidations() {
+  function checkValidations() {
     var downloadContentEl = $('.download_content_form .btn').closest('.download_content');
     var error = $('.error');
 
@@ -88,7 +87,7 @@ $(document).on("ready", function(){
     }
   }
 
-    function togglePDFUrl(bool) {
+  function togglePDFUrl(bool) {
     var btnIos = $('.btnIOS')
     if(bool) {
       btnIos.attr('href', href='https://www.bestinver.es/wp-content/uploads/observatorio_ahorro_inversion_2018.pdf')
@@ -116,7 +115,6 @@ $(window).on("load", function(){
     setTimeout(function(){
       $('.hero_home .hero_home_bg').fadeIn(500, function(){
         $('.hero_home .page_title').fadeIn(500);
-
       });
     }, 1000);
   }
@@ -160,7 +158,7 @@ $(window).on("load", function(){
     } else {
       $('html').animate({
           scrollTop: distance + 1
-      }, 1000, function(){
+      }, 1000, function() {
         var findAnim = target.find('.svg_anim');
         var idAnim = findAnim.attr('id');
         if ( !findAnim.is('.end_anim') ) {

@@ -809,10 +809,10 @@ $(window).on("load", function(){
   }
 
   var emailInput = document.querySelector('#email')
-  emailInput.addEventListener('input', function(ev) {
-    isValid = validateEmail(ev.currentTarget.value);
-    checkValidations();
-  });
+  // emailInput.addEventListener('input', function(ev) {
+  //   isValid = validateEmail(ev.currentTarget.value);
+  //   checkValidations();
+  // });
 
   var legalInput = document.querySelector('#check-legal')
   legalInput.addEventListener('change', function(ev) {

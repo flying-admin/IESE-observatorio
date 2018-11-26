@@ -251,7 +251,9 @@ $(window).on("load", function() {
       animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
       $(this).addClass('end_anim');
       if ( $(window).width() < 768) {
-        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+        setTimeout(function(){
+          statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+        }, 750);
       }
     });
 
@@ -259,13 +261,17 @@ $(window).on("load", function() {
       animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
       $('#stats_horizontal').addClass('end_anim');
       if ( $(window).width() < 768) {
-        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+        setTimeout(function(){
+          statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+        }, 750);
       }
     }
   } else if ($('#stats_horizontal').length > 0) {
     animstats_horizontal = lottie.loadAnimation(stats_horizontalParams);
     if ( $(window).width() < 768) {
-      statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      setTimeout(function(){
+        statsHBar = new SimpleBar($('#stats_horizontal')[0], { autoHide: false });
+      }, 750);
       $('#stats_horizontal').addClass('end_anim');
     }
   }

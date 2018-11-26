@@ -53,7 +53,8 @@ $(document).on("ready", function(){
   var isValid,legalChecked;
   var pdfData = {};
 
-  var targetElement = document.querySelector(".mobile_menu");
+  var targetElement = $(".mobile_menu");
+  console.log(targetElement);
 
 
   function GetURLParameter(sParam) {

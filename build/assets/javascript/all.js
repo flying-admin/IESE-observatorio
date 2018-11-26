@@ -53,6 +53,10 @@ $(document).on("ready", function(){
   var isValid,legalChecked;
   var pdfData = {};
 
+  var targetElement = $(".mobile_menu");
+  console.log(targetElement);
+
+
   function GetURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -208,9 +212,11 @@ $(window).on("load", function(){
     $('body').toggleClass('no-scroll');
     if(!$('.mobile_menu').is('.open')) {
       $('.mobile_menu_content').fadeOut('fast');
+      bodyScrollLock.enableBodyScroll(targetElement);
     } else {
       setTimeout(function(){
         $('.mobile_menu_content').fadeIn();
+        bodyScrollLock.disableBodyScroll(targetElement);
       }, 500);
     }
   });

@@ -115,7 +115,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: 'assets/javascript/custom/num87.json'
+      path: 'assets/javascript/custom/shapes/num87.json'
   };
 
   if ( $('#num87home').length > 0 ) {
@@ -160,7 +160,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: 'assets/javascript/custom/rosco1A.json'
+      path: 'assets/javascript/custom/shapes/rosco1A.json'
   };
 
   if ( $('#rosco1Ahome').length > 0 ) {
@@ -218,7 +218,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: 'assets/javascript/custom/num78.json'
+      path: 'assets/javascript/custom/shapes/num78.json'
   };
 
   if ( $('#num78home').length > 0 ) {
@@ -265,7 +265,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: false,
-      path: 'assets/javascript/custom/rosco1B.json'
+      path: 'assets/javascript/custom/shapes/rosco1B.json'
   };
 
   if ( $('#rosco1Bhome').length > 0 ) {

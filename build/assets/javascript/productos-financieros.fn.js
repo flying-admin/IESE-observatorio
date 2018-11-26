@@ -193,7 +193,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/rosco1B.json'
+      path: 'assets/javascript/custom/shapes/rosco1B.json'
   };
 
   if ( $('#rosco1B').closest('.fp_animate').length > 0 ) {
@@ -219,7 +219,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/roscofoto3A.json'
+      path: 'assets/javascript/custom/shapes/roscofoto3A.json'
   };
 
   roscofoto3BParams = {
@@ -227,7 +227,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/roscofoto3B.json'
+      path: 'assets/javascript/custom/shapes/roscofoto3B.json'
   };
 
   if ( $('#roscofoto3A').closest('.fp_animate').length > 0 ) {
@@ -259,7 +259,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/roscos_varios_1.json'
+      path: 'assets/javascript/custom/shapes/roscos_varios_1.json'
   };
 
   if ( $('#roscos_varios_1').closest('.fp_animate').length > 0 ) {

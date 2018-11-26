@@ -37,7 +37,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/num78.json'
+      path: 'assets/javascript/custom/shapes/num78.json'
   };
 
   if ( $('#num78').closest('.fp_animate').length > 0 ) {
@@ -63,7 +63,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/stats_horizontal.json'
+      path: 'assets/javascript/custom/shapes/stats_horizontal.json'
   };
 
   if ( $('#stats_horizontal').closest('.fp_animate').length > 0 ) {
@@ -102,7 +102,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/roscos_varios_3.json'
+      path: 'assets/javascript/custom/shapes/roscos_varios_3.json'
   };
 
   if ( $('#roscos_varios_3').closest('.fp_animate').length > 0 ) {
@@ -128,7 +128,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/roscofoto2A.json'
+      path: 'assets/javascript/custom/shapes/roscofoto2A.json'
   };
 
   if ( $('#roscofoto2A').closest('.fp_animate').length > 0 ) {

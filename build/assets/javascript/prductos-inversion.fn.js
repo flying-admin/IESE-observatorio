@@ -211,7 +211,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/num87.json'
+      path: 'assets/javascript/custom/shapes/num87.json'
   };
 
   if ( $('#num87').closest('.fp_animate').length > 0 ) {
@@ -237,7 +237,7 @@ $(window).on("load", function() {
       renderer: 'svg',
       loop: false,
       autoplay: true,
-      path: 'assets/javascript/custom/stats_vertical.json'
+      path: 'assets/javascript/custom/shapes/stats_vertical.json'
   };
 
   if ( $('#stats_vertical').closest('.fp_animate').length > 0 ) {

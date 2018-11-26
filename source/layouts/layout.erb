@@ -72,7 +72,10 @@
         var date = new Date();
         var localeTime =  d.toLocaleTimeString();
     </script>
-    <%= javascript_include_tag("all.fn", "all") %>
+    <%= javascript_include_tag("common.fn") %>
+    <% if ( current_page.data.js ) %>
+        <%= javascript_include_tag(current_page.data.js + ".fn" ) %>
+    <% end %>
   </head>
   <body>
     <div class="body-wrapper">
